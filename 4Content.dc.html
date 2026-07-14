@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#0A0A0B;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  input,textarea{cursor:text;}
+  ::selection{background:#FF2E2E;color:#fff;}
+  @media (pointer:fine){body{cursor:none;}}
+  @keyframes pulseDot{0%{transform:scale(1);opacity:.8;}70%{transform:scale(2.6);opacity:0;}100%{opacity:0;}}
+  @keyframes mqA{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes mqB{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+  @media (max-width:1100px){
+    [data-desktop-nav]{display:none !important;}
+    [data-nav-right]{display:none !important;}
+    [data-hamburger]{display:flex !important;}
+  }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div id="root" style="--accent:#FF2E2E;--accent-rgb:255,46,46;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
+
+<div id="cursor" style="position: fixed; top: 0; left: 0; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--accent); transform: translate(-50%,-50%); pointer-events: none; z-index: 9999; transition: width .25s ease,height .25s ease,background .25s ease; display: none; border-color: #D5C29E"></div>
+
+<!-- DIRECTION SWITCHER -->
+
+
+<!-- NAVBAR -->
+<nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;transition:box-shadow .3s ease;">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(14,14,16,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:11px 14px 11px 22px;box-shadow:0 10px 36px rgba(0,0,0,.4);">
+    <a href="#hero" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white.png" alt="4Content" style="height:32px;width:auto;display:block;"></a>
+
+    <div data-desktop-nav="" style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
+      <a href="#services" style="color:#fff;text-decoration:none;font-size:14px;opacity:.82;" style-hover="opacity:1;">Serviços</a>
+      <a href="#cases" style="color:#fff;text-decoration:none;font-size:14px;opacity:.82;" style-hover="opacity:1;">Cases</a>
+      <a href="#about" style="color:#fff;text-decoration:none;font-size:14px;opacity:.82;" style-hover="opacity:1;">Sobre</a>
+      <a href="#why" style="color:#fff;text-decoration:none;font-size:14px;opacity:.82;" style-hover="opacity:1;">Por que 4Content</a>
+      <a href="#capabilities" style="color:#fff;text-decoration:none;font-size:14px;opacity:.82;" style-hover="opacity:1;">Produção</a>
+    </div>
+
+    <div data-nav-right="" style="display:flex;align-items:center;gap:14px;flex:0 0 auto;">
+      <span style="position:relative;display:flex;width:9px;height:9px;">
+        <span style="position:absolute;inset:0;border-radius:50%;background:var(--accent);animation:pulseDot 2s ease-out infinite;"></span>
+        <span style="position: relative; width: 9px; height: 9px; border-radius: 50%; background-color: #D5C29E"></span>
+      </span>
+      <a href="#contact" style="color: #0A0A0B; text-decoration: none; font-size: 13px; font-weight: 600; border-radius: 50px; padding: 10px 18px; transition: transform .2s; background-color: #D5C29E" style-hover="transform:translateY(-1px);">Fala com a gente</a>
+    </div>
+
+    <button data-hamburger="" id="hamburger" style="display:none;flex-direction:column;gap:4px;background:transparent;border:none;padding:6px;width:34px;height:34px;align-items:center;justify-content:center;">
+      <span style="width:18px;height:2px;background:#fff;display:block;"></span>
+      <span style="width:18px;height:2px;background:#fff;display:block;"></span>
+      <span style="width:18px;height:2px;background:#fff;display:block;"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" style="display:none;flex-direction:column;gap:2px;background:rgba(14,14,16,.96);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:24px;margin-top:10px;padding:16px 22px;">
+    <a href="#services" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Serviços</a>
+    <a href="#cases" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Cases</a>
+    <a href="#about" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Sobre</a>
+    <a href="#why" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Por que 4Content</a>
+    <a href="#capabilities" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Produção</a>
+    <a href="#contact" style="color:var(--accent);text-decoration:none;font-size:16px;padding:9px 0;font-weight:600;">Fala com a gente</a>
+  </div>
+</nav>
+
+<!-- HERO CAROUSEL -->
+<section id="hero" data-screen-label="Hero" style="position:relative;height:100vh;min-height:640px;overflow:hidden;">
+  <div id="hero-track" style="display:flex;height:100%;width:100%;transition:transform .9s cubic-bezier(.76,0,.24,1);">
+
+    <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
+      <video id="hero-video-1" src="./185.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:0 24px 120px;max-width:1340px;margin:0 auto;left:50%;transform:translateX(-50%);width:100%;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+          <span style="font-family: 'Poppins'; font-weight: 700; font-size: 13px; letter-spacing: .05em; color: #D5C29E">01</span>
+          <span style="width: 34px; height: 1px; background-color: #D5C29E"></span>
+          <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Campanhas</span>
+        </div>
+        <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(48px,8vw,128px);line-height:.92;letter-spacing:-.02em;max-width:14ch;">Marca que vira torcida</h1>
+        <p style="margin:22px 0 0;max-width:520px;font-size:clamp(15px,1.4vw,19px);line-height:1.55;color:#bcbcc2;font-weight:300;">Estratégia criativa e impacto comercial no único terreno onde a paixão não tem filtro: o esporte.</p>
+        <a href="Campanhas.dc.html" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; text-decoration: none; color: #0A0A0B; border-radius: 50px; padding: 14px 26px; font-size: 15px; font-weight: 600; transition: transform .2s; background-color: #D5C29E" style-hover="transform:translateY(-2px);">Ver serviço <span style="font-size:17px;">→</span></a>
+      </div>
+    </div>
+
+    <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
+      <video id="hero-video-2" src="./hero-series.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
+      <div style="position:absolute;left:50%;transform:translateX(-50%);right:0;bottom:0;padding:0 24px 120px;max-width:1340px;width:100%;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+          <span style="font-family: 'Poppins'; font-weight: 700; font-size: 13px; letter-spacing: .05em; color: #D5C29E">02</span>
+          <span style="width: 34px; height: 1px; background-color: #D5C29E"></span>
+          <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Séries Documentais</span>
+        </div>
+        <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(48px,8vw,128px);line-height:.92;letter-spacing:-.02em;max-width:14ch;">Eternizando legados</h1>
+        <p style="margin:22px 0 0;max-width:520px;font-size:clamp(15px,1.4vw,19px);line-height:1.55;color:#bcbcc2;font-weight:300;">Histórias que constroem audiência, conexão emocional e legado de marca — temporada após temporada.</p>
+        <a href="Series.dc.html" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; text-decoration: none; color: #0A0A0B; border-radius: 50px; padding: 14px 26px; font-size: 15px; font-weight: 600; transition: transform .2s; background-color: #D5C29E" style-hover="transform:translateY(-2px);">Ver serviço <span style="font-size:17px;">→</span></a>
+      </div>
+    </div>
+
+    <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
+      <video id="hero-video-3" src="./hero-mediaday.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
+      <div style="position:absolute;left:50%;transform:translateX(-50%);right:0;bottom:0;padding:0 24px 120px;max-width:1340px;width:100%;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+          <span style="font-family: 'Poppins'; font-weight: 700; font-size: 13px; letter-spacing: .05em; color: #D5C29E">03</span>
+          <span style="width: 34px; height: 1px; background-color: #D5C29E"></span>
+          <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Media Day</span>
+        </div>
+        <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(44px,7.4vw,118px);line-height:.92;letter-spacing:-.02em;max-width:16ch;">Um dia. Uma temporada de conteúdo.</h1>
+        <p style="margin:22px 0 0;max-width:520px;font-size:clamp(15px,1.4vw,19px);line-height:1.55;color:#bcbcc2;font-weight:300;">Operação de captação em escala que transforma um único encontro em centenas de ativos para marca e patrocinadores.</p>
+        <a href="Media-Day.dc.html" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; text-decoration: none; color: #0A0A0B; border-radius: 50px; padding: 14px 26px; font-size: 15px; font-weight: 600; transition: transform .2s; background-color: #D5C29E" style-hover="transform:translateY(-2px);">Ver serviço <span style="font-size:17px;">→</span></a>
+      </div>
+    </div>
+
+    <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
+      <video id="hero-video-4" src="./hero-realtime.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
+      <div style="position:absolute;left:50%;transform:translateX(-50%);right:0;bottom:0;padding:0 24px 120px;max-width:1340px;width:100%;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+          <span style="font-family: 'Poppins'; font-weight: 700; font-size: 13px; letter-spacing: .05em; color: #D5C29E">04</span>
+          <span style="width:34px;height:1px;background:var(--accent);"></span>
+          <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Real Time</span>
+        </div>
+        <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(46px,7.6vw,122px);line-height:.92;letter-spacing:-.02em;max-width:15ch;">Todos os momentos são decisivos</h1>
+        <p style="margin:22px 0 0;max-width:520px;font-size:clamp(15px,1.4vw,19px);line-height:1.55;color:#bcbcc2;font-weight:300;">Cobertura ao vivo e narrativa em tempo real para dominar a conversa enquanto ela acontece.</p>
+        <a href="Real-Time.dc.html" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; text-decoration: none; color: #0A0A0B; border-radius: 50px; padding: 14px 26px; font-size: 15px; font-weight: 600; transition: transform .2s; background-color: #D5C29E" style-hover="transform:translateY(-2px);">Ver serviço <span style="font-size:17px;">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <button id="hero-prev" aria-label="Anterior" style="position:absolute;left:18px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.07);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);color:#fff;width:46px;height:46px;border-radius:50%;font-size:19px;display:flex;align-items:center;justify-content:center;z-index:5;" style-hover="background:rgba(255,255,255,.18);">←</button>
+  <button id="hero-next" aria-label="Próximo" style="position:absolute;right:18px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.07);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);color:#fff;width:46px;height:46px;border-radius:50%;font-size:19px;display:flex;align-items:center;justify-content:center;z-index:5;" style-hover="background:rgba(255,255,255,.18);">→</button>
+  <div id="hero-bars" style="position:absolute;bottom:48px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:5;width:min(280px,70vw);">
+    <span data-bar="0" style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.22);overflow:hidden;cursor:pointer;"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
+    <span data-bar="1" style="flex: 1; height: 3px; border-radius: 3px; background: rgba(255,255,255,.22); overflow: hidden; cursor: pointer; display: block"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
+    <span data-bar="2" style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.22);overflow:hidden;cursor:pointer;"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
+    <span data-bar="3" style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.22);overflow:hidden;cursor:pointer;"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" data-screen-label="About" style="padding:150px 24px;max-width:1180px;margin:0 auto;">
+  <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:34px;">
+    <span style="width: 34px; height: 1px; background-color: #D5C29E"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">A 4Content</span>
+  </div>
+  <h2 data-reveal="" style="margin:0;font-family:'Poppins';font-weight:800;font-size:clamp(32px,4.6vw,68px);line-height:1.08;letter-spacing:-.02em;max-width:18ch;">Transformamos esporte em <span style="color: #D5C29E">influência, relevância e negócio.</span></h2>
+  <p data-reveal="" style="margin:36px 0 0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Somos a agência de conteúdo esportivo premium da América Latina. Não fazemos vídeo — construímos relevância. Da estratégia à captação em tempo real, criamos conteúdo fora do padrão para marcas, atletas, clubes, ligas e veículos que querem liderar a conversa.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" data-screen-label="Services" style="padding:40px 24px 130px;max-width:1340px;margin:0 auto;">
+  <div data-reveal="" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:48px;">
+    <h2 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(34px,5vw,76px);line-height:.95;letter-spacing:-.02em;">O que fazemos</h2>
+    <p style="margin:0;max-width:380px;font-size:15px;line-height:1.55;color:#8a8a90;font-weight:300;">Quatro frentes de conteúdo premium pensadas para gerar resultado dentro e fora de campo.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;">
+    <a class="svc-card" href="Campanhas.dc.html" data-reveal="" style="position:relative;display:block;text-decoration:none;border-radius:18px;overflow:hidden;aspect-ratio:3/4;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="home-svc-campanhas" shape="rect" src="uploads/DSC09539.jpg" placeholder="Capa do serviço — Campanhas (vertical, 3:4)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),rgba(10,10,11,.18) 60%);"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
+        <span style="font-family: 'Poppins'; font-weight: 700; font-size: 14px; color: #D5C29E">01</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-family:'Poppins';font-weight:700;font-size:24px;color:#fff;">Campanhas</h3>
+          <p style="margin:0;font-size:13.5px;line-height:1.5;color:#b6b6bc;">Posicionamento de marca, estratégia criativa e impacto comercial.</p>
+          <span class="svc-go" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#fff;font-size:13px;font-weight:600;">Explorar <span style="color: #D5C29E; border-color: #D5C29E">→</span></span>
+        </div>
+      </div>
+    </a>
+    <a class="svc-card" href="Series.dc.html" data-reveal="" style="position:relative;display:block;text-decoration:none;border-radius:18px;overflow:hidden;aspect-ratio:3/4;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="home-svc-series" shape="rect" src="uploads/DSC08197.jpg" placeholder="Capa do serviço — Séries Documentais (vertical, 3:4)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),rgba(10,10,11,.18) 60%);"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
+        <span style="font-family: 'Poppins'; font-weight: 700; font-size: 14px; color: #D5C29E">02</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-family:'Poppins';font-weight:700;font-size:24px;color:#fff;">Séries Documentais</h3>
+          <p style="margin:0;font-size:13.5px;line-height:1.5;color:#b6b6bc;">Storytelling, legado e conexão emocional que constrói audiência.</p>
+          <span class="svc-go" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#fff;font-size:13px;font-weight:600;">Explorar <span style="color: #D5C29E; border-color: #D5C29E">→</span></span>
+        </div>
+      </div>
+    </a>
+    <a class="svc-card" href="Media-Day.dc.html" data-reveal="" style="position:relative;display:block;text-decoration:none;border-radius:18px;overflow:hidden;aspect-ratio:3/4;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="home-svc-mediaday" shape="rect" src="uploads/WhatsApp Image 2026-06-01 at 18.16.37 (1).jpg" placeholder="Capa do serviço — Media Day (vertical, 3:4)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),rgba(10,10,11,.18) 60%);"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
+        <span style="font-family: 'Poppins'; font-weight: 700; font-size: 14px; color: #D5C29E">03</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-family:'Poppins';font-weight:700;font-size:24px;color:#fff;">Media Day</h3>
+          <p style="margin:0;font-size:13.5px;line-height:1.5;color:#b6b6bc;">Captação em escala: um dia que vira uma temporada de ativos.</p>
+          <span class="svc-go" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#fff;font-size:13px;font-weight:600;">Explorar <span style="color: #D5C29E; border-color: #D5C29E">→</span></span>
+        </div>
+      </div>
+    </a>
+    <a class="svc-card" href="Real-Time.dc.html" data-reveal="" style="position:relative;display:block;text-decoration:none;border-radius:18px;overflow:hidden;aspect-ratio:3/4;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="home-svc-realtime" shape="rect" src="uploads/4CT_2025_Bastidores_GPSP-1.jpg" placeholder="Capa do serviço — Real Time (vertical, 3:4)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),rgba(10,10,11,.18) 60%);"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
+        <span style="font-family: 'Poppins'; font-weight: 700; font-size: 14px; color: #D5C29E">04</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-family:'Poppins';font-weight:700;font-size:24px;color:#fff;">Real Time</h3>
+          <p style="margin:0;font-size:13.5px;line-height:1.5;color:#b6b6bc;">Velocidade, relevância e narrativa ao vivo no ritmo do evento.</p>
+          <span class="svc-go" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#fff;font-size:13px;font-weight:600;">Explorar <span style="color: #D5C29E; border-color: #D5C29E">→</span></span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- WHY 4CONTENT -->
+<section id="why" data-screen-label="Why" style="padding:120px 24px;background:#121214;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+      <span style="width: 34px; height: 1px; background-color: #D5C29E"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Por que 4Content</span>
+    </div>
+    <h2 data-reveal="" style="margin:0 0 18px;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(30px,4.4vw,64px);line-height:.98;letter-spacing:-.02em;max-width:18ch;">Do lado certo de cada escolha</h2>
+
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin:34px 0 64px;">
+      <div data-reveal="" style="display:flex;align-items:center;gap:14px;background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:12px 22px;">
+        <span style="color:#6a6a70;font-size:14px;text-decoration:line-through;">Volume</span><span style="color: #D5C29E; border-color: #D5C29E">→</span><span style="font-family:'Poppins';font-weight:700;font-size:16px;">Qualidade</span>
+      </div>
+      <div data-reveal="" style="display:flex;align-items:center;gap:14px;background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:12px 22px;">
+        <span style="color:#6a6a70;font-size:14px;text-decoration:line-through;">Alcance</span><span style="color: #D5C29E; border-color: #D5C29E">→</span><span style="font-family:'Poppins';font-weight:700;font-size:16px;">Exclusividade</span>
+      </div>
+      <div data-reveal="" style="display:flex;align-items:center;gap:14px;background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:12px 22px;">
+        <span style="color:#6a6a70;font-size:14px;text-decoration:line-through;">Baixo custo</span><span style="color: #D5C29E; border-color: #D5C29E">→</span><span style="font-family:'Poppins';font-weight:700;font-size:16px;">Premium</span>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;">
+      <div data-reveal="" style="background:#121214;padding:32px 26px;">
+        <div style="font-family: 'Poppins'; font-weight: 800; font-size: clamp(40px,4vw,58px); line-height: 1; color: #D5C29E"><span data-count="14" data-suffix="+" style="border-color: #D5C29E; color: #D5C29E">0</span></div>
+        <div style="margin-top:10px;font-size:14px;color:#9a9aa0;">anos produzindo conteúdo de alto padrão</div>
+      </div>
+      <div data-reveal="" style="background:#121214;padding:32px 26px;">
+        <div style="font-family: 'Poppins'; font-weight: 800; font-size: clamp(40px,4vw,58px); line-height: 1; color: #D5C29E"><span data-count="500" data-suffix="+" style="border-color: #D5C29E; color: #D5C29E">0</span></div>
+        <div style="margin-top:10px;font-size:14px;color:#9a9aa0;">ativos gerados em um único media day</div>
+      </div>
+      <div data-reveal="" style="background:#121214;padding:32px 26px;">
+        <div style="font-family: 'Poppins'; font-weight: 800; font-size: clamp(40px,4vw,58px); line-height: 1; color: #D5C29E"><span data-count="24" data-prefix="&lt;" data-suffix="h" style="border-color: #D5C29E; color: #D5C29E">0</span></div>
+        <div style="margin-top:10px;font-size:14px;color:#9a9aa0;">para entrega de conteúdo em tempo real</div>
+      </div>
+      <div data-reveal="" style="background:#121214;padding:32px 26px;">
+        <div style="font-family: 'Poppins'; font-weight: 800; font-size: clamp(40px,4vw,58px); line-height: 1; color: #D5C29E"><span data-count="100" data-suffix="%" style="border-color: #D5C29E; color: #D5C29E">0</span></div>
+        <div style="margin-top:10px;font-size:14px;color:#9a9aa0;">linguagem nativa da Geração Z</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients" data-screen-label="Clients" style="padding:90px 0;overflow:hidden;">
+  <p data-reveal="" style="text-align:center;margin:0 0 44px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Marcas, clubes e veículos que confiam na 4Content</p>
+  <div style="white-space:nowrap;overflow:hidden;margin-bottom:24px;">
+    <div style="display:inline-flex;align-items:center;animation:mqA 32s linear infinite;">
+      <img class="cli" src="assets/cli-ad.png" alt="Adidas" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-f1.png" alt="F1 GP São Paulo" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-byd.png" alt="BYD" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-caz.png" alt="CazéTV" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-lvie.png" alt="Live Mode" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-logi.png" alt="Logitech" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-cinem.png" alt="Cinemark" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-km.png" alt="KaBuM!" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-be.png" alt="Bem Brasil" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-cbfa.png" alt="CBFA" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-cob.png" alt="COB Expo" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-espm.png" alt="ESPM" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-ad.png" alt="Adidas" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-f1.png" alt="F1 GP São Paulo" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-byd.png" alt="BYD" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-caz.png" alt="CazéTV" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-lvie.png" alt="Live Mode" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-logi.png" alt="Logitech" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-cinem.png" alt="Cinemark" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-km.png" alt="KaBuM!" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-be.png" alt="Bem Brasil" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-cbfa.png" alt="CBFA" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-cob.png" alt="COB Expo" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-espm.png" alt="ESPM" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+    </div>
+  </div>
+  <div style="white-space:nowrap;overflow:hidden;">
+    <div style="display:inline-flex;align-items:center;animation:mqB 38s linear infinite;">
+      <img class="cli" src="assets/cli-rb.png" alt="Red Bull" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-prime.png" alt="Prime Video" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-oakel.png" alt="Oakley" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-mizun.png" alt="Mizuno" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-unice.png" alt="UNICEF" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-vc.png" alt="Victorinox" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-zuricj.png" alt="Zurich" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-vivara.png" alt="Vivara" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-paulis.png" alt="Paulistão" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-vivasort.png" alt="Viva Sorte" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-rug.png" alt="Rug" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-sem.png" alt="Marca" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-rb.png" alt="Red Bull" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-prime.png" alt="Prime Video" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-oakel.png" alt="Oakley" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-mizun.png" alt="Mizuno" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-unice.png" alt="UNICEF" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-vc.png" alt="Victorinox" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-zuricj.png" alt="Zurich" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-vivara.png" alt="Vivara" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-paulis.png" alt="Paulistão" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-vivasort.png" alt="Viva Sorte" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-rug.png" alt="Rug" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+      <img class="cli" src="assets/cli-sem.png" alt="Marca" style="margin:0 52px;height:120px;width:auto;opacity:.55;transition:opacity .3s;">
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CASES -->
+<section id="cases" data-screen-label="Cases" style="padding:110px 0 130px;">
+  <div style="max-width:1340px;margin:0 auto;padding:0 24px;">
+    <div data-reveal="" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:48px;">
+      <h2 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(34px,5vw,76px);line-height:.95;letter-spacing:-.02em;">Cases em destaque</h2>
+      <p style="margin:0;max-width:380px;font-size:15px;line-height:1.55;color:#8a8a90;font-weight:300;">Conteúdo cinematográfico com alto valor de produção e resultado de marca.</p>
+    </div>
+  </div>
+  <div style="position:relative;max-width:1500px;margin:0 auto;">
+    <div id="cases-scroll" style="display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding:6px 24px 26px;scrollbar-width:none;">
+      <a class="case-card" href="#" data-reveal="" style="flex:0 0 560px;max-width:86vw;text-decoration:none;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
+          <image-slot id="home-case-1" shape="rect" placeholder="Thumbnail do case (paisagem, 16:9)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
+          <div class="case-ov" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.6),transparent);opacity:.7;transition:opacity .3s;"></div>
+          <span style="position:absolute;top:14px;left:14px;background:rgba(10,10,11,.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;">Série Documental</span>
+        </div>
+        <h3 style="margin:18px 0 5px;font-family:'Poppins';font-weight:700;font-size:21px;color:#fff;">A Última Temporada <span style="color:#6a6a70;font-weight:500;">| Norte FC</span></h3>
+        <p style="margin:0;font-size:14px;color:#8a8a90;line-height:1.45;">Bastidores de uma campanha histórica que reposicionou o clube na mídia nacional.</p>
+      </a>
+      <a class="case-card" href="#" data-reveal="" style="flex:0 0 560px;max-width:86vw;text-decoration:none;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
+          <image-slot id="home-case-2" shape="rect" placeholder="Thumbnail do case (paisagem, 16:9)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
+          <div class="case-ov" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.6),transparent);opacity:.7;transition:opacity .3s;"></div>
+          <span style="position:absolute;top:14px;left:14px;background:rgba(10,10,11,.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;">Media Day</span>
+        </div>
+        <h3 style="margin:18px 0 5px;font-family:'Poppins';font-weight:700;font-size:21px;color:#fff;">Dia de Elenco <span style="color:#6a6a70;font-weight:500;">| Liga Pro</span></h3>
+        <p style="margin:0;font-size:14px;color:#8a8a90;line-height:1.45;">+500 ativos para 12 patrocinadores captados em uma única operação.</p>
+      </a>
+      <a class="case-card" href="#" data-reveal="" style="flex:0 0 560px;max-width:86vw;text-decoration:none;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
+          <image-slot id="home-case-3" shape="rect" placeholder="Thumbnail do case (paisagem, 16:9)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
+          <div class="case-ov" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.6),transparent);opacity:.7;transition:opacity .3s;"></div>
+          <span style="position:absolute;top:14px;left:14px;background:rgba(10,10,11,.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;">Campanha</span>
+        </div>
+        <h3 style="margin:18px 0 5px;font-family:'Poppins';font-weight:700;font-size:21px;color:#fff;">Feito de Atitude <span style="color:#6a6a70;font-weight:500;">| Veloz</span></h3>
+        <p style="margin:0;font-size:14px;color:#8a8a90;line-height:1.45;">Lançamento de marca esportiva com a Geração Z no centro da narrativa.</p>
+      </a>
+      <a class="case-card" href="#" data-reveal="" style="flex:0 0 560px;max-width:86vw;text-decoration:none;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
+          <image-slot id="home-case-4" shape="rect" placeholder="Thumbnail do case (paisagem, 16:9)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
+          <div class="case-ov" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.6),transparent);opacity:.7;transition:opacity .3s;"></div>
+          <span style="position:absolute;top:14px;left:14px;background:rgba(10,10,11,.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;">Real Time</span>
+        </div>
+        <h3 style="margin:18px 0 5px;font-family:'Poppins';font-weight:700;font-size:21px;color:#fff;">Decisão ao Vivo <span style="color:#6a6a70;font-weight:500;">| Arena+</span></h3>
+        <p style="margin:0;font-size:14px;color:#8a8a90;line-height:1.45;">Cobertura em tempo real que dominou as redes durante a final.</p>
+      </a>
+    </div>
+    <button id="cases-next" aria-label="Próximo" style="position:absolute;right:18px;top:calc(50% - 40px);transform:translateY(-50%);background:var(--accent);color:#0A0A0B;width:50px;height:50px;border-radius:50%;border:none;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:4;">→</button>
+  </div>
+</section>
+
+<!-- PRODUCTION CAPABILITIES -->
+<section id="capabilities" data-screen-label="Capabilities" style="padding:120px 24px;background:#121214;border-top:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+      <span style="width: 34px; height: 1px; border-color: #D5C29E; background-color: #D5C29E"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Capacidade de produção</span>
+    </div>
+    <h2 data-reveal="" style="margin:0 0 56px;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(30px,4.4vw,64px);line-height:.98;letter-spacing:-.02em;max-width:18ch;">Estrutura ponta a ponta</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+      <div data-reveal="" style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;"><div style="font-family:'Poppins';font-weight:700;font-size:18px;margin-bottom:8px;">Estratégia &amp; Criação</div><div style="font-size:13.5px;color:#8a8a90;line-height:1.5;">Planejamento editorial, conceito e roteiro com posicionamento de marca.</div></div>
+      <div data-reveal="" style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;"><div style="font-family:'Poppins';font-weight:700;font-size:18px;margin-bottom:8px;">Direção &amp; Captação</div><div style="font-size:13.5px;color:#8a8a90;line-height:1.5;">Direção, captação multicâmera e operação de set em alto padrão.</div></div>
+      <div data-reveal="" style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;"><div style="font-family:'Poppins';font-weight:700;font-size:18px;margin-bottom:8px;">Pós &amp; Color</div><div style="font-size:13.5px;color:#8a8a90;line-height:1.5;">Edição, finalização, color grading e tratamento cinematográfico.</div></div>
+      <div data-reveal="" style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;"><div style="font-family:'Poppins';font-weight:700;font-size:18px;margin-bottom:8px;">Motion &amp; Design</div><div style="font-size:13.5px;color:#8a8a90;line-height:1.5;">Identidade visual em movimento, GC e pacotes gráficos para esporte.</div></div>
+      <div data-reveal="" style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;"><div style="font-family:'Poppins';font-weight:700;font-size:18px;margin-bottom:8px;">Operação Real Time</div><div style="font-size:13.5px;color:#8a8a90;line-height:1.5;">Ilha móvel, edição on-site e publicação ao vivo durante o evento.</div></div>
+      <div data-reveal="" style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;"><div style="font-family:'Poppins';font-weight:700;font-size:18px;margin-bottom:8px;">Distribuição &amp; Performance</div><div style="font-size:13.5px;color:#8a8a90;line-height:1.5;">Estratégia de canais, versionamento por plataforma e métricas.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" data-screen-label="Contact" style="padding:150px 24px 120px;text-align:center;">
+  <p data-reveal="" style="margin:0 0 28px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Vamos jogar juntos</p>
+  <h2 data-reveal="" style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(56px,11vw,180px);line-height:.86;letter-spacing:-.03em;">Qual sua<br>próxima<br><span style="color: #D5C29E; border-color: #D5C29E">jogada?</span></h2>
+  <a href="mailto:hello@4content.com.br" data-reveal="" style="display:inline-block;margin-top:46px;font-family:'Poppins';font-weight:600;font-size:clamp(20px,3vw,38px);color:#fff;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:6px;" style-hover="color:var(--accent);">hello@4content.com.br</a>
+  <p data-reveal="" style="margin:36px 0 0;font-size:14px;color:#6a6a70;line-height:1.6;">São Paulo · Brasil — atendendo marcas e propriedades esportivas em toda a América Latina</p>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#070708;padding:80px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:1340px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:48px;">
+    <div>
+      <img src="assets/logo-white.png" alt="4Content" style="width:150px;height:auto;display:block;margin-bottom:22px;">
+      <p style="margin:0;max-width:280px;font-size:14px;line-height:1.55;color:#8a8a90;font-weight:300;">Conteúdo esportivo premium. Transformamos esporte em influência, relevância e negócio.</p>
+    </div>
+    <div>
+      <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#6a6a70;margin-bottom:16px;">Serviços</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="Campanhas.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Campanhas</a>
+        <a href="Series.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Séries Documentais</a>
+        <a href="Media-Day.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Media Day</a>
+        <a href="Real-Time.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Real Time</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#6a6a70;margin-bottom:16px;">Empresa</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#about" style="color:#c4c4c8;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Sobre</a>
+        <a href="#cases" style="color:#c4c4c8;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Cases</a>
+        <a href="#why" style="color:#c4c4c8;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Por que 4Content</a>
+        <a href="#contact" style="color:#c4c4c8;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Contato</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#6a6a70;margin-bottom:16px;">Newsletter</div>
+      <div style="display:flex;gap:8px;max-width:320px;">
+        <input type="email" placeholder="seu@email.com" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.18);border-radius:50px;padding:11px 16px;color:#fff;font-size:14px;font-family:'Inter';outline:none;">
+        <button style="color: #0A0A0B; border: none; border-radius: 50px; padding: 11px 20px; font-size: 14px; font-weight: 600; font-family: 'Inter'; border-color: #D5C29E; background-color: #D5C29E">Enviar</button>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1340px;margin:54px auto 0;height:1px;background:rgba(255,255,255,.08);"></div>
+  <div style="max-width:1340px;margin:24px auto 0;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;">
+    <div style="display:flex;gap:18px;">
+      <a href="#" aria-label="Instagram" style="color:#8a8a90;display:flex;" style-hover="color:#fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+      <a href="#" aria-label="LinkedIn" style="color:#8a8a90;display:flex;" style-hover="color:#fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8.5h5V24H0zM8 8.5h4.8v2.1h.07c.67-1.2 2.3-2.5 4.73-2.5 5.06 0 6 3.3 6 7.6V24h-5v-6.8c0-1.6 0-3.7-2.25-3.7s-2.6 1.75-2.6 3.6V24H8z"></path></svg></a>
+      <a href="#" aria-label="YouTube" style="color:#8a8a90;display:flex;" style-hover="color:#fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.9 4.8 12 4.8 12 4.8s-5.9 0-7.6.4a2.8 2.8 0 0 0-2 2C2 8.9 2 12 2 12s0 3.1.4 4.8a2.8 2.8 0 0 0 2 2c1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4a2.8 2.8 0 0 0 2-2C22 15.1 22 12 22 12s0-3.1-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"></path></svg></a>
+    </div>
+    <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+    const root = $('#root');
+
+    // ---- Hero background video (autoplay needs muted set as a property) ----
+    $$('#hero-video-1, #hero-video-2, #hero-video-3, #hero-video-4').forEach((hv) => {
+      hv.muted = true;
+      hv.setAttribute('muted', '');
+      const pv = hv.play();
+      if (pv && pv.catch) pv.catch(() => {});
+    });
+
+    // ---- Fixed brand accent (gold) ----
+    root.style.setProperty('--accent', '#D5C29E');
+    root.style.setProperty('--accent-rgb', '213,194,158');
+
+    // ---- Custom cursor ----
+    const cursor = $('#cursor');
+    if (window.matchMedia('(pointer:fine)').matches && cursor) {
+      cursor.style.display = 'block';
+      let cx = innerWidth / 2, cy = innerHeight / 2, tx = cx, ty = cy;
+      addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
+      const loop = () => {
+        cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2;
+        cursor.style.left = cx + 'px'; cursor.style.top = cy + 'px';
+        this._raf = requestAnimationFrame(loop);
+      };
+      loop();
+      const grow = () => { cursor.style.width = '56px'; cursor.style.height = '56px'; cursor.style.background = 'rgba(var(--accent-rgb),.18)'; };
+      const shrink = () => { cursor.style.width = '30px'; cursor.style.height = '30px'; cursor.style.background = 'transparent'; };
+      $$('a,button,[role=button],.svc-card,.case-card').forEach((el) => {
+        el.addEventListener('mouseenter', grow); el.addEventListener('mouseleave', shrink);
+      });
+    }
+
+    // ---- Reveal (rAF tween + capture-phase scroll + poll fallback) ----
+    const revealEls = $$('[data-reveal]');
+    revealEls.forEach((el) => {
+      if (el.dataset.revealed) return;
+      el.style.setProperty('opacity', '0', 'important');
+      el.style.setProperty('transform', 'translateY(34px)', 'important');
+    });
+    const tween = (el) => {
+      const s = performance.now(), dur = 760;
+      const step = (now) => {
+        const t = Math.min(1, (now - s) / dur);
+        const e = 1 - Math.pow(1 - t, 3);
+        el.style.setProperty('opacity', String(e), 'important');
+        el.style.setProperty('transform', 'translateY(' + (34 * (1 - e)).toFixed(2) + 'px)', 'important');
+        if (t < 1) requestAnimationFrame(step);
+        else { el.style.setProperty('opacity', '1', 'important'); el.style.setProperty('transform', 'translateY(0)', 'important'); }
+      };
+      requestAnimationFrame(step);
+    };
+    const revealCheck = () => {
+      const vh = innerHeight || document.documentElement.clientHeight;
+      revealEls.forEach((el) => {
+        if (el.dataset.revealed) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < vh - 60 && r.bottom > -40) { el.dataset.revealed = '1'; tween(el); if (el.querySelector('[data-count]') || el.hasAttribute('data-count')) startCount(el); }
+      });
+    };
+
+    // ---- Counters ----
+    const startCount = (scope) => {
+      (scope.matches && scope.matches('[data-count]') ? [scope] : Array.from(scope.querySelectorAll('[data-count]'))).forEach((el) => {
+        if (el.dataset.counted) return; el.dataset.counted = '1';
+        const target = parseFloat(el.getAttribute('data-count')) || 0;
+        const pre = el.getAttribute('data-prefix') || '', suf = el.getAttribute('data-suffix') || '';
+        const s = performance.now(), dur = 1400;
+        const step = (now) => {
+          const t = Math.min(1, (now - s) / dur);
+          const e = 1 - Math.pow(1 - t, 3);
+          el.textContent = pre + Math.round(target * e) + suf;
+          if (t < 1) requestAnimationFrame(step); else el.textContent = pre + target + suf;
+        };
+        requestAnimationFrame(step);
+      });
+    };
+
+    revealCheck();
+    addEventListener('scroll', revealCheck, { passive: true });
+    addEventListener('resize', revealCheck);
+    document.addEventListener('scroll', revealCheck, true);
+    this._poll = setInterval(() => { revealCheck(); if (revealEls.every((el) => el.dataset.revealed)) { clearInterval(this._poll); this._poll = null; } }, 250);
+    setTimeout(revealCheck, 300); setTimeout(revealCheck, 1200);
+
+    // ---- Navbar scroll ----
+    const nav = $('#navbar');
+    addEventListener('scroll', () => {
+      if (!nav) return;
+      nav.firstElementChild.style.boxShadow = (scrollY > 40) ? '0 12px 44px rgba(0,0,0,.6)' : '0 10px 36px rgba(0,0,0,.4)';
+    }, { passive: true });
+
+    // ---- Mobile menu ----
+    const burger = $('#hamburger'), mm = $('#mobile-menu');
+    if (burger && mm) {
+      burger.addEventListener('click', () => { mm.style.display = mm.style.display === 'flex' ? 'none' : 'flex'; });
+      mm.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { mm.style.display = 'none'; }));
+    }
+
+    // ---- Hero carousel ----
+    const track = $('#hero-track');
+    const bars = $$('#hero-bars [data-bar]');
+    const total = 4;
+    let idx = 0, barRAF = null, barStart = 0;
+    const DURATION = 6000;
+    const animateBar = () => {
+      const fill = bars[idx] ? bars[idx].querySelector('i') : null;
+      barStart = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now - barStart) / DURATION);
+        if (fill) fill.style.width = (p * 100) + '%';
+        if (p < 1) barRAF = requestAnimationFrame(tick); else go(idx + 1);
+      };
+      barRAF = requestAnimationFrame(tick);
+    };
+    const go = (i) => {
+      if (barRAF) cancelAnimationFrame(barRAF);
+      bars.forEach((b) => { const f = b.querySelector('i'); if (f) f.style.width = '0%'; });
+      idx = (i + total) % total;
+      if (track) track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+      animateBar();
+    };
+    if ($('#hero-prev')) $('#hero-prev').addEventListener('click', () => go(idx - 1));
+    if ($('#hero-next')) $('#hero-next').addEventListener('click', () => go(idx + 1));
+    bars.forEach((b) => b.addEventListener('click', () => go(parseInt(b.getAttribute('data-bar'), 10))));
+    go(0);
+
+    // ---- Cases scroll ----
+    const cn = $('#cases-next'), cs = $('#cases-scroll');
+    if (cn && cs) {
+      cn.addEventListener('click', () => {
+        const card = cs.querySelector('.case-card');
+        const step = card ? card.offsetWidth + 20 : 580;
+        if (cs.scrollLeft + cs.clientWidth >= cs.scrollWidth - 10) cs.scrollTo({ left: 0 });
+        else cs.scrollBy({ left: step });
+      });
+    }
+    $$('.case-card').forEach((c) => {
+      const im = c.querySelector('img, image-slot'), ov = c.querySelector('.case-ov');
+      c.addEventListener('mouseenter', () => { if (im) im.style.transform = 'scale(1.05)'; if (ov) ov.style.opacity = '.35'; });
+      c.addEventListener('mouseleave', () => { if (im) im.style.transform = 'scale(1)'; if (ov) ov.style.opacity = '.7'; });
+    });
+    $$('.svc-card').forEach((c) => {
+      const im = c.querySelector('img, image-slot');
+      c.addEventListener('mouseenter', () => { if (im) im.style.transform = 'scale(1.06)'; });
+      c.addEventListener('mouseleave', () => { if (im) im.style.transform = 'scale(1)'; });
+    });
+
+    // ---- Client logos hover ----
+    $$('.cli').forEach((l) => {
+      l.addEventListener('mouseenter', () => { l.style.color = '#fff'; l.style.opacity = '1'; });
+      l.addEventListener('mouseleave', () => { l.style.color = '#3a3a40'; l.style.opacity = '.55'; });
+    });
+  }
+
+  componentWillUnmount() {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._poll) clearInterval(this._poll);
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#0A0A0B;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  input,textarea{cursor:text;}
+  ::selection{background:#FF2E2E;color:#fff;}
+  @media (pointer:fine){body{cursor:none;}}
+  @keyframes pulseDot{0%{transform:scale(1);opacity:.8;}70%{transform:scale(2.6);opacity:0;}100%{opacity:0;}}
+  @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div id="root" style="--accent:#FF2E2E;--accent-rgb:255,46,46;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
+
+<div id="cursor" style="position:fixed;top:0;left:0;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);transform:translate(-50%,-50%);pointer-events:none;z-index:9999;transition:width .25s ease,height .25s ease,background .25s ease;display:none;"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(14,14,16,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:11px 14px 11px 22px;box-shadow:0 10px 36px rgba(0,0,0,.4);">
+    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white.png" alt="4Content" style="height:32px;width:auto;display:block;"></a>
+    <div data-desktop-nav style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
+      <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Campanhas</a>
+      <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:1;">Séries</a>
+      <a href="Media-Day.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Media Day</a>
+      <a href="Real-Time.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Real Time</a>
+    </div>
+    <div data-nav-right style="display:flex;align-items:center;gap:14px;flex:0 0 auto;">
+      <a href="4Content.dc.html#contact" style="color:#0A0A0B;text-decoration:none;font-size:13px;font-weight:600;background:var(--accent);border-radius:50px;padding:10px 18px;transition:transform .2s;" style-hover="transform:translateY(-1px);">Fala com a gente</a>
+    </div>
+    <button data-hamburger id="hamburger" style="display:none;flex-direction:column;gap:4px;background:transparent;border:none;padding:6px;width:34px;height:34px;align-items:center;justify-content:center;">
+      <span style="width:18px;height:2px;background:#fff;display:block;"></span><span style="width:18px;height:2px;background:#fff;display:block;"></span><span style="width:18px;height:2px;background:#fff;display:block;"></span>
+    </button>
+  </div>
+  <div id="mobile-menu" style="display:none;flex-direction:column;gap:2px;background:rgba(14,14,16,.96);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:24px;margin-top:10px;padding:16px 22px;">
+    <a href="4Content.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Home</a>
+    <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Campanhas</a>
+    <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Séries</a>
+    <a href="Media-Day.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Media Day</a>
+    <a href="Real-Time.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Real Time</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section data-screen-label="Campanhas Hero" style="position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;">
+  <image-slot id="series-hero" shape="rect" placeholder="Imagem de fundo do hero — Séries Documentais (paisagem, 1920×1200)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.4) 55%,rgba(10,10,11,.55) 100%);"></div>
+  <div style="position:relative;max-width:1340px;margin:0 auto;width:100%;padding:0 24px 110px;">
+    <a href="4Content.dc.html" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar</a>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <span style="font-family:'Poppins';font-weight:700;font-size:13px;color:var(--accent);">02</span>
+      <span style="width:34px;height:1px;background:var(--accent);"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Serviço</span>
+    </div>
+    <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(42px,7vw,112px);line-height:.9;letter-spacing:-.02em;">Séries<br>Documentais</h1>
+    <p style="margin:24px 0 0;max-width:600px;font-size:clamp(16px,1.5vw,21px);line-height:1.55;color:#bcbcc2;font-weight:300;">Eternizando legados. Storytelling de longa duração que constrói audiência fiel, conexão emocional e legado de marca — temporada após temporada.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section data-screen-label="Intro" style="padding:120px 24px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">A oportunidade</span>
+  </div>
+  <h2 data-reveal style="margin:0;font-family:'Poppins';font-weight:800;font-size:clamp(28px,4vw,58px);line-height:1.08;letter-spacing:-.02em;max-width:18ch;">Campanha gera pico. <span style="color:var(--accent);">Série constrói legado.</span></h2>
+  <p data-reveal style="margin:34px 0 0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Desenvolvemos séries documentais que revelam o que ninguém mais tem acesso: os bastidores, a jornada e a essência humana por trás do esporte. Conteúdo recorrente que mantém sua marca relevante o ano inteiro e transforma audiência em comunidade.</p>
+</section>
+
+<!-- DELIVERABLES -->
+<section data-screen-label="Deliverables" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">01</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Conceito & arco narrativo</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Linha editorial, personagens e a história que se desenrola por temporada.</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">02</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Episódios cinematográficos</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Captação documental e acesso exclusivo com padrão de série premium.</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">03</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Cortes & teasers</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Trailers, episódios curtos e cortes verticais para alimentar as redes.</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">04</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Estratégia de distribuição</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Planejamento de lançamento por plataforma para maximizar audiência.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STRIP -->
+<section data-screen-label="Case" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:440px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="series-case" shape="rect" radius="20" placeholder="Imagem do case — Séries Documentais (paisagem, 16:9)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
+    <div style="position:relative;padding:44px;max-width:600px;">
+      <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Série Documental</span>
+      <h3 style="margin:0 0 12px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">A Última Temporada | Norte FC</h3>
+      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">Bastidores de uma campanha histórica em uma série de 6 episódios que reposicionou o clube na mídia nacional e dobrou o engajamento da torcida.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT SERVICE / CTA -->
+<section data-screen-label="CTA" style="padding:120px 24px 130px;text-align:center;">
+  <h2 data-reveal style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(40px,7vw,110px);line-height:.9;letter-spacing:-.02em;">Bora contar a sua história?</h2>
+  <a href="4Content.dc.html#contact" data-reveal style="display:inline-flex;align-items:center;gap:10px;margin-top:36px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fala com a gente <span style="font-size:17px;">&#8594;</span></a>
+  <div data-reveal style="margin-top:64px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="Campanhas.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:10px 20px;" style-hover="border-color:rgba(255,255,255,.4);color:#fff;">Campanhas &#8594;</a>
+    <a href="Media-Day.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:10px 20px;" style-hover="border-color:rgba(255,255,255,.4);color:#fff;">Media Day &#8594;</a>
+    <a href="Real-Time.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:10px 20px;" style-hover="border-color:rgba(255,255,255,.4);color:#fff;">Real Time &#8594;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#070708;padding:60px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
+    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
+    <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+    const root = $('#root');
+
+    root.style.setProperty('--accent', '#D5C29E');
+    root.style.setProperty('--accent-rgb', '213,194,158');
+
+    const cursor = $('#cursor');
+    if (window.matchMedia('(pointer:fine)').matches && cursor) {
+      cursor.style.display = 'block';
+      let cx = innerWidth/2, cy = innerHeight/2, tx = cx, ty = cy;
+      addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
+      const loop = () => { cx += (tx-cx)*0.2; cy += (ty-cy)*0.2; cursor.style.left = cx+'px'; cursor.style.top = cy+'px'; this._raf = requestAnimationFrame(loop); };
+      loop();
+      const grow = () => { cursor.style.width='56px'; cursor.style.height='56px'; cursor.style.background='rgba(var(--accent-rgb),.18)'; };
+      const shrink = () => { cursor.style.width='30px'; cursor.style.height='30px'; cursor.style.background='transparent'; };
+      $$('a,button,[role=button]').forEach((el) => { el.addEventListener('mouseenter', grow); el.addEventListener('mouseleave', shrink); });
+    }
+
+    const revealEls = $$('[data-reveal]');
+    revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });
+    const tween = (el) => {
+      const s = performance.now(), dur = 760;
+      const step = (now) => { const t = Math.min(1,(now-s)/dur); const e = 1-Math.pow(1-t,3); el.style.setProperty('opacity',String(e),'important'); el.style.setProperty('transform','translateY('+(34*(1-e)).toFixed(2)+'px)','important'); if (t<1) requestAnimationFrame(step); else { el.style.setProperty('opacity','1','important'); el.style.setProperty('transform','translateY(0)','important'); } };
+      requestAnimationFrame(step);
+    };
+    const revealCheck = () => { const vh = innerHeight||document.documentElement.clientHeight; revealEls.forEach((el) => { if (el.dataset.revealed) return; const r = el.getBoundingClientRect(); if (r.top < vh-60 && r.bottom > -40) { el.dataset.revealed='1'; tween(el); } }); };
+    revealCheck();
+    addEventListener('scroll', revealCheck, { passive:true });
+    addEventListener('resize', revealCheck);
+    document.addEventListener('scroll', revealCheck, true);
+    this._poll = setInterval(() => { revealCheck(); if (revealEls.every((el) => el.dataset.revealed)) { clearInterval(this._poll); this._poll = null; } }, 250);
+    setTimeout(revealCheck, 300); setTimeout(revealCheck, 1200);
+
+    const nav = $('#navbar');
+    addEventListener('scroll', () => { if (nav) nav.firstElementChild.style.boxShadow = (scrollY>40)?'0 12px 44px rgba(0,0,0,.6)':'0 10px 36px rgba(0,0,0,.4)'; }, { passive:true });
+
+    const burger = $('#hamburger'), mm = $('#mobile-menu');
+    if (burger && mm) { burger.addEventListener('click', () => { mm.style.display = mm.style.display==='flex'?'none':'flex'; }); mm.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { mm.style.display='none'; })); }
+  }
+  componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); if (this._poll) clearInterval(this._poll); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
