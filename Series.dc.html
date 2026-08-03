@@ -17,7 +17,6 @@
   body{margin:0;background:#0A0A0B;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   input,textarea{cursor:text;}
   ::selection{background:#FF2E2E;color:#fff;}
-  @media (pointer:fine){body{cursor:none;}}
   @keyframes pulseDot{0%{transform:scale(1);opacity:.8;}70%{transform:scale(2.6);opacity:0;}100%{opacity:0;}}
   @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
 </style>
@@ -25,8 +24,6 @@
 </helmet>
 
 <div id="root" style="--accent:#FF2E2E;--accent-rgb:255,46,46;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
-
-<div id="cursor" style="position:fixed;top:0;left:0;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);transform:translate(-50%,-50%);pointer-events:none;z-index:9999;transition:width .25s ease,height .25s ease,background .25s ease;display:none;"></div>
 
 <!-- NAVBAR -->
 <nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;">
@@ -39,7 +36,7 @@
       <a href="Real-Time.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Real Time</a>
     </div>
     <div data-nav-right style="display:flex;align-items:center;gap:14px;flex:0 0 auto;">
-      <a href="4Content.dc.html#contact" style="color:#0A0A0B;text-decoration:none;font-size:13px;font-weight:600;background:var(--accent);border-radius:50px;padding:10px 18px;transition:transform .2s;" style-hover="transform:translateY(-1px);">Fala com a gente</a>
+      <a href="4Content.dc.html#contact" style="color:#0A0A0B;text-decoration:none;font-size:13px;font-weight:600;background:var(--accent);border-radius:50px;padding:10px 18px;transition:transform .2s;" style-hover="transform:translateY(-1px);">Fale conosco</a>
     </div>
     <button data-hamburger id="hamburger" style="display:none;flex-direction:column;gap:4px;background:transparent;border:none;padding:6px;width:34px;height:34px;align-items:center;justify-content:center;">
       <span style="width:18px;height:2px;background:#fff;display:block;"></span><span style="width:18px;height:2px;background:#fff;display:block;"></span><span style="width:18px;height:2px;background:#fff;display:block;"></span>
@@ -56,7 +53,7 @@
 
 <!-- HERO -->
 <section data-screen-label="Campanhas Hero" style="position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;">
-  <image-slot id="series-hero" shape="rect" placeholder="Imagem de fundo do hero — Séries Documentais (paisagem, 1920×1200)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+  <video src="./series-hero-video.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.4) 55%,rgba(10,10,11,.55) 100%);"></div>
   <div style="position:relative;max-width:1340px;margin:0 auto;width:100%;padding:0 24px 110px;">
     <a href="4Content.dc.html" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar</a>
@@ -106,15 +103,113 @@
   </div>
 </section>
 
+<!-- IMAGE BREAK -->
+<section data-screen-label="Imagem — série em produção (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
+    <video src="./series-video-2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  </div>
+</section>
+
+<!-- MAIS SOBRE -->
+<section data-screen-label="Mais sobre" style="padding:0 24px 120px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Sobre a série</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:16px;line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos da série.</p>
+</section>
+
+<!-- IMAGE BREAK 3 FOTOS -->
+<section data-screen-label="Imagem — bastidores da série (3 fotos)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+    <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="series-break-2a" shape="rect" radius="20" src="assets/series-hero-photo.webp" placeholder="Foto de bastidor" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+    <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
+      <video src="./series-vert-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    </div>
+    <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
+      <video src="./series-vert-2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section data-screen-label="Resultados" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Resultados</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;">
+    <div data-reveal style="background:#121214;padding:28px 24px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
+      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
+    </div>
+    <div data-reveal style="background:#121214;padding:28px 24px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
+      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
+    </div>
+    <div data-reveal style="background:#121214;padding:28px 24px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
+      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<section data-screen-label="Vídeo — galeria da série (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:460px;border:1px solid rgba(255,255,255,.08);">
+    <video src="./series-video-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  </div>
+</section>
+
 <!-- CASE STRIP -->
+<section data-screen-label="Antes do case" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Case</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos do case.</p>
+</section>
+
 <section data-screen-label="Case" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:440px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <image-slot id="series-case" shape="rect" radius="20" placeholder="Imagem do case — Séries Documentais (paisagem, 16:9)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:520px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
+    <video src="./series-case-video.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Série Documental</span>
-      <h3 style="margin:0 0 12px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">A Última Temporada | Norte FC</h3>
-      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">Bastidores de uma campanha histórica em uma série de 6 episódios que reposicionou o clube na mídia nacional e dobrou o engajamento da torcida.</p>
+      <h3 style="margin:0 0 12px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">The Gamers</h3>
+      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">A definir e dobrou o engajamento da torcida.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEXTO ABAIXO DO CASE -->
+<section data-screen-label="Sobre o resultado" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Sobre o resultado</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos.</p>
+</section>
+
+<!-- IMAGE BREAK 3 FOTOS -->
+<section data-screen-label="Imagem — encerramento (3 fotos verticais)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+    <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="series-break-4a" shape="rect" placeholder="Foto vertical" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+    <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="series-break-4b" shape="rect" placeholder="Foto vertical" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+    <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="series-break-4c" shape="rect" placeholder="Foto vertical" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
     </div>
   </div>
 </section>
@@ -122,7 +217,10 @@
 <!-- NEXT SERVICE / CTA -->
 <section data-screen-label="CTA" style="padding:120px 24px 130px;text-align:center;">
   <h2 data-reveal style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(40px,7vw,110px);line-height:.9;letter-spacing:-.02em;">Bora contar a sua história?</h2>
-  <a href="4Content.dc.html#contact" data-reveal style="display:inline-flex;align-items:center;gap:10px;margin-top:36px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fala com a gente <span style="font-size:17px;">&#8594;</span></a>
+  <div data-reveal style="margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="4Content.dc.html#contact" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fale conosco <span style="font-size:17px;">&#8594;</span></a>
+    <a href="4Content.dc.html#contact" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fale conosco, nos envie seu projeto</a>
+  </div>
   <div data-reveal style="margin-top:64px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
     <a href="Campanhas.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:10px 20px;" style-hover="border-color:rgba(255,255,255,.4);color:#fff;">Campanhas &#8594;</a>
     <a href="Media-Day.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:10px 20px;" style-hover="border-color:rgba(255,255,255,.4);color:#fff;">Media Day &#8594;</a>
@@ -150,17 +248,23 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    const cursor = $('#cursor');
-    if (window.matchMedia('(pointer:fine)').matches && cursor) {
-      cursor.style.display = 'block';
-      let cx = innerWidth/2, cy = innerHeight/2, tx = cx, ty = cy;
-      addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
-      const loop = () => { cx += (tx-cx)*0.2; cy += (ty-cy)*0.2; cursor.style.left = cx+'px'; cursor.style.top = cy+'px'; this._raf = requestAnimationFrame(loop); };
-      loop();
-      const grow = () => { cursor.style.width='56px'; cursor.style.height='56px'; cursor.style.background='rgba(var(--accent-rgb),.18)'; };
-      const shrink = () => { cursor.style.width='30px'; cursor.style.height='30px'; cursor.style.background='transparent'; };
-      $$('a,button,[role=button]').forEach((el) => { el.addEventListener('mouseenter', grow); el.addEventListener('mouseleave', shrink); });
-    }
+    $$('video').forEach((v) => {
+      v.muted = true;
+      v.loop = true;
+      v.setAttribute('muted', '');
+      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
+      const pv = v.play();
+      if (pv && pv.catch) pv.catch(() => {});
+    });
+
+    $$('video').forEach((v) => {
+      v.muted = true;
+      v.loop = true;
+      v.setAttribute('muted', '');
+      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
+      const pv = v.play();
+      if (pv && pv.catch) pv.catch(() => {});
+    });
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });

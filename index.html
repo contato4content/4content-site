@@ -17,7 +17,6 @@
   body{margin:0;background:#0A0A0B;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   input,textarea{cursor:text;}
   ::selection{background:#FF2E2E;color:#fff;}
-  @media (pointer:fine){body{cursor:none;}}
   @keyframes pulseDot{0%{transform:scale(1);opacity:.8;}70%{transform:scale(2.6);opacity:0;}100%{opacity:0;}}
   @keyframes mqA{from{transform:translateX(0);}to{transform:translateX(-50%);}}
   @keyframes mqB{from{transform:translateX(-50%);}to{transform:translateX(0);}}
@@ -31,8 +30,6 @@
 </helmet>
 
 <div id="root" style="--accent:#FF2E2E;--accent-rgb:255,46,46;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
-
-<div id="cursor" style="position: fixed; top: 0; left: 0; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--accent); transform: translate(-50%,-50%); pointer-events: none; z-index: 9999; transition: width .25s ease,height .25s ease,background .25s ease; display: none; border-color: #D5C29E"></div>
 
 <!-- DIRECTION SWITCHER -->
 
@@ -55,7 +52,7 @@
         <span style="position:absolute;inset:0;border-radius:50%;background:var(--accent);animation:pulseDot 2s ease-out infinite;"></span>
         <span style="position: relative; width: 9px; height: 9px; border-radius: 50%; background-color: #D5C29E"></span>
       </span>
-      <a href="#contact" style="color: #0A0A0B; text-decoration: none; font-size: 13px; font-weight: 600; border-radius: 50px; padding: 10px 18px; transition: transform .2s; background-color: #D5C29E" style-hover="transform:translateY(-1px);">Fala com a gente</a>
+      <a href="#contact" style="color: #0A0A0B; text-decoration: none; font-size: 13px; font-weight: 600; border-radius: 50px; padding: 10px 18px; transition: transform .2s; background-color: #D5C29E" style-hover="transform:translateY(-1px);">Fale conosco</a>
     </div>
 
     <button data-hamburger="" id="hamburger" style="display:none;flex-direction:column;gap:4px;background:transparent;border:none;padding:6px;width:34px;height:34px;align-items:center;justify-content:center;">
@@ -71,7 +68,7 @@
     <a href="#about" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Sobre</a>
     <a href="#why" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Por que 4Content</a>
     <a href="#capabilities" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Produção</a>
-    <a href="#contact" style="color:var(--accent);text-decoration:none;font-size:16px;padding:9px 0;font-weight:600;">Fala com a gente</a>
+    <a href="#contact" style="color:var(--accent);text-decoration:none;font-size:16px;padding:9px 0;font-weight:600;">Fale conosco</a>
   </div>
 </nav>
 
@@ -192,7 +189,7 @@
       </div>
     </a>
     <a class="svc-card" href="Media-Day.dc.html" data-reveal="" style="position:relative;display:block;text-decoration:none;border-radius:18px;overflow:hidden;aspect-ratio:3/4;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="home-svc-mediaday" shape="rect" src="uploads/WhatsApp Image 2026-06-01 at 18.16.37 (1).jpg" placeholder="Capa do serviço — Media Day (vertical, 3:4)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
+      <image-slot id="home-svc-mediaday" shape="rect" src="assets/home-svc-mediaday.jpg" placeholder="Capa do serviço — Media Day (vertical, 3:4)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
       <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),rgba(10,10,11,.18) 60%);"></div>
       <div style="position:absolute;inset:0;pointer-events:none;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
         <span style="font-family: 'Poppins'; font-weight: 700; font-size: 14px; color: #D5C29E">03</span>
@@ -331,6 +328,15 @@
   </div>
   <div style="position:relative;max-width:1500px;margin:0 auto;">
     <div id="cases-scroll" style="display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding:6px 24px 26px;scrollbar-width:none;">
+      <a class="case-card" href="Case-Gabigol-Cruzeiro.dc.html" data-reveal="" style="flex:0 0 560px;max-width:86vw;text-decoration:none;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
+          <img src="assets/case-cover.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .6s ease;">
+          <div class="case-ov" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.6),transparent);opacity:.7;transition:opacity .3s;"></div>
+          <span style="position:absolute;top:14px;left:14px;background:rgba(10,10,11,.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;">Campanha</span>
+        </div>
+        <h3 style="margin:18px 0 5px;font-family:'Poppins';font-weight:700;font-size:21px;color:#fff;">Gabi é Cabuloso <span style="color:#6a6a70;font-weight:500;">| Cruzeiro</span></h3>
+        <p style="margin:0;font-size:14px;color:#8a8a90;line-height:1.45;">A maior apresentação de um jogador que o Brasil já viu — do countdown ao Mineirão lotado.</p>
+      </a>
       <a class="case-card" href="#" data-reveal="" style="flex:0 0 560px;max-width:86vw;text-decoration:none;">
         <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
           <image-slot id="home-case-1" shape="rect" placeholder="Thumbnail do case (paisagem, 16:9)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);transition:transform .6s ease;"></image-slot>
@@ -395,7 +401,10 @@
 <section id="contact" data-screen-label="Contact" style="padding:150px 24px 120px;text-align:center;">
   <p data-reveal="" style="margin:0 0 28px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Vamos jogar juntos</p>
   <h2 data-reveal="" style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(56px,11vw,180px);line-height:.86;letter-spacing:-.03em;">Qual sua<br>próxima<br><span style="color: #D5C29E; border-color: #D5C29E">jogada?</span></h2>
-  <a href="mailto:hello@4content.com.br" data-reveal="" style="display:inline-block;margin-top:46px;font-family:'Poppins';font-weight:600;font-size:clamp(20px,3vw,38px);color:#fff;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:6px;" style-hover="color:var(--accent);">hello@4content.com.br</a>
+  <a href="mailto:contato@4content.com.br" data-reveal="" style="display:inline-block;margin-top:46px;font-family:'Poppins';font-weight:600;font-size:clamp(20px,3vw,38px);color:#fff;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:6px;" style-hover="color:var(--accent);">contato@4content.com.br</a>
+  <div data-reveal="" style="margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="mailto:contato@4content.com.br" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fale conosco, nos envie seu projeto</a>
+  </div>
   <p data-reveal="" style="margin:36px 0 0;font-size:14px;color:#6a6a70;line-height:1.6;">São Paulo · Brasil — atendendo marcas e propriedades esportivas em toda a América Latina</p>
 </section>
 
@@ -455,7 +464,9 @@ class Component extends DCLogic {
     // ---- Hero background video (autoplay needs muted set as a property) ----
     $$('#hero-video-1, #hero-video-2, #hero-video-3, #hero-video-4').forEach((hv) => {
       hv.muted = true;
+      hv.loop = true;
       hv.setAttribute('muted', '');
+      hv.addEventListener('ended', () => { hv.currentTime = 0; hv.play(); });
       const pv = hv.play();
       if (pv && pv.catch) pv.catch(() => {});
     });
@@ -463,25 +474,6 @@ class Component extends DCLogic {
     // ---- Fixed brand accent (gold) ----
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
-
-    // ---- Custom cursor ----
-    const cursor = $('#cursor');
-    if (window.matchMedia('(pointer:fine)').matches && cursor) {
-      cursor.style.display = 'block';
-      let cx = innerWidth / 2, cy = innerHeight / 2, tx = cx, ty = cy;
-      addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
-      const loop = () => {
-        cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2;
-        cursor.style.left = cx + 'px'; cursor.style.top = cy + 'px';
-        this._raf = requestAnimationFrame(loop);
-      };
-      loop();
-      const grow = () => { cursor.style.width = '56px'; cursor.style.height = '56px'; cursor.style.background = 'rgba(var(--accent-rgb),.18)'; };
-      const shrink = () => { cursor.style.width = '30px'; cursor.style.height = '30px'; cursor.style.background = 'transparent'; };
-      $$('a,button,[role=button],.svc-card,.case-card').forEach((el) => {
-        el.addEventListener('mouseenter', grow); el.addEventListener('mouseleave', shrink);
-      });
-    }
 
     // ---- Reveal (rAF tween + capture-phase scroll + poll fallback) ----
     const revealEls = $$('[data-reveal]');

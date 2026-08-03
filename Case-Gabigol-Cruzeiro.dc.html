@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#0A0A0B;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  input,textarea{cursor:text;}
+  ::selection{background:#D5C29E;color:#0A0A0B;}
+  @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div id="root" style="--accent:#D5C29E;--accent-rgb:213,194,158;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
+
+<div id="cursor" style="display:none;"></div>
+
+<nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(14,14,16,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:11px 14px 11px 22px;box-shadow:0 10px 36px rgba(0,0,0,.4);">
+    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white.png" alt="4Content" style="height:32px;width:auto;display:block;"></a>
+    <div data-desktop-nav style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
+      <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Campanhas</a>
+      <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Séries</a>
+      <a href="Media-Day.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Media Day</a>
+      <a href="Real-Time.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Real Time</a>
+    </div>
+    <div data-nav-right style="display:flex;align-items:center;gap:14px;flex:0 0 auto;">
+      <a href="4Content.dc.html#contact" style="color:#0A0A0B;text-decoration:none;font-size:13px;font-weight:600;background:var(--accent);border-radius:50px;padding:10px 18px;transition:transform .2s;" style-hover="transform:translateY(-1px);">Fale conosco</a>
+    </div>
+    <button data-hamburger id="hamburger" style="display:none;flex-direction:column;gap:4px;background:transparent;border:none;padding:6px;width:34px;height:34px;align-items:center;justify-content:center;">
+      <span style="width:18px;height:2px;background:#fff;display:block;"></span><span style="width:18px;height:2px;background:#fff;display:block;"></span><span style="width:18px;height:2px;background:#fff;display:block;"></span>
+    </button>
+  </div>
+  <div id="mobile-menu" style="display:none;flex-direction:column;gap:2px;background:rgba(14,14,16,.96);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:24px;margin-top:10px;padding:16px 22px;">
+    <a href="4Content.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Home</a>
+    <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Campanhas</a>
+    <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Séries</a>
+    <a href="Media-Day.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Media Day</a>
+    <a href="Real-Time.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Real Time</a>
+  </div>
+</nav>
+
+<section data-screen-label="Case Hero" style="position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden;">
+  <img src="assets/case-hero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.45) 55%,rgba(10,10,11,.6) 100%);"></div>
+  <div style="position:relative;max-width:1180px;margin:0 auto;width:100%;padding:0 24px 110px;">
+    <a href="4Content.dc.html#cases" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar aos cases</a>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <span style="font-family:'Poppins';font-weight:700;font-size:13px;color:var(--accent);">CASE</span>
+      <span style="width:34px;height:1px;background:var(--accent);"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">4Content × Cruzeiro × Gabigol</span>
+    </div>
+    <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(42px,7.5vw,120px);line-height:.92;letter-spacing:-.02em;">Gabi é cabuloso!</h1>
+    <p style="margin:24px 0 0;max-width:640px;font-size:clamp(16px,1.5vw,21px);line-height:1.55;color:#bcbcc2;font-weight:300;">"A maior apresentação de um jogador que o Brasil já viu."</p>
+    <p style="margin:20px 0 0;font-size:13px;color:#6a6a70;">Produção: 4Content / 4CM</p>
+  </div>
+</section>
+
+<section data-screen-label="Ação 01 — Countdown" style="padding:120px 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">01</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Countdown no YouTube</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:22ch;">Parcerias estratégicas e uma ação inédita</h2>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Em conjunto com a WHIDO, lançamos uma live com um countdown de 10 dias no canal oficial do Gabigol no YouTube — deixando todos intrigados sobre o que aconteceria quando o cronômetro chegasse a 00:00:00:00. Houve muitas especulações, mas a ideia sempre foi anunciar o novo clube na virada do ano: uma ação inovadora pensada pela 4Content e pelo Gabigol, com a colaboração da WHIDO e do Cruzeiro.</p>
+</section>
+<section data-screen-label="Countdown bento" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:14px;align-items:stretch;">
+    <img data-reveal src="assets/case-countdown.jpg" alt="Countdown no canal do Gabigol" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);min-height:320px;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3.4vw,46px);color:var(--accent);line-height:1;">10 dias</div><div style="margin-top:10px;font-size:14px;color:#9a9aa0;">Duração do countdown</div></div>
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3.4vw,46px);color:var(--accent);line-height:1;">252 horas</div><div style="margin-top:10px;font-size:14px;color:#9a9aa0;">No ar</div></div>
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3.4vw,46px);color:var(--accent);line-height:1;">640 mil</div><div style="margin-top:10px;font-size:14px;color:#9a9aa0;">Views na live</div></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Repercussão da virada" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
+  <h3 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;">O primeiro segundo de 2025...</h3>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Na virada do ano, o canal do Gabigol no YouTube bateu <strong style="color:#fff;">40.000 espectadores simultâneos</strong>, ansiosos pela revelação do novo clube — uma experiência imersiva que redefiniu a forma de anunciar uma contratação. Durante o ano novo, noticiários e redes costumam ser dominados por festas e fogos de artifício; neste ano foi diferente. O anúncio de Gabigol no Cruzeiro, feito no exato momento da virada, gerou um buzz sem precedentes.</p>
+</section>
+<section data-screen-label="Repercussão imagens" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:14px;">
+    <img data-reveal src="assets/case-primeiro-segundo.jpg" alt="Gabigol, primeiro segundo de 2025" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);">
+    <img data-reveal src="assets/case-contratado.jpg" alt="Gabigol contratado pelo Cruzeiro" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);">
+  </div>
+</section>
+<section data-screen-label="Trending topics" style="padding:0 24px 100px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:14px;align-items:stretch;">
+    <img data-reveal src="assets/case-imprensa.jpg" alt="Cobertura da imprensa" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);min-height:280px;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">#3 Trending Topics do X</div>
+        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Durante a virada, "Gabigol" ficou atrás apenas de "Feliz Ano Novo" e "Feliz 2025" — à frente de nomes como Anitta.</div>
+      </div>
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Entrevista exclusiva</div>
+        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Entrevista no Show da Virada da Globo, no exato momento do anúncio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Ação 02 — Resplandecer" style="position:relative;padding:120px 24px;overflow:hidden;">
+  <img src="assets/case-resplandece-bg.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.82);"></div>
+  <div style="position:relative;max-width:1340px;margin:0 auto;">
+    <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+      <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">02</span>
+      <span style="width:34px;height:1px;background:var(--accent);"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Anúncio Oficial</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+      <div>
+        <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(28px,4vw,58px);line-height:1.08;letter-spacing:-.02em;max-width:16ch;">O Cruzeiro <span style="color:var(--accent);">Resplandece</span></h2>
+        <p data-reveal style="margin:0 0 24px;max-width:560px;font-size:16px;line-height:1.65;color:#c4c4c8;font-weight:300;">Ao mesmo tempo que a live anunciava a ida de Gabigol ao Cruzeiro, um vídeo era lançado no canal e tomava conta das redes — pensado para ser algo rápido e chocante, desde o nome até a descrição.</p>
+        <p data-reveal style="margin:0;max-width:560px;font-size:16px;line-height:1.65;color:#c4c4c8;font-weight:300;">O nome <strong style="color:#fff;">RESPLANDECER</strong> retrata algo do cotidiano do cruzeirense: no Hino Nacional, a frase mais ouvida é "a imagem do CRUZEIRO resplandece". A chegada de Gabigol é uma atitude brilhante do Cruzeiro e do atleta.</p>
+      </div>
+      <img data-reveal src="assets/case-resplandecer.jpg" alt="Vídeo Resplandecer" style="width:100%;border-radius:20px;border:1px solid rgba(255,255,255,.1);display:block;">
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Ação 03 — Aniversário" style="padding:120px 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">03</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Aniversário do Cruzeiro</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:20ch;">Projeção mapeada em 104 anos de história</h2>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">No dia 2 de janeiro de 2025, data em que o Cruzeiro completou 104 anos, diversas ações foram realizadas para celebrar com a torcida. Em parceria com a 4Content e a chegada do Gabigol, projeções mapeadas em quatro pontos estratégicos de Belo Horizonte exibiram a data da apresentação, o escudo do clube e a imagem da Raposa — de 18h à meia-noite do dia seguinte.</p>
+</section>
+<section data-screen-label="Aniversário imagem" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:14px;">
+    <img data-reveal src="assets/case-projecao.jpg" alt="Projeção mapeada no Mineirão" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);">
+    <img data-reveal src="assets/case-camisa9.jpg" alt="Camisa 9 do Gabigol" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);">
+  </div>
+</section>
+<section data-screen-label="Camisa 9" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="max-width:700px;">
+    <h3 style="margin:0 0 16px;font-family:'Poppins';font-weight:700;font-size:clamp(20px,2.2vw,28px);">O novo camisa 9</h3>
+    <p style="margin:0;font-size:15px;line-height:1.65;color:#9a9aa0;font-weight:300;">Em outra ação com a 4Content e Gabigol, o Cruzeiro anunciou que o artilheiro vestiria a camisa 9. Imediatamente após o anúncio do número, as vendas foram abertas, movimentando significativamente as lojas oficiais do clube em todo o país.</p>
+  </div>
+</section>
+
+<section data-screen-label="Ação 04 — Viva Sorte" style="padding:0 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">04</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Ativação Viva Sorte</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:22ch;">Um mural para o maior de Minas</h2>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Gabigol, embaixador da Viva Sorte, recebeu uma homenagem especial em sua chegada a Belo Horizonte. Idealizada pela 4Content — produtora oficial da marca — em parceria com o Cruzeiro, a Viva Sorte convidou o artista Luan Ribeiro para criar um mural exclusivo na Toca da Raposa. O grafite, que levou dois dias para ser finalizado, já se tornou um ponto de encontro para os cruzeirenses e ficará exposto por pelo menos 90 dias.</p>
+</section>
+<section data-screen-label="Mural imagens" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:14px;">
+    <img data-reveal src="assets/case-mural.jpg" alt="Mural Bem-vindo ao maior de Minas" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);">
+    <img data-reveal src="assets/case-mural-gabi.jpg" alt="Gabigol em frente ao mural" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);">
+  </div>
+</section>
+
+<section data-screen-label="Ação 05 — Apresentação Cabulosa" style="padding:0 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">05</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Apresentação Cabulosa</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:24ch;">A maior apresentação que já existiu</h2>
+  <p data-reveal style="margin:0 0 24px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Com um público de 44 mil torcedores eufóricos, a apresentação de Gabigol no Mineirão quase superou o recorde de público para apresentação de jogador no Brasil. A repercussão midiática foi tão avassaladora que, nos primeiros meses do ano, o Cruzeiro se tornou o centro das atenções no cenário esportivo nacional — só se falava de Gabigol e Cruzeiro.</p>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">O desafio: transformar a experiência offline em entretenimento digital. Criamos uma estratégia de comunicação para proporcionar a todos os torcedores uma imersão azul, com ativações em pontos estratégicos da cidade e repercussão nas mídias físicas e digitais — uma "febre azul" em torno do artilheiro.</p>
+</section>
+<section data-screen-label="Apresentação imagem" style="padding:0 24px 40px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:14px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <img data-reveal src="assets/case-torcedores-1.jpg" alt="Apresentação Cabulosa no Mineirão" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);">
+      <img data-reveal src="assets/case-torcedores-2.jpg" alt="Apresentação Cabulosa no Mineirão" style="width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid rgba(255,255,255,.08);">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">44 mil</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">Torcedores no Mineirão</div></div>
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">200 mil</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">Pico simultâneo na transmissão</div></div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Apresentação transmissão" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Transmissão ao vivo</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.6;">Diante da alta demanda por ingressos, a TV Cruzeiro transmitiu a Apresentação Cabulosa ao vivo, alcançando mais de <strong style="color:#fff;">1,1 milhão</strong> de torcedores.</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Copos personalizados</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.6;">A Só Ídolos produziu, em tempo recorde, copos personalizados do jogador — vendidos no Mineirão e enviados às lojas oficiais em todo o país.</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Impactos em números" style="padding:0 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">06</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Impactos em números</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 44px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;">Resultado em toda a jornada digital.</h2>
+</section>
+<section data-screen-label="Números hero" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;">
+    <div data-reveal style="background:linear-gradient(150deg,rgba(var(--accent-rgb),.22),rgba(18,18,20,1) 70%);border:1px solid rgba(var(--accent-rgb),.35);border-radius:24px;padding:44px 38px;">
+      <div style="font-family:'Poppins';font-weight:900;font-size:clamp(56px,8vw,104px);color:var(--accent);line-height:.92;letter-spacing:-.03em;">202M</div>
+      <div style="margin-top:14px;font-size:15px;color:#e4e4e8;max-width:22ch;">Visualizações no perfil do Cruzeiro</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">+45M</div>
+        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Views geradas ao clube pelo Gabigol</div>
+      </div>
+      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">16,2M</div>
+        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Visualizações em posts no X</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">44 mil</div>
+        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Torcedores na Apresentação Cabulosa</div>
+      </div>
+      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">640 mil</div>
+        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Views na live do countdown</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Números grid" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Instagram · @Gabigol</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">+590 mil</div>
+      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Espectadores únicos</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.6;">+505 mil novos espectadores<br>+80 mil espectadores recorrentes</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">YouTube · @Gabigol</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">+6M</div>
+      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Impressões</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.6;">+1,2 milhão de visualizações<br>+25 mil horas assistidas · +41 mil novos inscritos</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Posts sobre o Cruzeiro</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">+16,5M</div>
+      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Visualizações nos vídeos</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.6;">+2,4 milhões de likes<br>+100 mil comentários</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">@Gabigolstore · alcance</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">+14,5M</div>
+      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Visualizações</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.6;">+3,5 milhões de contas alcançadas<br>+25 mil novos seguidores</div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Impactos imagem" style="padding:0 24px 130px;max-width:1340px;margin:0 auto;">
+  <img data-reveal src="assets/case-impactos.jpg" alt="Mockup de resultados" style="width:100%;border-radius:20px;border:1px solid rgba(255,255,255,.08);display:block;">
+</section>
+
+<section data-screen-label="CTA" style="padding:0 24px 130px;text-align:center;">
+  <h2 data-reveal style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(38px,6.4vw,100px);line-height:.9;letter-spacing:-.02em;">Bora criar o seu?</h2>
+  <div data-reveal style="margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="4Content.dc.html#contact" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fale conosco <span style="font-size:17px;">&#8594;</span></a>
+    <a href="4Content.dc.html#contact" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fale conosco, nos envie seu projeto</a>
+  </div>
+</section>
+
+<footer style="background:#070708;padding:60px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
+    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
+    <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+    const root = $('#root');
+
+    root.style.setProperty('--accent', '#D5C29E');
+    root.style.setProperty('--accent-rgb', '213,194,158');
+
+    const cursor = $('#cursor');
+    if (window.matchMedia('(pointer:fine)').matches && cursor) {
+      cursor.style.display = 'block';
+      let cx = innerWidth/2, cy = innerHeight/2, tx = cx, ty = cy;
+      addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
+      const loop = () => { cx += (tx-cx)*0.2; cy += (ty-cy)*0.2; cursor.style.left = cx+'px'; cursor.style.top = cy+'px'; this._raf = requestAnimationFrame(loop); };
+      loop();
+      const grow = () => { cursor.style.width='56px'; cursor.style.height='56px'; cursor.style.background='rgba(var(--accent-rgb),.18)'; };
+      const shrink = () => { cursor.style.width='30px'; cursor.style.height='30px'; cursor.style.background='transparent'; };
+      $$('a,button,[role=button]').forEach((el) => { el.addEventListener('mouseenter', grow); el.addEventListener('mouseleave', shrink); });
+    }
+
+    const revealEls = $$('[data-reveal]');
+    revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });
+    const tween = (el) => {
+      const s = performance.now(), dur = 760;
+      const step = (now) => { const t = Math.min(1,(now-s)/dur); const e = 1-Math.pow(1-t,3); el.style.setProperty('opacity',String(e),'important'); el.style.setProperty('transform','translateY('+(34*(1-e)).toFixed(2)+'px)','important'); if (t<1) requestAnimationFrame(step); else { el.style.setProperty('opacity','1','important'); el.style.setProperty('transform','translateY(0)','important'); } };
+      requestAnimationFrame(step);
+    };
+    const revealCheck = () => { const vh = innerHeight||document.documentElement.clientHeight; revealEls.forEach((el) => { if (el.dataset.revealed) return; const r = el.getBoundingClientRect(); if (r.top < vh-60 && r.bottom > -40) { el.dataset.revealed='1'; tween(el); } }); };
+    revealCheck();
+    addEventListener('scroll', revealCheck, { passive:true });
+    addEventListener('resize', revealCheck);
+    document.addEventListener('scroll', revealCheck, true);
+    this._poll = setInterval(() => { revealCheck(); if (revealEls.every((el) => el.dataset.revealed)) { clearInterval(this._poll); this._poll = null; } }, 250);
+    setTimeout(revealCheck, 300); setTimeout(revealCheck, 1200);
+
+    const nav = $('#navbar');
+    addEventListener('scroll', () => { if (nav) nav.firstElementChild.style.boxShadow = (scrollY>40)?'0 12px 44px rgba(0,0,0,.6)':'0 10px 36px rgba(0,0,0,.4)'; }, { passive:true });
+
+    const burger = $('#hamburger'), mm = $('#mobile-menu');
+    if (burger && mm) { burger.addEventListener('click', () => { mm.style.display = mm.style.display==='flex'?'none':'flex'; }); mm.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { mm.style.display='none'; })); }
+  }
+  componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); if (this._poll) clearInterval(this._poll); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
