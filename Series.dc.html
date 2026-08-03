@@ -8,6 +8,10 @@
 <body>
 <x-dc>
 <helmet>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -106,7 +110,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — série em produção (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./series-video-2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./series-video-2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 
@@ -127,10 +131,10 @@
       <image-slot id="series-break-2a" shape="rect" radius="20" src="assets/series-hero-photo.webp" placeholder="Foto de bastidor" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./series-vert-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./series-vert-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./series-vert-2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./series-vert-2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
 </section>
@@ -163,7 +167,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Vídeo — galeria da série (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:460px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./series-video-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./series-video-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 
@@ -179,7 +183,7 @@
 
 <section data-screen-label="Case" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:520px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <video src="./series-case-video.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <video src="./series-case-video.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Série Documental</span>
@@ -231,7 +235,7 @@
 <!-- FOOTER -->
 <footer style="background:#070708;padding:60px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
   <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
-    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
+    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;" loading="lazy" decoding="async"></a>
     <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
   </div>
 </footer>
@@ -248,23 +252,38 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    $$('video').forEach((v) => {
+    // ---- Video playback: hero plays immediately; the rest lazy-load and
+    // play only once scrolled near the viewport, so the page doesn't pull
+    // down every clip on the page up front. ----
+    const pageVideos = $$('video');
+    pageVideos.forEach((v) => {
       v.muted = true;
       v.loop = true;
       v.setAttribute('muted', '');
-      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
-      const pv = v.play();
-      if (pv && pv.catch) pv.catch(() => {});
+      v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
     });
-
-    $$('video').forEach((v) => {
-      v.muted = true;
-      v.loop = true;
-      v.setAttribute('muted', '');
-      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
-      const pv = v.play();
-      if (pv && pv.catch) pv.catch(() => {});
-    });
+    if (pageVideos[0]) {
+      const pv0 = pageVideos[0].play();
+      if (pv0 && pv0.catch) pv0.catch(() => {});
+    }
+    const lazyVideos = pageVideos.slice(1);
+    if (lazyVideos.length && 'IntersectionObserver' in window) {
+      const vio = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const v = entry.target;
+          if (entry.isIntersecting) {
+            if (v.preload !== 'auto') v.preload = 'auto';
+            const pv = v.play();
+            if (pv && pv.catch) pv.catch(() => {});
+          } else {
+            v.pause();
+          }
+        });
+      }, { rootMargin: '400px 0px' });
+      lazyVideos.forEach((v) => vio.observe(v));
+    } else {
+      lazyVideos.forEach((v) => { const pv = v.play(); if (pv && pv.catch) pv.catch(() => {}); });
+    }
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });
