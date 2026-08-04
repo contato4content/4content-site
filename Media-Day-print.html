@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  * { animation-delay: -99s !important; animation-duration: .001s !important; animation-iteration-count: 1 !important; animation-fill-mode: both !important; animation-play-state: running !important; transition-duration: 0s !important; }
+  body{margin:0;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  doc-page:not(:defined){visibility:hidden;}
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" margin="0" hint-size="100%,100%">
+
+<div style="--accent:#D5C29E;--accent-rgb:213,194,158;background:#0A0A0B;color:#fff;">
+
+<div style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 40px;border-bottom:1px solid rgba(255,255,255,.08);break-inside:avoid;">
+  <img src="assets/logo-white.png" alt="4Content" style="height:30px;width:auto;display:block;">
+  <span style="font-size:13px;font-weight:600;border-radius:50px;padding:9px 18px;background-color:#D5C29E;color:#0A0A0B;">contato@4content.com.br</span>
+</div>
+
+<div style="position:relative;padding:64px 40px;overflow:hidden;break-inside:avoid;">
+  <image-slot id="mediaday-hero" shape="rect" placeholder="Imagem de fundo do hero — Media Day" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+  <div style="position:absolute;inset:0;background:rgba(10,10,11,.78);"></div>
+  <div style="position:relative;max-width:820px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <span style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;">03</span>
+      <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Serviço</span>
+    </div>
+    <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:48px;line-height:.95;letter-spacing:-.02em;">Media Day</h1>
+    <p style="margin:22px 0 0;max-width:560px;font-size:17px;line-height:1.55;color:#bcbcc2;font-weight:300;">O novo padrão de Media Day no esporte. Transformamos um único dia de produção em meses de conteúdo estratégico para clubes, atletas, federações e patrocinadores.</p>
+  </div>
+</div>
+
+<div style="padding:70px 40px;max-width:900px;margin:0 auto;break-inside:avoid;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+    <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Como funciona</span>
+  </div>
+  <h2 style="margin:0;font-family:'Poppins';font-weight:800;font-size:32px;line-height:1.15;letter-spacing:-.02em;">Muito além de <span style="color:#D5C29E;">fotos e vídeos.</span></h2>
+  <p style="margin:26px 0 0;font-size:16px;line-height:1.6;color:#9a9aa0;font-weight:300;">O Media Day deixou de ser uma sessão de fotos. Tornou-se a principal plataforma de geração de ativos de comunicação para clubes, ligas, atletas e patrocinadores. Enquanto a maioria das produções entrega arquivos, nós desenvolvemos um sistema completo de criação de conteúdo.</p>
+  <p style="margin:18px 0 0;font-size:14px;line-height:1.65;color:#8a8a90;font-weight:300;">Cada produção é planejada para ser uma campanha, atendendo patrocinadores, imprensa, plataformas digitais e ações comerciais ao longo de toda a temporada.</p>
+  <p style="margin:26px 0 0;font-family:'Poppins';font-weight:700;font-size:19px;line-height:1.35;color:#fff;">Não acreditamos em um Media Day como uma obrigação operacional. Acreditamos em uma plataforma de mídia e conteúdo.</p>
+</div>
+
+<div style="padding:0 40px 60px;max-width:1200px;margin:0 auto;break-inside:avoid;">
+  <div style="position:relative;border-radius:16px;overflow:hidden;height:320px;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="mediaday-break-1" shape="rect" radius="16" src="assets/mediaday-break-1.jpg" placeholder="Imagem — Media Day em ação" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+  </div>
+</div>
+
+<div style="padding:0 40px 60px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;break-inside:avoid;">
+    <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Autoridade</span>
+  </div>
+  <h2 style="margin:0 0 16px;font-family:'Poppins';font-weight:800;font-size:26px;line-height:1.2;letter-spacing:-.02em;max-width:24ch;break-inside:avoid;">Com certeza você já foi impactado pelos conteúdos de Media Day produzidos pela 4Content.</h2>
+  <p style="margin:0 0 26px;max-width:680px;font-size:14px;line-height:1.6;color:#9a9aa0;font-weight:300;">Nosso portfólio é o reflexo da nossa vontade, atenção e cuidado com todas as campanhas que trabalhamos.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;break-inside:avoid;">
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">Campeonato Brasileiro</span>
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">Jogando Juntos Unicef</span>
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">Paulistão Masculino</span>
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">Paulistão Feminino</span>
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">Red Bull Bragantino</span>
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">CBFA</span>
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">Gabigol</span>
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">Lucas Moura</span>
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">Antony</span>
+    <span style="display:inline-block;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:9px 16px;font-size:13px;color:#e4e4e8;">Alexandre Pato</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;">
+    <div style="background:#121214;padding:22px 20px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;margin-bottom:12px;">Paulistão Masculino</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:26px;line-height:1;color:#D5C29E;">3.345 fotos</div>
+      <div style="margin-top:6px;font-family:'Poppins';font-weight:800;font-size:26px;line-height:1;color:#D5C29E;">204 vídeos</div>
+    </div>
+    <div style="background:#121214;padding:22px 20px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;margin-bottom:12px;">Paulistão Feminino</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:26px;line-height:1;color:#D5C29E;">1.657 fotos</div>
+      <div style="margin-top:6px;font-family:'Poppins';font-weight:800;font-size:26px;line-height:1;color:#D5C29E;">152 vídeos</div>
+    </div>
+    <div style="background:#121214;padding:22px 20px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;margin-bottom:12px;">Campeonato Brasileiro</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:26px;line-height:1;color:#D5C29E;">1.168 vídeos</div>
+    </div>
+    <div style="background:#121214;padding:22px 20px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;margin-bottom:12px;">CBFA</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:26px;line-height:1;color:#D5C29E;">190 fotos</div>
+      <div style="margin-top:6px;font-family:'Poppins';font-weight:800;font-size:26px;line-height:1;color:#D5C29E;">176 vídeos</div>
+    </div>
+    <div style="background:#121214;padding:22px 20px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;margin-bottom:12px;">Red Bull Bragantino</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:26px;line-height:1;color:#D5C29E;">2.091 fotos</div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 40px 60px;max-width:1200px;margin:0 auto;break-inside:avoid;">
+  <div style="position:relative;border-radius:16px;overflow:hidden;height:320px;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="mediaday-break-2" shape="rect" radius="16" src="assets/mediaday-break-2.jpg" placeholder="Imagem — bastidores de produção" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+  </div>
+</div>
+
+<div style="padding:0 40px 60px;max-width:1200px;margin:0 auto;break-inside:avoid;">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+    <div style="position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="mediaday-gallery-1" shape="rect" src="assets/mediaday-gallery-1.jpg" placeholder="Foto de Media Day" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+    </div>
+    <div style="position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="mediaday-gallery-2" shape="rect" src="assets/mediaday-gallery-2.jpg" placeholder="Foto de Media Day" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+    </div>
+    <div style="position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="mediaday-gallery-3" shape="rect" src="assets/mediaday-gallery-3.jpg" placeholder="Foto de Media Day" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 40px 70px;max-width:900px;margin:0 auto;break-inside:avoid;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+    <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">O problema</span>
+  </div>
+  <h2 style="margin:0 0 20px;font-family:'Poppins';font-weight:800;font-size:30px;line-height:1.15;letter-spacing:-.02em;max-width:18ch;">O Media Day tradicional está <span style="color:#D5C29E;">ultrapassado.</span></h2>
+  <p style="margin:0 0 26px;max-width:680px;font-size:15px;line-height:1.6;color:#9a9aa0;font-weight:300;">Na maioria dos clubes e organizações esportivas, o Media Day ainda é tratado como uma simples sessão de fotos. O resultado?</p>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:26px;">
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Pouca variedade de conteúdo</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Baixa qualidade visual</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Produções genéricas</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Falta de planejamento</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Pouco aproveitamento comercial</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Material usado em poucas semanas</span></div>
+  </div>
+  <p style="margin:0;font-family:'Poppins';font-weight:700;font-size:18px;line-height:1.35;color:#fff;">Nós acreditamos que um único dia de produção deve abastecer toda a estratégia de comunicação da temporada.</p>
+</div>
+
+<div style="padding:0 40px 60px;max-width:1200px;margin:0 auto;break-inside:avoid;">
+  <div style="position:relative;border-radius:16px;overflow:hidden;height:320px;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="mediaday-break-3" shape="rect" radius="16" src="assets/mediaday-break-3.jpg" placeholder="Imagem — planejamento e moodboard" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+  </div>
+</div>
+
+<div style="padding:0 40px 70px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;break-inside:avoid;">
+    <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Nossa metodologia</span>
+  </div>
+  <h2 style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:30px;line-height:1.15;letter-spacing:-.02em;max-width:22ch;break-inside:avoid;">Cada conteúdo nasce antes da câmera ser ligada.</h2>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;margin-bottom:12px;">01</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Planejamento Estratégico</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.5;">Objetivos da marca, públicos, canais, entregas e cronograma.</div>
+    </div>
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;margin-bottom:12px;">02</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Storytelling</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.5;">Conceitos criativos para que cada conteúdo conte uma história.</div>
+    </div>
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;margin-bottom:12px;">03</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Moodboard</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.5;">Fotografia, iluminação, direção de arte e enquadramentos aprovados antes.</div>
+    </div>
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;margin-bottom:12px;">04</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Storyboard</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.5;">Planejamento completo das cenas, minuto a minuto do shooting.</div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 40px 60px;max-width:1200px;margin:0 auto;break-inside:avoid;">
+  <div style="position:relative;border-radius:16px;overflow:hidden;height:320px;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="mediaday-break-4" shape="rect" radius="16" src="assets/mediaday-break-4.jpg" placeholder="Imagem — equipe em operação" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+  </div>
+</div>
+
+<div style="padding:0 40px 70px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;break-inside:avoid;">
+    <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Operação</span>
+  </div>
+  <h2 style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:30px;line-height:1.15;letter-spacing:-.02em;max-width:22ch;break-inside:avoid;">Sua campanha entregue, com mais segurança.</h2>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:30px;">
+    <div style="break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Equipe especializada em Media Day</div>
+      <div style="display:flex;flex-direction:column;gap:9px;font-size:13px;color:#c4c4c8;">
+        <div>— Fotógrafos esportivos</div><div>— Diretores criativos</div><div>— Videomakers</div><div>— Produtores</div><div>— Iluminadores</div><div>— Operadores de câmera</div><div>— Equipe de apoio</div><div>— Parceiros de maquiagem, moda e styling</div>
+      </div>
+    </div>
+    <div style="break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Estrutura própria</div>
+      <div style="display:flex;flex-direction:column;gap:9px;font-size:13px;color:#c4c4c8;">
+        <div>— Estúdios móveis</div><div>— Equipamentos próprios</div><div>— Iluminação profissional</div><div>— Cinema cameras</div><div>— Sistema de armazenamento</div><div>— Backup em tempo real</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 40px 60px;max-width:1200px;margin:0 auto;break-inside:avoid;">
+  <div style="position:relative;border-radius:16px;overflow:hidden;height:320px;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="mediaday-break-5" shape="rect" radius="16" src="assets/mediaday-break-5.jpg" placeholder="Imagem — banco de ativos" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+  </div>
+</div>
+
+<div style="padding:0 40px 70px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;break-inside:avoid;">
+    <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">O que entregamos</span>
+  </div>
+  <h2 style="margin:0 0 16px;font-family:'Poppins';font-weight:800;font-size:30px;line-height:1.15;letter-spacing:-.02em;max-width:18ch;break-inside:avoid;">Muito mais do que <span style="color:#D5C29E;">fotos.</span></h2>
+  <p style="margin:0 0 30px;max-width:720px;font-size:14px;line-height:1.6;color:#9a9aa0;font-weight:300;">Produzimos um banco de imagens completo de ativos para todas as áreas do cliente.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:14px;">Fotografias</div>
+      <div style="display:flex;flex-direction:column;gap:7px;font-size:13px;color:#8a8a90;">Retratos · Institucionais · Patrocinadores · Ações comerciais · Social media · Editorial · Fashion · Lifestyle</div>
+    </div>
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:14px;">Vídeos</div>
+      <div style="display:flex;flex-direction:column;gap:7px;font-size:13px;color:#8a8a90;">Hero film · Social · Reels · TikTok · Campanhas · Bastidores · Entrevistas · Patrocinadores</div>
+    </div>
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:14px;">Organização dos arquivos</div>
+      <div style="display:flex;flex-direction:column;gap:7px;font-size:13px;color:#8a8a90;">Por atleta · por campanha · por patrocinador · por formato · entrega em nuvem</div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 40px 60px;max-width:1200px;margin:0 auto;break-inside:avoid;">
+  <div style="position:relative;border-radius:16px;overflow:hidden;height:320px;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="mediaday-break-6" shape="rect" radius="16" src="assets/mediaday-break-6.jpg" placeholder="Imagem — set de captação" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+  </div>
+</div>
+
+<div style="padding:0 40px 70px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;break-inside:avoid;">
+    <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Nosso processo</span>
+  </div>
+  <h2 style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:30px;line-height:1.15;letter-spacing:-.02em;break-inside:avoid;">Do briefing à entrega.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;margin-bottom:12px;">01</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:12px;">Pré-produção</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.6;">Kickoff, briefing, planejamento, cronograma, storytelling, storyboard, moodboard, visita técnica, roteiros.</div>
+    </div>
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;margin-bottom:12px;">02</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:12px;">Produção</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.6;">Captação real-time, múltiplos estúdios móveis, B-roll, verticais e horizontais, depoimentos, bastidores.</div>
+    </div>
+    <div style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;break-inside:avoid;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;margin-bottom:12px;">03</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:12px;">Pós-produção</div>
+      <div style="font-size:13px;color:#8a8a90;line-height:1.6;">Seleção, tratamento, edição, colorização, exportação, organização, entrega.</div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 40px 60px;max-width:1200px;margin:0 auto;break-inside:avoid;">
+  <div style="position:relative;border-radius:16px;overflow:hidden;height:320px;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="mediaday-break-7" shape="rect" radius="16" src="assets/mediaday-break-7.jpg" placeholder="Imagem — entrega final" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+  </div>
+</div>
+
+<div style="padding:0 40px 70px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;break-inside:avoid;">
+    <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Diferenciais</span>
+  </div>
+  <h2 style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:30px;line-height:1.15;letter-spacing:-.02em;max-width:20ch;break-inside:avoid;">Pensado para quem precisa produzir em escala.</h2>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Entrega em até 24 horas</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Equipe altamente especializada</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Fluxo otimizado</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Produção simultânea</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Padronização visual</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Escalabilidade</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Organização profissional</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;break-inside:avoid;"><span style="color:#D5C29E;font-family:'Poppins';font-weight:700;">—</span><span style="font-size:13px;color:#c4c4c8;line-height:1.5;">Qualidade cinematográfica</span></div>
+  </div>
+</div>
+
+<div style="padding:0 40px 70px;max-width:1200px;margin:0 auto;break-inside:avoid;">
+  <div style="position:relative;border-radius:16px;overflow:hidden;min-height:320px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="mediaday-case" shape="rect" radius="16" src="assets/mediaday-case.jpg" placeholder="Imagem do case — Media Day" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+    <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
+    <div style="position:relative;padding:36px;max-width:560px;">
+      <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:4px 12px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;">Case · Media Day</span>
+      <h3 style="margin:0 0 10px;font-family:'Poppins';font-weight:800;font-size:28px;line-height:1;">Dia de Elenco | Liga Pro</h3>
+      <p style="margin:0;font-size:14px;color:#bcbcc2;line-height:1.55;max-width:460px;">+500 ativos para 12 patrocinadores captados em uma única operação de um dia.</p>
+    </div>
+  </div>
+</div>
+
+<div style="padding:80px 40px 90px;text-align:center;break-inside:avoid;">
+  <h2 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:48px;line-height:.92;letter-spacing:-.02em;">Bora otimizar sua diária?</h2>
+  <div style="margin-top:28px;font-family:'Poppins';font-weight:600;font-size:20px;color:#fff;border-bottom:2px solid #D5C29E;display:inline-block;padding-bottom:5px;">contato@4content.com.br</div>
+</div>
+
+<div style="background:#070708;padding:50px 40px 30px;border-top:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;">
+    <img src="assets/logo-white.png" alt="4Content" style="width:130px;height:auto;display:block;">
+    <div style="font-size:12px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
+  </div>
+</div>
+
+</div>
+</x-import>
+</x-dc>
+</body>
+</html>

@@ -8,10 +8,6 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -32,7 +28,7 @@
 <!-- NAVBAR -->
 <nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;">
   <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(14,14,16,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:11px 14px 11px 22px;box-shadow:0 10px 36px rgba(0,0,0,.4);">
-    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white.png" alt="4Content" style="height:32px;width:auto;display:block;"></a>
+    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white-cropped.png" alt="4Content" style="height:15px;width:auto;display:block;"></a>
     <div data-desktop-nav style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
       <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Campanhas</a>
       <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Séries</a>
@@ -78,7 +74,7 @@
     <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">A velocidade</span>
   </div>
   <h2 data-reveal style="margin:0;font-family:'Poppins';font-weight:800;font-size:clamp(28px,4vw,58px);line-height:1.08;letter-spacing:-.02em;max-width:18ch;">O lance dura segundos. <span style="color:var(--accent);">A relevância, o jogo inteiro.</span></h2>
-  <p data-reveal style="margin:34px 0 0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Montamos uma operação de conteúdo dentro do evento: ilha de edição on-site, equipe de captação e publicação em minutos. Enquanto a torcida sente, sua marca já está na timeline — com o lance, o corte e a legenda certos, no momento exato em que a audiência está no pico.</p>
+  <p data-reveal style="margin:34px 0 0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Montamos uma operação de conteúdo dentro do evento: ilha de edição on-site, equipe de captação e publicação em minutos. Enquanto a torcida sente, sua marca já está na timeline, com o lance, o corte e a legenda certos, no momento exato em que a audiência está no pico.</p>
 </section>
 
 <!-- DELIVERABLES -->
@@ -147,6 +143,21 @@
   </div>
 </section>
 
+<!-- O DESAFIO -->
+<section data-screen-label="O desafio" style="padding:0 24px 120px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">O desafio</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">A maioria das coberturas ainda chega <span style="color:var(--accent);">depois do jogo acabar.</span></h2>
+  <p data-reveal style="margin:0 0 30px;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Grande parte dos eventos ainda trata o tempo real como extra, não como operação: aprovação lenta, cortes genéricos e conteúdo publicado quando a torcida já mudou de assunto. Nós acreditamos que captar, editar e publicar precisam acontecer no mesmo ritmo do jogo.</p>
+  <div data-reveal style="display:flex;flex-direction:column;gap:10px;">
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Publicação horas depois do lance</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Cortes sem identidade da marca</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Falta de equipe dedicada dentro do evento</span></div>
+  </div>
+</section>
+
 <!-- RESULTADOS -->
 <section data-screen-label="Resultados" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
@@ -155,41 +166,45 @@
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;">
     <div data-reveal style="background:#121214;padding:28px 24px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">[XX] minutos</div>
       <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
-      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
+      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">tempo médio entre o lance e a publicação do primeiro corte</div>
     </div>
     <div data-reveal style="background:#121214;padding:28px 24px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">+50 eventos</div>
       <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
-      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
+      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">de grande porte cobertos ao vivo pela operação de real time da 4Content</div>
     </div>
     <div data-reveal style="background:#121214;padding:28px 24px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">[XX] conteúdos</div>
       <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
-      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
+      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">produzidos e publicados em um único evento, do pré-jogo ao apito final</div>
     </div>
   </div>
 </section>
 
-<!-- IMAGE BREAK -->
-<section data-screen-label="Imagem — galeria da cobertura (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:58vh;min-height:380px;border:1px solid rgba(255,255,255,.08);">
-    <video id="realtime-video-unicef2" src="./realtime-video-unicef2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+<!-- COMO FUNCIONA NA PRÁTICA -->
+<section data-screen-label="Como funciona na prática" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Como funciona na prática</span>
   </div>
-</section>
-
-<!-- IMAGE BREAK 4 FOTOS -->
-<section data-screen-label="Imagem — 4 fotos" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;">
-    <div data-reveal style="position:relative;aspect-ratio:3/4.6;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="realtime-quad-1" shape="rect" src="assets/realtime-quad-1.webp" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+  <h2 data-reveal style="margin:0 0 44px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">O plano nasce <span style="color:var(--accent);">antes do apito inicial.</span></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">01</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Preparação pré-evento</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Mapeamento dos momentos-chave e montagem da war room antes do jogo começar.</div>
     </div>
-    <div data-reveal style="position:relative;aspect-ratio:3/4.6;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="realtime-quad-2" shape="rect" src="assets/realtime-quad-2.jpg" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">02</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Captação e edição simultânea</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Câmeras em campo alimentando cortes prontos enquanto o jogo acontece.</div>
     </div>
-    <div data-reveal style="grid-column:span 2;position:relative;aspect-ratio:6/4.6;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video id="realtime-quad-video" src="./realtime-quad-video.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">03</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Publicação e monitoramento</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Time de social media publicando e acompanhando a repercussão em tempo real.</div>
     </div>
   </div>
 </section>
@@ -204,28 +219,7 @@
   <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">A equipe 4Content é altamente preparada para conduzir produções de grande complexidade e responder com agilidade às demandas do tempo real. A operação integra captação, edição, aprovação e publicação para que o conteúdo acompanhe o ritmo do evento. Assim, enquanto tudo acontece presencialmente, as pessoas já estão assistindo, curtindo e compartilhando os principais momentos por meio do trabalho da 4Content.</p>
 </section>
 
-<!-- IMAGE BREAK -->
-<section data-screen-label="Imagem — encerramento (2 vídeos)" style="padding:0 24px 100px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-    <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:82vh;min-height:540px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-video-4a.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
-    </div>
-    <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:82vh;min-height:540px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-video-4b.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
-    </div>
-  </div>
-</section>
-
 <!-- CASE STRIP -->
-<section data-screen-label="Antes do case" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
-  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
-    <span style="width:34px;height:1px;background:var(--accent);"></span>
-    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">O case</span>
-  </div>
-  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0;max-width:680px;font-size:16px;line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos do case.</p>
-</section>
-
 <section data-screen-label="Case" style="padding:0 24px 100px;max-width:1340px;margin:0 auto;">
   <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:14px;">
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:440px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
@@ -239,6 +233,16 @@
       <video src="./realtime-case-big.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
+</section>
+
+<!-- A JANELA NÃO ESPERA -->
+<section data-screen-label="A janela não espera" style="padding:0 24px 120px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">A janela não espera</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">Enquanto a torcida ainda reage ao lance, <span style="color:var(--accent);">a conversa sobre ele já avança para o próximo momento.</span></h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">O pico de atenção dura poucos minutos. Depois dele, a repercussão se dispersa e o conteúdo publicado fora desse intervalo perde força justamente quando mais deveria gerar resultado. Nós acreditamos que dominar o tempo real significa estar presente enquanto o jogo ainda acontece, não depois que ele já terminou.</p>
 </section>
 
 <!-- NEXT SERVICE / CTA -->
@@ -258,7 +262,7 @@
 <!-- FOOTER -->
 <footer style="background:#070708;padding:60px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
   <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
-    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;" loading="lazy" decoding="async"></a>
+    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
     <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
   </div>
 </footer>
@@ -275,38 +279,17 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    // ---- Video playback: hero plays immediately; the rest lazy-load and
-    // play only once scrolled near the viewport, so the page doesn't pull
-    // down every clip on the page up front. ----
-    const pageVideos = $$('video');
-    pageVideos.forEach((v) => {
+    $$('video').forEach((v) => {
       v.muted = true;
       v.loop = true;
       v.setAttribute('muted', '');
-      v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
+      v.setAttribute('loop', '');
+      v.removeEventListener('ended', v._loopHandler || (() => {}));
+      v._loopHandler = () => { v.currentTime = 0; v.play(); };
+      v.addEventListener('ended', v._loopHandler);
+      const pv = v.play();
+      if (pv && pv.catch) pv.catch(() => {});
     });
-    if (pageVideos[0]) {
-      const pv0 = pageVideos[0].play();
-      if (pv0 && pv0.catch) pv0.catch(() => {});
-    }
-    const lazyVideos = pageVideos.slice(1);
-    if (lazyVideos.length && 'IntersectionObserver' in window) {
-      const vio = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const v = entry.target;
-          if (entry.isIntersecting) {
-            if (v.preload !== 'auto') v.preload = 'auto';
-            const pv = v.play();
-            if (pv && pv.catch) pv.catch(() => {});
-          } else {
-            v.pause();
-          }
-        });
-      }, { rootMargin: '400px 0px' });
-      lazyVideos.forEach((v) => vio.observe(v));
-    } else {
-      lazyVideos.forEach((v) => { const pv = v.play(); if (pv && pv.catch) pv.catch(() => {}); });
-    }
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });

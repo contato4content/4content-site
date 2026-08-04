@@ -8,10 +8,6 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -32,7 +28,7 @@
 <!-- NAVBAR -->
 <nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;">
   <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(14,14,16,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:11px 14px 11px 22px;box-shadow:0 10px 36px rgba(0,0,0,.4);">
-    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white.png" alt="4Content" style="height:32px;width:auto;display:block;"></a>
+    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white-cropped.png" alt="4Content" style="height:15px;width:auto;display:block;"></a>
     <div data-desktop-nav style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
       <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Campanhas</a>
       <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:1;">Séries</a>
@@ -67,7 +63,7 @@
       <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Serviço</span>
     </div>
     <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(42px,7vw,112px);line-height:.9;letter-spacing:-.02em;">Séries<br>Documentais</h1>
-    <p style="margin:24px 0 0;max-width:600px;font-size:clamp(16px,1.5vw,21px);line-height:1.55;color:#bcbcc2;font-weight:300;">Eternizando legados. Storytelling de longa duração que constrói audiência fiel, conexão emocional e legado de marca — temporada após temporada.</p>
+    <p style="margin:24px 0 0;max-width:600px;font-size:clamp(16px,1.5vw,21px);line-height:1.55;color:#bcbcc2;font-weight:300;">Eternizando legados. Storytelling de longa duração que constrói audiência fiel, conexão emocional e legado de marca, temporada após temporada.</p>
   </div>
 </section>
 
@@ -114,14 +110,37 @@
   </div>
 </section>
 
+<!-- O DESAFIO -->
+<section data-screen-label="O desafio" style="padding:0 24px 120px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">O desafio</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">Campanha acaba. <span style="color:var(--accent);">Legado precisa de continuidade.</span></h2>
+  <p data-reveal style="margin:0 0 30px;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">A maioria das marcas ainda pensa o conteúdo esportivo em picos: um lançamento, uma ativação, um momento isolado, e depois disso, silêncio até a próxima campanha. O problema é que audiência não se constrói em picos, se constrói em presença.</p>
+  <div data-reveal style="display:flex;flex-direction:column;gap:10px;margin-bottom:30px;">
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Conteúdo pontual que some depois de poucas semanas</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Falta de personagem e continuidade entre as publicações</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Torcida que se conecta com o momento, não com a marca</span></div>
+  </div>
+  <p data-reveal style="margin:0;max-width:640px;font-family:'Poppins';font-weight:700;font-size:clamp(18px,1.8vw,24px);line-height:1.35;color:#fff;">Nós acreditamos que uma série documental transforma esse pico em jornada, e a torcida, em comunidade.</p>
+</section>
+
+<!-- VÍDEO — THE GAMERS SACY TRAILER -->
+<section data-screen-label="Vídeo — The Gamers Sacy Trailer (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:72vh;min-height:480px;border:1px solid rgba(255,255,255,.08);">
+    <video src="./series-video-3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  </div>
+</section>
+
 <!-- MAIS SOBRE -->
 <section data-screen-label="Mais sobre" style="padding:0 24px 120px;max-width:1180px;margin:0 auto;">
   <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
     <span style="width:34px;height:1px;background:var(--accent);"></span>
     <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Sobre a série</span>
   </div>
-  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0;max-width:680px;font-size:16px;line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos da série.</p>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:24ch;">Séries documentais mudaram a forma como o esporte constrói audiência. <span style="color:var(--accent);">A 4Content ajudou a escrever esse capítulo.</span></h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Desenvolvemos séries que acompanham atletas, elencos e bastidores com padrão de produção de cinema, unindo direção de fotografia, roteiro e edição sofisticada para transformar rotina em narrativa. Cada temporada é planejada para durar, não para ser consumida em um dia e esquecida no seguinte.</p>
 </section>
 
 <!-- IMAGE BREAK 3 FOTOS -->
@@ -139,35 +158,29 @@
   </div>
 </section>
 
-<!-- RESULTADOS -->
-<section data-screen-label="Resultados" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+<!-- COMO FUNCIONA NA PRÁTICA -->
+<section data-screen-label="Como funciona na prática" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
     <span style="width:34px;height:1px;background:var(--accent);"></span>
-    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Resultados</span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Como funciona na prática</span>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;">
-    <div data-reveal style="background:#121214;padding:28px 24px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
-      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
+  <h2 data-reveal style="margin:0 0 44px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">Cada temporada nasce com um arco, <span style="color:var(--accent);">não com uma pauta solta.</span></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">01</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Arco narrativo</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Definimos a linha editorial e os personagens antes de ligar a câmera. Cada episódio precisa ter função dentro da história completa.</div>
     </div>
-    <div data-reveal style="background:#121214;padding:28px 24px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
-      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">02</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Captação ao longo da temporada</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Acompanhamos atletas, elenco e bastidores durante o período determinado, captando os momentos que sustentam a narrativa.</div>
     </div>
-    <div data-reveal style="background:#121214;padding:28px 24px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
-      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">03</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Distribuição por episódio</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Lançamento planejado por plataforma, com cortes e teasers alimentando as redes entre um episódio e outro.</div>
     </div>
-  </div>
-</section>
-
-<!-- IMAGE BREAK -->
-<section data-screen-label="Vídeo — galeria da série (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:460px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./series-video-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 
@@ -177,8 +190,7 @@
     <span style="width:34px;height:1px;background:var(--accent);"></span>
     <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Case</span>
   </div>
-  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos do case.</p>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Séries que já mudaram <span style="color:var(--accent);">a conversa sobre o time.</span></h2>
 </section>
 
 <section data-screen-label="Case" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
@@ -188,7 +200,7 @@
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Série Documental</span>
       <h3 style="margin:0 0 12px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">The Gamers</h3>
-      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">A definir e dobrou o engajamento da torcida.</p>
+      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">Documentário e estreia no Cinemark uniram pro players e comunidade gamer em uma só experiência.</p>
     </div>
   </div>
 </section>
@@ -199,8 +211,36 @@
     <span style="width:34px;height:1px;background:var(--accent);"></span>
     <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Sobre o resultado</span>
   </div>
-  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos.</p>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">The Gamers nasceu para contar <span style="color:var(--accent);">quem são os pro players por trás da tela.</span></h2>
+  <p data-reveal style="margin:0 0 22px;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Criamos uma série documental aberta a gamers do Brasil e do mundo, revelando a trajetória de cada um desde a infância até os momentos de queda e de virada. Em vez de falar sobre performance dentro do jogo, mostramos a pessoa por trás do personagem.</p>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">A entrega vai além da tela: o documentário ganhou uma estreia presencial no Cinemark, e o projeto gerou conteúdo próprio para redes sociais em colaboração entre o The Gamers e os pro players retratados. O resultado é um vínculo mais forte entre a comunidade gamer, os fãs de cada jogador e as marcas envolvidas no projeto.</p>
+</section>
+
+<!-- IMAGE BREAK -->
+<section data-screen-label="Vídeo — galeria da série (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:460px;border:1px solid rgba(255,255,255,.08);">
+    <video src="./series-video-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  </div>
+</section>
+
+<!-- CASE 2 -->
+<section data-screen-label="Case — Red Bull Bragantino Creators Cup" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Case · Série Documental</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">Red Bull Bragantino Creators Cup</h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Seis times de criadores brasileiros e latino-americanos disputando uma vaga para visitar o CT do Red Bull New York, nos Estados Unidos.</p>
+</section>
+
+<!-- SOBRE O RESULTADO 2 -->
+<section data-screen-label="Sobre o resultado — Creators Cup" style="padding:0 24px 120px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Sobre o resultado</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">Uma disputa entre criadores <span style="color:var(--accent);">que virou série.</span></h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Transformamos a Red Bull Bragantino Creators Cup em uma série documental: seis times de criadores de conteúdo do Brasil e da América Latina competiram nas instalações do Red Bull Bragantino, em Atibaia, com desafios em campo que também mostraram a estrutura do CPD do clube. Como prêmio, uma viagem para conhecer o Centro de Treinamento do Red Bull em Nova York, o mesmo CT usado pela seleção brasileira durante a Copa.</p>
 </section>
 
 <!-- IMAGE BREAK 3 FOTOS -->
@@ -216,6 +256,16 @@
       <image-slot id="series-break-4c" shape="rect" placeholder="Foto vertical" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
     </div>
   </div>
+</section>
+
+<!-- TEXTO EXTRA -->
+<section data-screen-label="Texto extra" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Um legado, não um lançamento</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">A torcida não lembra de campanha. <span style="color:var(--accent);">Lembra de história.</span></h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Enquanto uma campanha dura o tempo de uma ativação, uma série documental continua sendo assistida, comentada e compartilhada muito depois do último episódio. É isso que transforma audiência em comunidade, e comunidade em resultado de longo prazo para a marca.</p>
 </section>
 
 <!-- NEXT SERVICE / CTA -->
@@ -235,7 +285,7 @@
 <!-- FOOTER -->
 <footer style="background:#070708;padding:60px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
   <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
-    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;" loading="lazy" decoding="async"></a>
+    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
     <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
   </div>
 </footer>
@@ -252,38 +302,23 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    // ---- Video playback: hero plays immediately; the rest lazy-load and
-    // play only once scrolled near the viewport, so the page doesn't pull
-    // down every clip on the page up front. ----
-    const pageVideos = $$('video');
-    pageVideos.forEach((v) => {
+    $$('video').forEach((v) => {
       v.muted = true;
       v.loop = true;
       v.setAttribute('muted', '');
-      v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
+      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
+      const pv = v.play();
+      if (pv && pv.catch) pv.catch(() => {});
     });
-    if (pageVideos[0]) {
-      const pv0 = pageVideos[0].play();
-      if (pv0 && pv0.catch) pv0.catch(() => {});
-    }
-    const lazyVideos = pageVideos.slice(1);
-    if (lazyVideos.length && 'IntersectionObserver' in window) {
-      const vio = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const v = entry.target;
-          if (entry.isIntersecting) {
-            if (v.preload !== 'auto') v.preload = 'auto';
-            const pv = v.play();
-            if (pv && pv.catch) pv.catch(() => {});
-          } else {
-            v.pause();
-          }
-        });
-      }, { rootMargin: '400px 0px' });
-      lazyVideos.forEach((v) => vio.observe(v));
-    } else {
-      lazyVideos.forEach((v) => { const pv = v.play(); if (pv && pv.catch) pv.catch(() => {}); });
-    }
+
+    $$('video').forEach((v) => {
+      v.muted = true;
+      v.loop = true;
+      v.setAttribute('muted', '');
+      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
+      const pv = v.play();
+      if (pv && pv.catch) pv.catch(() => {});
+    });
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });

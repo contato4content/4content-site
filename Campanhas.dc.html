@@ -8,10 +8,6 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -32,7 +28,7 @@
 <!-- NAVBAR -->
 <nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;">
   <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(14,14,16,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:11px 14px 11px 22px;box-shadow:0 10px 36px rgba(0,0,0,.4);">
-    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white.png" alt="4Content" style="height:32px;width:auto;display:block;"></a>
+    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white-cropped.png" alt="4Content" style="height:15px;width:auto;display:block;"></a>
     <div data-desktop-nav style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
       <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:1;">Campanhas</a>
       <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Séries</a>
@@ -78,7 +74,7 @@
     <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">O desafio</span>
   </div>
   <h2 data-reveal style="margin:0;font-family:'Poppins';font-weight:800;font-size:clamp(28px,4vw,58px);line-height:1.08;letter-spacing:-.02em;max-width:18ch;">Atenção todo mundo compra. <span style="color:var(--accent);">Relevância se conquista.</span></h2>
-  <p data-reveal style="margin:34px 0 0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Construímos campanhas de marca a partir do território esportivo — o único lugar onde a paixão não tem filtro. Da grande ideia ao filme manifesto, conectamos o que sua marca representa com o que a torcida sente, no padrão visual de uma produção de cinema.</p>
+  <p data-reveal style="margin:34px 0 0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Construímos campanhas de marca a partir do território esportivo, o único lugar onde a paixão não tem filtro. Da grande ideia ao filme manifesto, conectamos o que sua marca representa com o que a torcida sente, no padrão visual de uma produção de cinema.</p>
 </section>
 
 <!-- DELIVERABLES -->
@@ -111,15 +107,32 @@
 <section data-screen-label="Imagem — bastidores da campanha (3 fotos)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div style="display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:14px;">
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <img src="assets/camp-pato-1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async">
+      <img src="assets/camp-pato-1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;margin-top:-5vh;border:1px solid rgba(255,255,255,.08);">
-      <video src="./campanhas-video-meio.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
+      <video src="./campanhas-video-meio.mp4" muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <img src="assets/camp-pato-2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async">
+      <img src="assets/camp-pato-2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
   </div>
+</section>
+
+<!-- O PONTO DE PARTIDA -->
+<section data-screen-label="O ponto de partida" style="padding:0 24px 120px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">O ponto de partida</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">A maioria das campanhas fala sobre a marca. <span style="color:var(--accent);">Poucas falam com a torcida.</span></h2>
+  <p data-reveal style="margin:0 0 30px;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Grande parte dos filmes publicitários no esporte usa o time ou o atleta como cenário, não como personagem. O resultado é sempre o mesmo: produção bonita, mas sem conexão real com quem vive aquele universo todos os dias.</p>
+  <div data-reveal style="display:flex;flex-direction:column;gap:10px;margin-bottom:30px;">
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Campanha genérica, que poderia ser de qualquer marca</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Atleta como garoto propaganda, não como personagem</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Produção sem padrão de cinema</span></div>
+    <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Pouco desdobramento além do filme principal</span></div>
+  </div>
+  <p data-reveal style="margin:0;max-width:640px;font-family:'Poppins';font-weight:700;font-size:clamp(18px,1.8vw,24px);line-height:1.35;color:#fff;">Nós acreditamos que campanha boa nasce de dentro do território esportivo, não de fora dele.</p>
 </section>
 
 <!-- MAIS SOBRE -->
@@ -128,14 +141,14 @@
     <span style="width:34px;height:1px;background:var(--accent);"></span>
     <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Sobre a campanha</span>
   </div>
-  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0;max-width:680px;font-size:16px;line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos da campanha.</p>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">O esporte é o único território <span style="color:var(--accent);">onde a torcida defende a marca como se fosse dela.</span></h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Desenvolvemos campanhas que partem de dentro desse universo, unindo estratégia de posicionamento, direção de cinema e distribuição pensada para cada plataforma. Cada filme manifesto nasce de um território criativo real, não de um briefing genérico aplicado ao esporte.</p>
 </section>
 
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — campanha em produção (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-hero.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <video src="./campanhas-hero.mp4" muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
   </div>
 </section>
 
@@ -164,31 +177,83 @@
   </div>
 </section>
 
-<!-- IMAGE BREAK -->
-<section data-screen-label="Imagem — galeria de campanha (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
-    <image-slot id="camp-break-3" shape="rect" radius="20" placeholder="Imagem — galeria de campanha (paisagem)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+<!-- COMO FUNCIONA NA PRÁTICA -->
+<section data-screen-label="Como funciona na prática" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Como funciona na prática</span>
   </div>
-</section>
-
-<!-- CASE STRIP -->
-<section data-screen-label="Case" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:440px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <image-slot id="camp-case" shape="rect" radius="20" placeholder="Imagem do case — Campanhas (paisagem, 16:9)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
-    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
-    <div style="position:relative;padding:44px;max-width:600px;">
-      <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Campanha</span>
-      <h3 style="margin:0 0 12px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">Feito de Atitude | Veloz</h3>
-      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">Lançamento de marca esportiva com a Geração Z no centro da narrativa — filme manifesto, desdobramentos sociais e ativação com creators.</p>
+  <h2 data-reveal style="margin:0 0 44px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">Do primeiro insight ao lançamento, cada etapa constrói a próxima.</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">01</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Imersão na torcida</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Pesquisa e escuta do universo do time, do atleta ou da modalidade antes de qualquer ideia de campanha.</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">02</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Conceito e território criativo</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Definição da grande ideia e do posicionamento que vai sustentar toda a campanha.</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">03</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Produção do filme manifesto</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Captação e direção em padrão de cinema, com roteiro e trilha alinhados ao conceito.</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">04</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Lançamento e desdobramento</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Distribuição por plataforma, cortes sociais e ativação com atletas e creators.</div>
     </div>
   </div>
 </section>
 
 <!-- IMAGE BREAK -->
-<section data-screen-label="Imagem — encerramento (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
-    <image-slot id="camp-break-4" shape="rect" radius="20" placeholder="Imagem — encerramento (paisagem)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+<section data-screen-label="Case — Arena Red Bull Bragantino" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
+    <video src="./campanhas-video-3.mp4" muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
+    <div style="position:relative;padding:44px;max-width:600px;">
+      <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Campanha</span>
+      <h3 style="margin:0 0 12px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">Arena Red Bull Bragantino</h3>
+      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">Texto a definir.</p>
+    </div>
   </div>
+</section>
+
+<!-- TEXTO ENTRE CASES -->
+<section data-screen-label="Texto entre cases" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos.</p>
+</section>
+
+<!-- CASE STRIP -->
+<section data-screen-label="Case — Mãe que conduz" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:88vh;min-height:600px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
+    <video src="./campanhas-video-4.mp4" muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
+    <div style="position:relative;padding:44px;max-width:600px;">
+      <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Campanha</span>
+      <h3 style="margin:0 0 12px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">Mãe que conduz</h3>
+      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">Texto a definir.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- MARCA QUE FICA -->
+<section data-screen-label="Marca que fica, não só que aparece" style="padding:0 24px 120px;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Marca que fica, não só que aparece</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:24ch;">Enquanto muitas campanhas terminam quando a verba acaba, <span style="color:var(--accent);">algumas continuam sendo lembradas muito depois disso.</span></h2>
+  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Alcance se compra com mídia. Memória se conquista com conexão real. Nós acreditamos que esse é o critério que separa uma campanha esquecida de uma campanha que constrói resultado de negócio no longo prazo.</p>
 </section>
 
 <!-- NEXT SERVICE / CTA -->
@@ -208,7 +273,7 @@
 <!-- FOOTER -->
 <footer style="background:#070708;padding:60px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
   <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
-    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;" loading="lazy" decoding="async"></a>
+    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
     <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
   </div>
 </footer>
@@ -225,38 +290,14 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    // ---- Video playback: hero plays immediately; the rest lazy-load and
-    // play only once scrolled near the viewport, so the page doesn't pull
-    // down every clip on the page up front. ----
-    const pageVideos = $$('video');
-    pageVideos.forEach((v) => {
+    $$('video').forEach((v) => {
       v.muted = true;
       v.loop = true;
       v.setAttribute('muted', '');
-      v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
+      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
+      const pv = v.play();
+      if (pv && pv.catch) pv.catch(() => {});
     });
-    if (pageVideos[0]) {
-      const pv0 = pageVideos[0].play();
-      if (pv0 && pv0.catch) pv0.catch(() => {});
-    }
-    const lazyVideos = pageVideos.slice(1);
-    if (lazyVideos.length && 'IntersectionObserver' in window) {
-      const vio = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const v = entry.target;
-          if (entry.isIntersecting) {
-            if (v.preload !== 'auto') v.preload = 'auto';
-            const pv = v.play();
-            if (pv && pv.catch) pv.catch(() => {});
-          } else {
-            v.pause();
-          }
-        });
-      }, { rootMargin: '400px 0px' });
-      lazyVideos.forEach((v) => vio.observe(v));
-    } else {
-      lazyVideos.forEach((v) => { const pv = v.play(); if (pv && pv.catch) pv.catch(() => {}); });
-    }
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });

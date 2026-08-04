@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  * { animation-delay: -99s !important; animation-duration: .001s !important; animation-iteration-count: 1 !important; animation-fill-mode: both !important; animation-play-state: running !important; transition-duration: 0s !important; }
+  body{margin:0;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  doc-page:not(:defined){visibility:hidden;}
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" margin="0" hint-size="100%,100%">
+
+<div style="--accent:#D5C29E;--accent-rgb:213,194,158;background:#0A0A0B;color:#fff;">
+
+<!-- HEADER -->
+<div style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 40px;border-bottom:1px solid rgba(255,255,255,.08);break-inside:avoid;">
+  <img src="assets/logo-white.png" alt="4Content" style="height:30px;width:auto;display:block;">
+  <span style="color:#fff;font-size:13px;font-weight:600;border-radius:50px;padding:9px 18px;background-color:#D5C29E;color:#0A0A0B;">contato@4content.com.br</span>
+</div>
+
+<!-- HERO -->
+<div style="position:relative;padding:64px 40px;overflow:hidden;break-inside:avoid;">
+  <image-slot id="home-hero-print" shape="rect" placeholder="Imagem de fundo — capa institucional (paisagem)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.5);"></image-slot>
+  <div style="position:absolute;inset:0;background:rgba(10,10,11,.72);"></div>
+  <div style="position:relative;max-width:820px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Agência de conteúdo esportivo premium</span>
+    </div>
+    <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:56px;line-height:.98;letter-spacing:-.02em;">Marca que vira torcida</h1>
+    <p style="margin:22px 0 0;max-width:560px;font-size:17px;line-height:1.55;color:#bcbcc2;font-weight:300;">Estratégia criativa e impacto comercial no único terreno onde a paixão não tem filtro: o esporte.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;">
+      <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0A0A0B;background-color:#D5C29E;border-radius:50px;padding:8px 16px;">Campanhas</span>
+      <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0A0A0B;background-color:#D5C29E;border-radius:50px;padding:8px 16px;">Séries Documentais</span>
+      <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0A0A0B;background-color:#D5C29E;border-radius:50px;padding:8px 16px;">Media Day</span>
+      <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0A0A0B;background-color:#D5C29E;border-radius:50px;padding:8px 16px;">Real Time</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div style="padding:70px 40px;max-width:900px;margin:0 auto;break-inside:avoid;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+    <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">A 4Content</span>
+  </div>
+  <h2 style="margin:0;font-family:'Poppins';font-weight:800;font-size:36px;line-height:1.15;letter-spacing:-.02em;">Transformamos esporte em <span style="color:#D5C29E;">influência, relevância e negócio.</span></h2>
+  <p style="margin:26px 0 0;font-size:16px;line-height:1.6;color:#9a9aa0;font-weight:300;">Somos a agência de conteúdo esportivo premium da América Latina. Não fazemos vídeo — construímos relevância. Da estratégia à captação em tempo real, criamos conteúdo fora do padrão para marcas, atletas, clubes, ligas e veículos que querem liderar a conversa.</p>
+</div>
+
+<!-- SERVICES -->
+<div style="padding:20px 40px 70px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:34px;break-inside:avoid;">
+    <h2 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:40px;line-height:.95;letter-spacing:-.02em;">O que fazemos</h2>
+    <p style="margin:0;max-width:360px;font-size:14px;line-height:1.55;color:#8a8a90;font-weight:300;">Quatro frentes de conteúdo premium pensadas para gerar resultado dentro e fora de campo.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+    <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.08);break-inside:avoid;">
+      <image-slot id="home-svc-campanhas" shape="rect" src="uploads/DSC09539.jpg" placeholder="Capa do serviço — Campanhas" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.92),rgba(10,10,11,.15) 60%);"></div>
+      <div style="position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;">
+        <span style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;">01</span>
+        <h3 style="margin:6px 0 6px;font-family:'Poppins';font-weight:700;font-size:20px;color:#fff;">Campanhas</h3>
+        <p style="margin:0;font-size:13px;line-height:1.5;color:#b6b6bc;">Posicionamento de marca, estratégia criativa e impacto comercial.</p>
+      </div>
+    </div>
+    <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.08);break-inside:avoid;">
+      <image-slot id="home-svc-series" shape="rect" src="uploads/DSC08197.jpg" placeholder="Capa do serviço — Séries Documentais" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.92),rgba(10,10,11,.15) 60%);"></div>
+      <div style="position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;">
+        <span style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;">02</span>
+        <h3 style="margin:6px 0 6px;font-family:'Poppins';font-weight:700;font-size:20px;color:#fff;">Séries Documentais</h3>
+        <p style="margin:0;font-size:13px;line-height:1.5;color:#b6b6bc;">Storytelling, legado e conexão emocional que constrói audiência.</p>
+      </div>
+    </div>
+    <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.08);break-inside:avoid;">
+      <image-slot id="home-svc-mediaday" shape="rect" src="uploads/WhatsApp Image 2026-06-01 at 18.16.37 (1).jpg" placeholder="Capa do serviço — Media Day" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.92),rgba(10,10,11,.15) 60%);"></div>
+      <div style="position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;">
+        <span style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;">03</span>
+        <h3 style="margin:6px 0 6px;font-family:'Poppins';font-weight:700;font-size:20px;color:#fff;">Media Day</h3>
+        <p style="margin:0;font-size:13px;line-height:1.5;color:#b6b6bc;">Captação em escala: um dia que vira uma temporada de ativos.</p>
+      </div>
+    </div>
+    <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.08);break-inside:avoid;">
+      <image-slot id="home-svc-realtime" shape="rect" src="uploads/4CT_2025_Bastidores_GPSP-1.jpg" placeholder="Capa do serviço — Real Time" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.92),rgba(10,10,11,.15) 60%);"></div>
+      <div style="position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;">
+        <span style="font-family:'Poppins';font-weight:700;font-size:13px;color:#D5C29E;">04</span>
+        <h3 style="margin:6px 0 6px;font-family:'Poppins';font-weight:700;font-size:20px;color:#fff;">Real Time</h3>
+        <p style="margin:0;font-size:13px;line-height:1.5;color:#b6b6bc;">Velocidade, relevância e narrativa ao vivo no ritmo do evento.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY 4CONTENT -->
+<div style="padding:70px 40px;background:#121214;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);break-inside:avoid;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;">
+      <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Por que 4Content</span>
+    </div>
+    <h2 style="margin:0 0 30px;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:34px;line-height:1;letter-spacing:-.02em;max-width:18ch;">Do lado certo de cada escolha</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;">
+      <div style="background:#121214;padding:26px 22px;"><div style="font-family:'Poppins';font-weight:800;font-size:38px;line-height:1;color:#D5C29E;">14+</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">anos produzindo conteúdo de alto padrão</div></div>
+      <div style="background:#121214;padding:26px 22px;"><div style="font-family:'Poppins';font-weight:800;font-size:38px;line-height:1;color:#D5C29E;">500+</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">ativos gerados em um único media day</div></div>
+      <div style="background:#121214;padding:26px 22px;"><div style="font-family:'Poppins';font-weight:800;font-size:38px;line-height:1;color:#D5C29E;">&lt;24h</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">para entrega de conteúdo em tempo real</div></div>
+      <div style="background:#121214;padding:26px 22px;"><div style="font-family:'Poppins';font-weight:800;font-size:38px;line-height:1;color:#D5C29E;">100%</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">linguagem nativa da Geração Z</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENTS -->
+<div style="padding:60px 40px;break-inside:avoid;">
+  <p style="text-align:center;margin:0 0 30px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Marcas, clubes e veículos que confiam na 4Content</p>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:20px;align-items:center;justify-items:center;max-width:1200px;margin:0 auto;">
+    <img src="assets/cli-ad.png" alt="Adidas" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-f1.png" alt="F1 GP São Paulo" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-byd.png" alt="BYD" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-caz.png" alt="CazéTV" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-lvie.png" alt="Live Mode" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-logi.png" alt="Logitech" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-cinem.png" alt="Cinemark" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-km.png" alt="KaBuM!" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-be.png" alt="Bem Brasil" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-cbfa.png" alt="CBFA" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-cob.png" alt="COB Expo" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-espm.png" alt="ESPM" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-rb.png" alt="Red Bull" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-prime.png" alt="Prime Video" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-oakel.png" alt="Oakley" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-mizun.png" alt="Mizuno" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-unice.png" alt="UNICEF" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-vc.png" alt="Victorinox" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-zuricj.png" alt="Zurich" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-vivara.png" alt="Vivara" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-paulis.png" alt="Paulistão" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-vivasort.png" alt="Viva Sorte" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-rug.png" alt="Rug" style="height:44px;width:auto;opacity:.8;">
+    <img src="assets/cli-sem.png" alt="Marca" style="height:44px;width:auto;opacity:.8;">
+  </div>
+</div>
+
+<!-- FEATURED CASES -->
+<div style="padding:60px 40px 70px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:30px;break-inside:avoid;">
+    <h2 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:40px;line-height:.95;letter-spacing:-.02em;">Cases em destaque</h2>
+    <p style="margin:0;max-width:360px;font-size:14px;line-height:1.55;color:#8a8a90;font-weight:300;">Conteúdo cinematográfico com alto valor de produção e resultado de marca.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
+    <div style="break-inside:avoid;">
+      <div style="position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
+        <img src="assets/case-apresentacao.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:12px;left:12px;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:4px 12px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#fff;">Campanha</span>
+      </div>
+      <h3 style="margin:14px 0 4px;font-family:'Poppins';font-weight:700;font-size:18px;color:#fff;">Gabi é Cabuloso <span style="color:#6a6a70;font-weight:500;">| Cruzeiro</span></h3>
+      <p style="margin:0;font-size:13px;color:#8a8a90;line-height:1.45;">A maior apresentação de um jogador que o Brasil já viu — do countdown ao Mineirão lotado.</p>
+    </div>
+    <div style="break-inside:avoid;">
+      <div style="position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
+        <image-slot id="home-case-1" shape="rect" placeholder="Thumbnail do case" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+        <span style="position:absolute;top:12px;left:12px;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:4px 12px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#fff;">Série Documental</span>
+      </div>
+      <h3 style="margin:14px 0 4px;font-family:'Poppins';font-weight:700;font-size:18px;color:#fff;">A Última Temporada <span style="color:#6a6a70;font-weight:500;">| Norte FC</span></h3>
+      <p style="margin:0;font-size:13px;color:#8a8a90;line-height:1.45;">Bastidores de uma campanha histórica que reposicionou o clube na mídia nacional.</p>
+    </div>
+    <div style="break-inside:avoid;">
+      <div style="position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
+        <image-slot id="home-case-2" shape="rect" placeholder="Thumbnail do case" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+        <span style="position:absolute;top:12px;left:12px;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:4px 12px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#fff;">Media Day</span>
+      </div>
+      <h3 style="margin:14px 0 4px;font-family:'Poppins';font-weight:700;font-size:18px;color:#fff;">Dia de Elenco <span style="color:#6a6a70;font-weight:500;">| Liga Pro</span></h3>
+      <p style="margin:0;font-size:13px;color:#8a8a90;line-height:1.45;">+500 ativos para 12 patrocinadores captados em uma única operação.</p>
+    </div>
+    <div style="break-inside:avoid;">
+      <div style="position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.08);">
+        <image-slot id="home-case-3" shape="rect" placeholder="Thumbnail do case" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+        <span style="position:absolute;top:12px;left:12px;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:4px 12px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#fff;">Campanha</span>
+      </div>
+      <h3 style="margin:14px 0 4px;font-family:'Poppins';font-weight:700;font-size:18px;color:#fff;">Feito de Atitude <span style="color:#6a6a70;font-weight:500;">| Veloz</span></h3>
+      <p style="margin:0;font-size:13px;color:#8a8a90;line-height:1.45;">Lançamento de marca esportiva com a Geração Z no centro da narrativa.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTION CAPABILITIES -->
+<div style="padding:70px 40px;background:#121214;border-top:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;">
+      <span style="width:34px;height:1px;background-color:#D5C29E;"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Capacidade de produção</span>
+    </div>
+    <h2 style="margin:0 0 34px;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:34px;line-height:1;letter-spacing:-.02em;max-width:18ch;">Estrutura ponta a ponta</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+      <div style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px;break-inside:avoid;"><div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Estratégia &amp; Criação</div><div style="font-size:13px;color:#8a8a90;line-height:1.5;">Planejamento editorial, conceito e roteiro com posicionamento de marca.</div></div>
+      <div style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px;break-inside:avoid;"><div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Direção &amp; Captação</div><div style="font-size:13px;color:#8a8a90;line-height:1.5;">Direção, captação multicâmera e operação de set em alto padrão.</div></div>
+      <div style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px;break-inside:avoid;"><div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Pós &amp; Color</div><div style="font-size:13px;color:#8a8a90;line-height:1.5;">Edição, finalização, color grading e tratamento cinematográfico.</div></div>
+      <div style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px;break-inside:avoid;"><div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Motion &amp; Design</div><div style="font-size:13px;color:#8a8a90;line-height:1.5;">Identidade visual em movimento, GC e pacotes gráficos para esporte.</div></div>
+      <div style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px;break-inside:avoid;"><div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Operação Real Time</div><div style="font-size:13px;color:#8a8a90;line-height:1.5;">Ilha móvel, edição on-site e publicação ao vivo durante o evento.</div></div>
+      <div style="background:#0A0A0B;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px;break-inside:avoid;"><div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:8px;">Distribuição &amp; Performance</div><div style="font-size:13px;color:#8a8a90;line-height:1.5;">Estratégia de canais, versionamento por plataforma e métricas.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div style="padding:80px 40px;text-align:center;break-inside:avoid;">
+  <p style="margin:0 0 22px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Vamos jogar juntos</p>
+  <h2 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:56px;line-height:.94;letter-spacing:-.03em;">Qual sua próxima <span style="color:#D5C29E;">jogada?</span></h2>
+  <div style="margin-top:30px;font-family:'Poppins';font-weight:600;font-size:22px;color:#fff;border-bottom:2px solid #D5C29E;display:inline-block;padding-bottom:5px;">contato@4content.com.br</div>
+  <p style="margin:28px 0 0;font-size:13px;color:#6a6a70;line-height:1.6;">São Paulo · Brasil — atendendo marcas e propriedades esportivas em toda a América Latina</p>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#070708;padding:60px 40px 30px;border-top:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:36px;">
+    <div style="break-inside:avoid;">
+      <img src="assets/logo-white.png" alt="4Content" style="width:130px;height:auto;display:block;margin-bottom:18px;">
+      <p style="margin:0;max-width:280px;font-size:13px;line-height:1.55;color:#8a8a90;font-weight:300;">Conteúdo esportivo premium. Transformamos esporte em influência, relevância e negócio.</p>
+    </div>
+    <div style="break-inside:avoid;">
+      <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6a6a70;margin-bottom:14px;">Serviços</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:#c4c4c8;">
+        <span>Campanhas</span><span>Séries Documentais</span><span>Media Day</span><span>Real Time</span>
+      </div>
+    </div>
+    <div style="break-inside:avoid;">
+      <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6a6a70;margin-bottom:14px;">Empresa</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:#c4c4c8;">
+        <span>Sobre</span><span>Cases</span><span>Por que 4Content</span><span>Contato</span>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:44px auto 0;height:1px;background:rgba(255,255,255,.08);"></div>
+  <div style="max-width:1200px;margin:20px auto 0;font-size:12px;color:#6a6a70;text-align:right;">© 2026 — 4Content. Todos os direitos reservados.</div>
+</div>
+
+</div>
+</x-import>
+</x-dc>
+</body>
+</html>

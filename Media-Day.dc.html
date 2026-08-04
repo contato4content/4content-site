@@ -8,10 +8,6 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -32,7 +28,7 @@
 <!-- NAVBAR -->
 <nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;">
   <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(14,14,16,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:11px 14px 11px 22px;box-shadow:0 10px 36px rgba(0,0,0,.4);">
-    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white.png" alt="4Content" style="height:32px;width:auto;display:block;"></a>
+    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white-cropped.png" alt="4Content" style="height:15px;width:auto;display:block;"></a>
     <div data-desktop-nav style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
       <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Campanhas</a>
       <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Séries</a>
@@ -57,7 +53,7 @@
 
 <!-- HERO -->
 <section data-screen-label="Campanhas Hero" style="position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;">
-  <image-slot id="mediaday-hero" shape="rect" src="assets/mediaday-hero.webp" placeholder="Imagem de fundo do hero — Media Day (paisagem, 1920×1200)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+  <image-slot id="mediaday-hero" shape="rect" placeholder="Imagem de fundo do hero — Media Day (paisagem, 1920×1200)" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
   <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.4) 55%,rgba(10,10,11,.55) 100%);"></div>
   <div style="position:relative;max-width:1340px;margin:0 auto;width:100%;padding:0 24px 110px;">
     <a href="4Content.dc.html" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar</a>
@@ -172,12 +168,12 @@
   <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(28px,4vw,54px);line-height:1.1;letter-spacing:-.02em;max-width:18ch;">O Media Day tradicional está <span style="color:var(--accent);">ultrapassado.</span></h2>
   <p data-reveal style="margin:0 0 40px;max-width:680px;font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#9a9aa0;font-weight:300;">Na maioria dos clubes e organizações esportivas, o Media Day ainda é tratado como uma simples sessão de fotos. O resultado?</p>
   <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:40px;">
-    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Pouca variedade de conteúdo</span></div>
-    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Baixa qualidade visual</span></div>
-    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Produções genéricas</span></div>
-    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Falta de planejamento</span></div>
-    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Pouco aproveitamento comercial</span></div>
-    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Poucas semanas depois, todo o material já foi utilizado</span></div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Pouca variedade de conteúdo</span></div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Baixa qualidade visual</span></div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Produções genéricas</span></div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Falta de planejamento</span></div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Pouco aproveitamento comercial</span></div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Poucas semanas depois, todo o material já foi utilizado</span></div>
   </div>
   <p data-reveal style="margin:0;max-width:640px;font-family:'Poppins';font-weight:700;font-size:clamp(18px,1.8vw,24px);line-height:1.35;color:#fff;">Nós acreditamos que um único dia de produção deve abastecer toda a estratégia de comunicação da temporada.</p>
 </section>
@@ -205,17 +201,17 @@
     <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
       <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">02</div>
       <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Storytelling</div>
-      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Criamos conceitos criativos para que cada conteúdo conte uma história. Não produzimos apenas imagens — produzimos narrativas e entregamos resultados.</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Criamos conceitos criativos para que cada conteúdo conte uma história. Não produzimos apenas imagens, produzimos narrativas e entregamos resultados.</div>
     </div>
     <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
       <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">03</div>
       <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Moodboard</div>
-      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Toda produção nasce com referências visuais para alinhar tom, linguagem e formatos. Definimos fotografia, iluminação, direção de arte, enquadramentos e identidade visual — tudo aprovado previamente pelo cliente.</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Toda produção nasce com referências visuais para alinhar tom, linguagem e formatos. Definimos fotografia, iluminação, direção de arte, enquadramentos e identidade visual, tudo aprovado previamente pelo cliente.</div>
     </div>
     <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
       <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">04</div>
       <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Storyboard</div>
-      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Planejamento completo das cenas. Cada minuto do shooting possui um objetivo — isso reduz tempo, evita improviso e aumenta a produtividade.</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Planejamento completo das cenas. Cada minuto do shooting possui um objetivo, o que reduz tempo, evita improviso e aumenta a produtividade.</div>
     </div>
   </div>
 </section>
@@ -238,25 +234,25 @@
     <div data-reveal>
       <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:20px;">Equipe especializada em Media Day</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Fotógrafos esportivos</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Diretores criativos</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Videomakers</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Produtores</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Iluminadores</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Operadores de câmera</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Equipe de apoio</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Profissionais parceiros de maquiagem, moda e styling</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Fotógrafos esportivos</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Diretores criativos</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Videomakers</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Produtores</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Iluminadores</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Operadores de câmera</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Equipe de apoio</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Profissionais parceiros de maquiagem, moda e styling</span></div>
       </div>
     </div>
     <div data-reveal>
       <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:20px;">Estrutura própria</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Estúdios móveis</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Equipamentos próprios</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Iluminação profissional</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Cinema cameras</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Sistema de armazenamento</span></div>
-        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Backup em tempo real</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Estúdios móveis</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Equipamentos próprios</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Iluminação profissional</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Cinema cameras</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Sistema de armazenamento</span></div>
+        <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Backup em tempo real</span></div>
       </div>
     </div>
   </div>
@@ -397,14 +393,14 @@
   </div>
   <h2 data-reveal style="margin:0 0 44px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:20ch;">Pensado para quem precisa produzir em escala.</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
-    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Entrega em até 24 horas</span></div>
-    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Equipe altamente especializada</span></div>
-    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Fluxo otimizado</span></div>
-    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Produção simultânea</span></div>
-    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Padronização visual</span></div>
-    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Escalabilidade</span></div>
-    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Organização profissional</span></div>
-    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="color:var(--accent);font-family:'Poppins';font-weight:700;">—</span><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Qualidade cinematográfica</span></div>
+    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Entrega em até 24 horas</span></div>
+    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Equipe altamente especializada</span></div>
+    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Fluxo otimizado</span></div>
+    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Produção simultânea</span></div>
+    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Padronização visual</span></div>
+    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Escalabilidade</span></div>
+    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Organização profissional</span></div>
+    <div data-reveal style="display:flex;gap:12px;align-items:flex-start;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;"><span style="font-size:14px;color:#c4c4c8;line-height:1.5;">Qualidade cinematográfica</span></div>
   </div>
 </section>
 
@@ -425,7 +421,7 @@
 <!-- FOOTER -->
 <footer style="background:#070708;padding:60px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
   <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
-    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;" loading="lazy" decoding="async"></a>
+    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
     <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
   </div>
 </footer>
@@ -442,38 +438,23 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    // ---- Video playback: hero plays immediately; the rest lazy-load and
-    // play only once scrolled near the viewport, so the page doesn't pull
-    // down every clip on the page up front. ----
-    const pageVideos = $$('video');
-    pageVideos.forEach((v) => {
+    $$('video').forEach((v) => {
       v.muted = true;
       v.loop = true;
       v.setAttribute('muted', '');
-      v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
+      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
+      const pv = v.play();
+      if (pv && pv.catch) pv.catch(() => {});
     });
-    if (pageVideos[0]) {
-      const pv0 = pageVideos[0].play();
-      if (pv0 && pv0.catch) pv0.catch(() => {});
-    }
-    const lazyVideos = pageVideos.slice(1);
-    if (lazyVideos.length && 'IntersectionObserver' in window) {
-      const vio = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const v = entry.target;
-          if (entry.isIntersecting) {
-            if (v.preload !== 'auto') v.preload = 'auto';
-            const pv = v.play();
-            if (pv && pv.catch) pv.catch(() => {});
-          } else {
-            v.pause();
-          }
-        });
-      }, { rootMargin: '400px 0px' });
-      lazyVideos.forEach((v) => vio.observe(v));
-    } else {
-      lazyVideos.forEach((v) => { const pv = v.play(); if (pv && pv.catch) pv.catch(() => {}); });
-    }
+
+    $$('video').forEach((v) => {
+      v.muted = true; v.setAttribute('muted', ''); v.loop = true; v.setAttribute('loop', '');
+      v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
+      const tryPlay = () => { const pv = v.play(); if (pv && pv.catch) pv.catch(() => {}); };
+      tryPlay();
+      document.addEventListener('click', tryPlay, { once: true });
+      document.addEventListener('scroll', tryPlay, { once: true, passive: true });
+    });
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });
