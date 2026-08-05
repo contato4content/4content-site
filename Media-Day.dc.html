@@ -148,13 +148,13 @@
 <section data-screen-label="Galeria" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
     <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./mediaday-gallery-video3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./mediaday-gallery-video3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
     <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./mediaday-gallery-video.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./mediaday-gallery-video.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
     <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./mediaday-gallery-video2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
+      <video src="./mediaday-gallery-video2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
     </div>
   </div>
 </section>
@@ -181,7 +181,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — planejamento e moodboard (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./mediaday-break-video2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./mediaday-break-video2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 
@@ -219,7 +219,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — equipe em operação (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./mediaday-break-video.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;"></video>
+    <video src="./mediaday-break-video.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;"></video>
   </div>
 </section>
 
@@ -318,7 +318,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — set de captação (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./mediaday-break-video3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./mediaday-break-video3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 
@@ -381,7 +381,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — entrega final (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./mediaday-video-ultima.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <video src="./mediaday-video-ultima.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
   </div>
 </section>
 
@@ -438,14 +438,27 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    $$('video').forEach((v) => {
-      v.muted = true;
-      v.loop = true;
-      v.setAttribute('muted', '');
-      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
-      const pv = v.play();
-      if (pv && pv.catch) pv.catch(() => {});
-    });
+    const kickVideos = () => {
+      $$('video').forEach((v) => {
+        v.muted = true;
+        v.loop = true;
+        v.setAttribute('muted', '');
+        v.setAttribute('loop', '');
+        if (!v.dataset.kicked) {
+          v.dataset.kicked = '1';
+          v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
+          v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); });
+          v.addEventListener('canplay', () => { v.play().catch(() => {}); });
+        }
+        const pv = v.play();
+        if (pv && pv.catch) pv.catch(() => {});
+      });
+    };
+    kickVideos();
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
+    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
+    setTimeout(kickVideos, 400);
+    setTimeout(kickVideos, 1500);
 
     $$('video').forEach((v) => {
       v.muted = true; v.setAttribute('muted', ''); v.loop = true; v.setAttribute('loop', '');

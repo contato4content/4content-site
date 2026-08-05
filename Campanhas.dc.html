@@ -110,7 +110,7 @@
       <img src="assets/camp-pato-1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;margin-top:-5vh;border:1px solid rgba(255,255,255,.08);">
-      <video src="./campanhas-video-meio.mp4" muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
+      <video src="./campanhas-video-meio.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
       <img src="assets/camp-pato-2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
@@ -148,62 +148,67 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — campanha em produção (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-hero.mp4" muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
-  </div>
-</section>
-
-<!-- RESULTADOS -->
-<section data-screen-label="Resultados" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
-    <span style="width:34px;height:1px;background:var(--accent);"></span>
-    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Resultados</span>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;">
-    <div data-reveal style="background:#121214;padding:28px 24px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
-      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
-    </div>
-    <div data-reveal style="background:#121214;padding:28px 24px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
-      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
-    </div>
-    <div data-reveal style="background:#121214;padding:28px 24px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:16px;margin-bottom:16px;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1;color:var(--accent);">—</div>
-      <div style="margin-top:6px;font-size:13px;color:#9a9aa0;">descrição</div>
-    </div>
+    <video src="./campanhas-hero.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
   </div>
 </section>
 
 <!-- COMO FUNCIONA NA PRÁTICA -->
-<section data-screen-label="Como funciona na prática" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+<section data-screen-label="Como funciona na prática" style="padding:0 24px 120px;max-width:1180px;margin:0 auto;">
   <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
     <span style="width:34px;height:1px;background:var(--accent);"></span>
     <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Como funciona na prática</span>
   </div>
-  <h2 data-reveal style="margin:0 0 44px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">Do primeiro insight ao lançamento, cada etapa constrói a próxima.</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">01</div>
-      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Imersão na torcida</div>
-      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Pesquisa e escuta do universo do time, do atleta ou da modalidade antes de qualquer ideia de campanha.</div>
+  <h2 data-reveal style="margin:0 0 60px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:22ch;">Do primeiro insight ao lançamento, cada etapa constrói a próxima.</h2>
+
+  <div style="position:relative;padding-left:36px;">
+    <div style="position:absolute;left:9px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--accent),rgba(255,255,255,.08));"></div>
+
+    <div data-reveal style="position:relative;padding-bottom:46px;">
+      <div style="position:absolute;left:-36px;top:0;width:19px;height:19px;border-radius:50%;background:#0A0A0B;border:2px solid var(--accent);"></div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:var(--accent);margin-bottom:8px;">FASE 01</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:22px;margin-bottom:10px;">Imersão na torcida</div>
+      <p style="margin:0 0 14px;max-width:640px;font-size:15px;color:#9a9aa0;line-height:1.6;">Pesquisa e escuta do universo do time, do atleta ou da modalidade antes de qualquer ideia de campanha.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Pesquisa de torcida</span>
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Escuta ativa</span>
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Diagnóstico de território</span>
+      </div>
     </div>
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">02</div>
-      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Conceito e território criativo</div>
-      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Definição da grande ideia e do posicionamento que vai sustentar toda a campanha.</div>
+
+    <div data-reveal style="position:relative;padding-bottom:46px;">
+      <div style="position:absolute;left:-36px;top:0;width:19px;height:19px;border-radius:50%;background:#0A0A0B;border:2px solid var(--accent);"></div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:var(--accent);margin-bottom:8px;">FASE 02</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:22px;margin-bottom:10px;">Conceito e território criativo</div>
+      <p style="margin:0 0 14px;max-width:640px;font-size:15px;color:#9a9aa0;line-height:1.6;">Definição da grande ideia e do posicionamento que vai sustentar toda a campanha.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Big idea</span>
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Posicionamento</span>
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Roteiro base</span>
+      </div>
     </div>
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">03</div>
-      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Produção do filme manifesto</div>
-      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Captação e direção em padrão de cinema, com roteiro e trilha alinhados ao conceito.</div>
+
+    <div data-reveal style="position:relative;padding-bottom:46px;">
+      <div style="position:absolute;left:-36px;top:0;width:19px;height:19px;border-radius:50%;background:#0A0A0B;border:2px solid var(--accent);"></div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:var(--accent);margin-bottom:8px;">FASE 03</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:22px;margin-bottom:10px;">Produção do filme manifesto</div>
+      <p style="margin:0 0 14px;max-width:640px;font-size:15px;color:#9a9aa0;line-height:1.6;">Captação e direção em padrão de cinema, com roteiro e trilha alinhados ao conceito.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Direção de cinema</span>
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Captação multicâmera</span>
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Trilha e sonorização</span>
+      </div>
     </div>
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);margin-bottom:18px;">04</div>
-      <div style="font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:10px;">Lançamento e desdobramento</div>
-      <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Distribuição por plataforma, cortes sociais e ativação com atletas e creators.</div>
+
+    <div data-reveal style="position:relative;">
+      <div style="position:absolute;left:-36px;top:0;width:19px;height:19px;border-radius:50%;background:var(--accent);border:2px solid var(--accent);"></div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;color:var(--accent);margin-bottom:8px;">FASE 04</div>
+      <div style="font-family:'Poppins';font-weight:700;font-size:22px;margin-bottom:10px;">Lançamento e desdobramento</div>
+      <p style="margin:0 0 14px;max-width:640px;font-size:15px;color:#9a9aa0;line-height:1.6;">Distribuição por plataforma, cortes sociais e ativação com atletas e creators.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Plano de mídia</span>
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Cortes sociais</span>
+        <span style="font-size:12px;color:#c4c4c8;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:6px 14px;">Ativação com creators</span>
+      </div>
     </div>
   </div>
 </section>
@@ -211,7 +216,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Case — Arena Red Bull Bragantino" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-video-3.mp4" muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <video src="./campanhas-video-3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Campanha</span>
@@ -221,25 +226,15 @@
   </div>
 </section>
 
-<!-- TEXTO ENTRE CASES -->
-<section data-screen-label="Texto entre cases" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
-  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
-    <span style="width:34px;height:1px;background:var(--accent);"></span>
-    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
-  </div>
-  <h2 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0;max-width:680px;font-size:clamp(16px,1.4vw,20px);line-height:1.6;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção — substitua por informações e resultados específicos.</p>
-</section>
-
 <!-- CASE STRIP -->
 <section data-screen-label="Case — Mãe que conduz" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:88vh;min-height:600px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-video-4.mp4" muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./campanhas-video-4.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Campanha</span>
       <h3 style="margin:0 0 12px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">Mãe que conduz</h3>
-      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">Texto a definir.</p>
+      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">A #MãeQueConduz foi uma ação especial de Dia das Mães idealizada e produzida pela 4Content, realizada no Morumbis durante uma partida do São Paulo FC. Um projeto criado para transformar emoção em conexão dentro e fora de campo.</p>
     </div>
   </div>
 </section>
@@ -290,14 +285,27 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    $$('video').forEach((v) => {
-      v.muted = true;
-      v.loop = true;
-      v.setAttribute('muted', '');
-      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
-      const pv = v.play();
-      if (pv && pv.catch) pv.catch(() => {});
-    });
+    const kickVideos = () => {
+      $$('video').forEach((v) => {
+        v.muted = true;
+        v.loop = true;
+        v.setAttribute('muted', '');
+        v.setAttribute('loop', '');
+        if (!v.dataset.kicked) {
+          v.dataset.kicked = '1';
+          v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
+          v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); });
+          v.addEventListener('canplay', () => { v.play().catch(() => {}); });
+        }
+        const pv = v.play();
+        if (pv && pv.catch) pv.catch(() => {});
+      });
+    };
+    kickVideos();
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
+    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
+    setTimeout(kickVideos, 400);
+    setTimeout(kickVideos, 1500);
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });
