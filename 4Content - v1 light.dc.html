@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#FFFFFF;color:#0D0D0D;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  input,textarea{cursor:text;}
+  @media (pointer:fine){body{cursor:none;}}
+  @keyframes pulseDot{0%{transform:scale(1);opacity:.8;}70%{transform:scale(2.6);opacity:0;}100%{opacity:0;}}
+  @keyframes mqA{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes mqB{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+  @media (max-width:1100px){
+    [data-desktop-nav]{display:none !important;}
+    [data-nav-right]{display:none !important;}
+    [data-hamburger]{display:flex !important;}
+  }
+</style>
+</helmet>
+
+<div style="position:relative;width:100%;overflow:hidden;">
+
+<!-- CUSTOM CURSOR -->
+<div id="cursor" style="position:fixed;top:0;left:0;width:34px;height:34px;border-radius:50%;background:rgba(204,0,0,0.18);border:1px solid rgba(204,0,0,0.5);transform:translate(-50%,-50%);pointer-events:none;z-index:9999;transition:width .25s ease,height .25s ease,background .25s ease;mix-blend-mode:normal;display:none;"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1320px;transition:box-shadow .3s ease,top .3s ease;">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:#111111;border-radius:50px;padding:12px 22px;box-shadow:0 8px 30px rgba(0,0,0,0.18);">
+    <div style="display:flex;align-items:center;gap:16px;flex:0 0 auto;">
+      <a href="#" aria-label="Instagram" style="color:#fff;opacity:.8;display:flex;" style-hover="opacity:1;color:#fff;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" aria-label="YouTube" style="color:#fff;opacity:.8;display:flex;" style-hover="opacity:1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.9 4.8 12 4.8 12 4.8s-5.9 0-7.6.4a2.8 2.8 0 0 0-2 2C2 8.9 2 12 2 12s0 3.1.4 4.8a2.8 2.8 0 0 0 2 2c1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4a2.8 2.8 0 0 0 2-2C22 15.1 22 12 22 12s0-3.1-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+      <a href="#" aria-label="Vimeo" style="color:#fff;opacity:.8;display:flex;" style-hover="opacity:1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7.4c-.1 2.1-1.6 5-4.4 8.6-2.9 3.8-5.4 5.7-7.4 5.7-1.2 0-2.3-1.2-3.1-3.5-.6-2.1-1.1-4.3-1.7-6.4-.6-2.3-1.3-3.5-2-3.5-.2 0-.7.3-1.6.9L0 8.1c1-.9 2-1.8 3-2.7 1.3-1.2 2.4-1.8 3-1.9 1.6-.2 2.6.9 3 3.3.4 2.6.7 4.2.9 4.8.5 2.3 1 3.5 1.6 3.5.5 0 1.2-.7 2.1-2.2.9-1.5 1.4-2.6 1.5-3.4.2-1.5-.4-2.3-1.7-2.3-.6 0-1.3.1-1.9.4 1.3-4.2 3.7-6.2 7.3-6.1 2.6.1 3.9 1.9 3.7 5.3z"/></svg></a>
+    </div>
+
+    <div data-desktop-nav style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
+      <a href="#hero" style="display:flex;align-items:center;text-decoration:none;"><img src="assets/logo-white.png" alt="4Content" style="height:19px;width:auto;display:block;"></a>
+      <span style="width:1px;height:16px;background:rgba(255,255,255,.18);"></span>
+      <a href="#hero" data-en="Home" style="color:#fff;text-decoration:none;font-size:14px;opacity:.85;" style-hover="opacity:1;">Home</a>
+      <a href="#manifesto" data-en="Content" style="color:#fff;text-decoration:none;font-size:14px;opacity:.85;" style-hover="opacity:1;">Conteúdos</a>
+      <a href="#reel" data-en="About" style="color:#fff;text-decoration:none;font-size:14px;opacity:.85;" style-hover="opacity:1;">Quem somos</a>
+      <a href="#gallery" data-en="Projects" style="color:#fff;text-decoration:none;font-size:14px;opacity:.85;" style-hover="opacity:1;">Projetos</a>
+      <a href="#contact" data-en="Contact" style="color:#fff;text-decoration:none;font-size:14px;opacity:.85;" style-hover="opacity:1;">Contato</a>
+    </div>
+
+    <div data-nav-right style="display:flex;align-items:center;gap:14px;flex:0 0 auto;">
+      <span style="position:relative;display:flex;width:9px;height:9px;">
+        <span style="position:absolute;inset:0;border-radius:50%;background:#22c55e;animation:pulseDot 2s ease-out infinite;"></span>
+        <span style="position:relative;width:9px;height:9px;border-radius:50%;background:#22c55e;"></span>
+      </span>
+      <span data-en="say hi" style="color:#fff;font-size:13px;opacity:.85;">fala com a gente</span>
+      <a href="mailto:hello@4content.com.br" style="color:#fff;text-decoration:none;font-size:13px;border:1px solid rgba(255,255,255,.35);border-radius:50px;padding:7px 14px;background:transparent;transition:background .2s,color .2s;" style-hover="background:#fff;color:#111;">hello@4content.com.br</a>
+      <button id="lang-toggle" style="background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff;font-size:12px;border-radius:50px;padding:6px 10px;font-family:'Inter';" style-hover="border-color:rgba(255,255,255,.5);"><span id="lang-label">PT</span> / EN</button>
+    </div>
+
+    <button data-hamburger id="hamburger" style="display:none;flex-direction:column;gap:4px;background:transparent;border:none;padding:6px;width:34px;height:34px;align-items:center;justify-content:center;">
+      <span style="width:18px;height:2px;background:#fff;display:block;"></span>
+      <span style="width:18px;height:2px;background:#fff;display:block;"></span>
+      <span style="width:18px;height:2px;background:#fff;display:block;"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" style="display:none;flex-direction:column;gap:2px;background:#111;border-radius:24px;margin-top:10px;padding:16px 22px;box-shadow:0 8px 30px rgba(0,0,0,.25);">
+    <a href="#hero" style="color:#fff;text-decoration:none;font-size:16px;padding:8px 0;">Home</a>
+    <a href="#manifesto" style="color:#fff;text-decoration:none;font-size:16px;padding:8px 0;">Conteúdos</a>
+    <a href="#reel" style="color:#fff;text-decoration:none;font-size:16px;padding:8px 0;">Quem somos</a>
+    <a href="#gallery" style="color:#fff;text-decoration:none;font-size:16px;padding:8px 0;">Projetos</a>
+    <a href="#contact" style="color:#fff;text-decoration:none;font-size:16px;padding:8px 0;">Contato</a>
+    <a href="mailto:hello@4content.com.br" style="color:#fff;text-decoration:none;font-size:14px;padding:10px 0 4px;opacity:.7;">hello@4content.com.br</a>
+  </div>
+</nav>
+
+<!-- SECTION 1 — HERO -->
+<section id="hero" data-screen-label="Hero" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:160px 24px 120px;text-align:center;">
+  <img data-reveal src="assets/logo-black.png" alt="4Content" style="width:clamp(150px,16vw,220px);height:auto;margin-bottom:38px;">
+  <h1 data-reveal style="margin:0;font-family:'Poppins';font-weight:800;letter-spacing:-.04em;line-height:.86;color:#0D0D0D;">
+    <span data-en="Content" style="display:block;font-size:clamp(64px,11vw,180px);">Conteúdo<span style="color:#CC0000;">*</span></span>
+    <span data-en="that connects" style="display:block;font-size:clamp(78px,14vw,240px);">que conecta</span>
+  </h1>
+  <p data-reveal data-hero-sub data-en="4Content helps brands communicate their values through powerful, strategic content." style="max-width:560px;margin:38px auto 0;font-size:19px;line-height:1.5;color:#555;font-weight:300;">A 4Content ajuda marcas a comunicarem seus valores através de conteúdo poderoso e estratégico.</p>
+  <a href="#projects" data-reveal data-en="start here" style="margin-top:42px;display:inline-block;text-decoration:none;color:#0D0D0D;background:#fff;border:1.5px solid #0D0D0D;border-radius:50px;padding:14px 30px;font-size:15px;transition:background .25s,color .25s;" style-hover="background:#0D0D0D;color:#fff;">comece aqui</a>
+</section>
+
+<!-- SECTION 2 — PROJECTS CAROUSEL -->
+<section id="projects" data-screen-label="Projects Carousel" style="position:relative;width:100%;height:88vh;overflow:hidden;background:#000;">
+  <div id="proj-track" style="display:flex;width:100%;height:100%;transition:transform .7s cubic-bezier(.65,0,.35,1);">
+
+    <div style="position:relative;flex:0 0 100%;height:100%;">
+      <img src="https://picsum.photos/seed/4c-proj1/1920/1080" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.45));"></div>
+      <button class="proj-play" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:transparent;border:none;color:#fff;font-family:'Poppins';font-size:clamp(60px,8vw,120px);font-style:italic;font-weight:600;letter-spacing:-.03em;transition:transform .3s;" style-hover="transform:translate(-50%,-50%) scale(1.06);">play</button>
+      <div style="position:absolute;left:32px;bottom:32px;max-width:420px;background:#fff;border-radius:18px;padding:26px 28px;box-shadow:0 20px 50px rgba(0,0,0,.3);">
+        <h3 style="margin:0 0 14px;font-family:'Poppins';font-weight:800;font-size:28px;letter-spacing:-.02em;">Vozes da Cidade</h3>
+        <a href="#" style="display:inline-block;text-decoration:none;color:#fff;background:#0D0D0D;border-radius:50px;padding:8px 18px;font-size:13px;margin-bottom:20px;" style-hover="background:#CC0000;">Assista</a>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;margin-bottom:18px;">
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Diretor</div><div style="font-weight:600;font-size:14px;">Marina Alves</div></div>
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">DOP</div><div style="font-weight:600;font-size:14px;">Téo Ramos</div></div>
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Produtor</div><div style="font-weight:600;font-size:14px;">Júlia Costa</div></div>
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Editor</div><div style="font-weight:600;font-size:14px;">L. Pereira</div></div>
+        </div>
+        <div style="font-size:11px;color:#999;margin-bottom:3px;">Sinopse</div>
+        <p style="margin:0 0 6px;font-size:13.5px;line-height:1.5;color:#333;">Um retrato documental das histórias que pulsam nas ruas e dão alma à comunicação de uma marca. <a href="#" style="color:#0D0D0D;text-decoration:underline;">Mais</a></p>
+        <div style="font-size:11px;color:#999;margin:14px 0 3px;">Formato</div>
+        <div style="font-weight:600;font-size:14px;">Digital · Redes Sociais</div>
+      </div>
+    </div>
+
+    <div style="position:relative;flex:0 0 100%;height:100%;">
+      <img src="https://picsum.photos/seed/4c-proj2/1920/1080" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.45));"></div>
+      <button class="proj-play" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:transparent;border:none;color:#fff;font-family:'Poppins';font-size:clamp(60px,8vw,120px);font-style:italic;font-weight:600;letter-spacing:-.03em;transition:transform .3s;" style-hover="transform:translate(-50%,-50%) scale(1.06);">play</button>
+      <div style="position:absolute;left:32px;bottom:32px;max-width:420px;background:#fff;border-radius:18px;padding:26px 28px;box-shadow:0 20px 50px rgba(0,0,0,.3);">
+        <h3 style="margin:0 0 14px;font-family:'Poppins';font-weight:800;font-size:28px;letter-spacing:-.02em;">Origem</h3>
+        <a href="#" style="display:inline-block;text-decoration:none;color:#fff;background:#0D0D0D;border-radius:50px;padding:8px 18px;font-size:13px;margin-bottom:20px;" style-hover="background:#CC0000;">Assista</a>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;margin-bottom:18px;">
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Diretor</div><div style="font-weight:600;font-size:14px;">R. Nogueira</div></div>
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">DOP</div><div style="font-weight:600;font-size:14px;">Ana Beatriz</div></div>
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Produtor</div><div style="font-weight:600;font-size:14px;">Caio Lima</div></div>
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Editor</div><div style="font-weight:600;font-size:14px;">M. Duarte</div></div>
+        </div>
+        <div style="font-size:11px;color:#999;margin-bottom:3px;">Sinopse</div>
+        <p style="margin:0 0 6px;font-size:13.5px;line-height:1.5;color:#333;">A jornada de uma marca contada a partir das pessoas que a construíram do zero. <a href="#" style="color:#0D0D0D;text-decoration:underline;">Mais</a></p>
+        <div style="font-size:11px;color:#999;margin:14px 0 3px;">Formato</div>
+        <div style="font-weight:600;font-size:14px;">TV · Digital</div>
+      </div>
+    </div>
+
+    <div style="position:relative;flex:0 0 100%;height:100%;">
+      <img src="https://picsum.photos/seed/4c-proj3/1920/1080" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.45));"></div>
+      <button class="proj-play" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:transparent;border:none;color:#fff;font-family:'Poppins';font-size:clamp(60px,8vw,120px);font-style:italic;font-weight:600;letter-spacing:-.03em;transition:transform .3s;" style-hover="transform:translate(-50%,-50%) scale(1.06);">play</button>
+      <div style="position:absolute;left:32px;bottom:32px;max-width:420px;background:#fff;border-radius:18px;padding:26px 28px;box-shadow:0 20px 50px rgba(0,0,0,.3);">
+        <h3 style="margin:0 0 14px;font-family:'Poppins';font-weight:800;font-size:28px;letter-spacing:-.02em;">Movimento</h3>
+        <a href="#" style="display:inline-block;text-decoration:none;color:#fff;background:#0D0D0D;border-radius:50px;padding:8px 18px;font-size:13px;margin-bottom:20px;" style-hover="background:#CC0000;">Assista</a>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;margin-bottom:18px;">
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Diretor</div><div style="font-weight:600;font-size:14px;">P. Santiago</div></div>
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">DOP</div><div style="font-weight:600;font-size:14px;">Helena Sá</div></div>
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Produtor</div><div style="font-weight:600;font-size:14px;">D. Freitas</div></div>
+          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Editor</div><div style="font-weight:600;font-size:14px;">Sofia Reis</div></div>
+        </div>
+        <div style="font-size:11px;color:#999;margin-bottom:3px;">Sinopse</div>
+        <p style="margin:0 0 6px;font-size:13.5px;line-height:1.5;color:#333;">Energia, ritmo e identidade visual em uma campanha que transformou a percepção da marca. <a href="#" style="color:#0D0D0D;text-decoration:underline;">Mais</a></p>
+        <div style="font-size:11px;color:#999;margin:14px 0 3px;">Formato</div>
+        <div style="font-weight:600;font-size:14px;">Redes Sociais</div>
+      </div>
+    </div>
+
+  </div>
+
+  <button id="proj-prev" aria-label="Anterior" style="position:absolute;left:18px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);color:#fff;width:48px;height:48px;border-radius:50%;font-size:20px;display:flex;align-items:center;justify-content:center;" style-hover="background:rgba(255,255,255,.25);">&#8592;</button>
+  <button id="proj-next" aria-label="Próximo" style="position:absolute;right:18px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);color:#fff;width:48px;height:48px;border-radius:50%;font-size:20px;display:flex;align-items:center;justify-content:center;" style-hover="background:rgba(255,255,255,.25);">&#8594;</button>
+  <div id="proj-dots" style="position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:10px;">
+    <span data-dot="0" style="width:9px;height:9px;border-radius:50%;background:#fff;cursor:pointer;"></span>
+    <span data-dot="1" style="width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;"></span>
+    <span data-dot="2" style="width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;"></span>
+  </div>
+</section>
+
+<!-- SECTION 3 — REEL -->
+<section id="reel" data-screen-label="Reel" style="background:#111111;color:#fff;padding:140px 24px;text-align:center;">
+  <div data-reveal style="font-size:13px;letter-spacing:.15em;text-transform:lowercase;color:#888;margin-bottom:18px;">conheça</div>
+  <img data-reveal src="assets/logo-white.png" alt="4Content" style="width:clamp(280px,42vw,620px);height:auto;margin:0 auto 44px;display:block;">
+  
+  <button id="reel-open" data-en="Watch our reel" style="background:transparent;border:1.5px solid rgba(255,255,255,.6);color:#fff;border-radius:50px;padding:16px 34px;font-size:16px;font-family:'Inter';transition:background .25s,color .25s;" style-hover="background:#fff;color:#111;">Assista nosso reel</button>
+</section>
+
+<!-- SECTION 4 — MANIFESTO -->
+<section id="manifesto" data-screen-label="Manifesto" style="background:#fff;padding:130px 0 120px;overflow:hidden;">
+  <div style="white-space:nowrap;overflow:hidden;margin-bottom:6px;">
+    <div style="display:inline-flex;animation:mqA 28s linear infinite;font-family:'Poppins';font-weight:800;font-size:clamp(48px,9vw,130px);letter-spacing:-.03em;color:#0D0D0D;">
+      <span style="padding-right:60px;">Conteúdo muda comportamento das pessoas&nbsp;&nbsp;*</span>
+      <span style="padding-right:60px;">Conteúdo muda comportamento das pessoas&nbsp;&nbsp;*</span>
+    </div>
+  </div>
+  <div style="white-space:nowrap;overflow:hidden;margin-bottom:80px;">
+    <div style="display:inline-flex;animation:mqB 28s linear infinite;font-family:'Poppins';font-weight:800;font-size:clamp(48px,9vw,130px);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px rgba(13,13,13,.22);">
+      <span style="padding-right:60px;">Conteúdo muda comportamento das pessoas&nbsp;&nbsp;*</span>
+      <span style="padding-right:60px;">Conteúdo muda comportamento das pessoas&nbsp;&nbsp;*</span>
+    </div>
+  </div>
+
+  <div style="max-width:1240px;margin:0 auto;padding:0 24px;">
+    <p data-reveal style="max-width:620px;font-size:20px;line-height:1.55;color:#333;font-weight:300;margin:0 0 14px;">Cada projeto começa com uma pergunta: o que essa marca precisa dizer, e para quem? Da resposta nasce conteúdo com propósito.</p>
+    <a href="#gallery" data-reveal style="font-size:15px;color:#0D0D0D;text-decoration:underline;text-underline-offset:4px;">veja nosso portfólio</a>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:60px;">
+      <div data-reveal>
+        <div style="position:relative;border-radius:18px;overflow:hidden;height:440px;">
+          <img src="https://picsum.photos/seed/4c-case1/800/900" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease;" style-hover="transform:scale(1.05);">
+          <span style="position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);border-radius:50px;padding:6px 14px;font-size:12px;font-weight:500;">Veja como</span>
+        </div>
+        <p style="margin:16px 2px 0;font-size:16px;line-height:1.45;font-weight:500;">Produzimos conteúdo real que empodera marcas e engaja audiências.</p>
+      </div>
+      <div data-reveal>
+        <div style="position:relative;border-radius:18px;overflow:hidden;height:440px;">
+          <img src="https://picsum.photos/seed/4c-case2/800/900" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease;" style-hover="transform:scale(1.05);">
+          <span style="position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);border-radius:50px;padding:6px 14px;font-size:12px;font-weight:500;">Veja como</span>
+        </div>
+        <p style="margin:16px 2px 0;font-size:16px;line-height:1.45;font-weight:500;">Encontramos narrativas autênticas na essência de cada projeto.</p>
+      </div>
+      <div data-reveal>
+        <div style="position:relative;border-radius:18px;overflow:hidden;height:440px;">
+          <img src="https://picsum.photos/seed/4c-case3/800/900" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease;" style-hover="transform:scale(1.05);">
+          <span style="position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);border-radius:50px;padding:6px 14px;font-size:12px;font-weight:500;">Veja como</span>
+        </div>
+        <p style="margin:16px 2px 0;font-size:16px;line-height:1.45;font-weight:500;">As texturas e cores da vida real nos inspiram a criar o que importa.</p>
+      </div>
+      <div data-reveal>
+        <div style="position:relative;border-radius:18px;overflow:hidden;height:440px;">
+          <img src="https://picsum.photos/seed/4c-case4/800/900" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease;" style-hover="transform:scale(1.05);">
+          <span style="position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);border-radius:50px;padding:6px 14px;font-size:12px;font-weight:500;">Veja como</span>
+        </div>
+        <p style="margin:16px 2px 0;font-size:16px;line-height:1.45;font-weight:500;">Acreditamos que o conteúdo certo transforma negócios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 — DATA -->
+<section data-screen-label="Data" style="background:#111111;color:#fff;padding:150px 24px;">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:80px;text-align:center;">
+    <p data-reveal style="margin:0;font-family:'Poppins';font-weight:700;font-size:clamp(30px,4.5vw,54px);line-height:1.12;letter-spacing:-.02em;">Conteúdo de qualidade gera <span style="color:#CC0000;">3x mais leads</span> do que marketing tradicional com 62% menos custo.</p>
+    <p data-reveal style="margin:0;font-size:21px;line-height:1.6;color:#bbb;font-weight:300;">Compreendemos o poder da narrativa como ferramenta estratégica para construir marcas relevantes e duradouras.</p>
+    <p data-reveal style="margin:0;font-size:21px;line-height:1.6;color:#bbb;font-weight:300;">Quando as marcas produzem conteúdo com propósito, elas criam comunidades, fidelizam clientes e constroem reputação.</p>
+  </div>
+</section>
+
+<!-- SECTION 6 — WHAT WE DO -->
+<section data-screen-label="What we do" style="background:#fff;padding:140px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 data-reveal style="margin:0 0 60px;font-family:'Poppins';font-weight:800;font-size:clamp(48px,8vw,120px);letter-spacing:-.03em;line-height:.9;"><span style="color:#999;font-weight:600;">o</span> que<br>fazemos</h2>
+    <div id="accordion" style="border-top:1px solid #e5e5e5;">
+      <div class="acc-item" style="border-bottom:1px solid #e5e5e5;">
+        <button class="acc-head" style="width:100%;display:flex;align-items:center;gap:24px;background:transparent;border:none;padding:30px 4px;text-align:left;font-family:'Inter';">
+          <span style="font-family:'Poppins';font-weight:700;font-size:18px;color:#CC0000;flex:0 0 auto;">01</span>
+          <span style="font-family:'Poppins';font-weight:700;font-size:clamp(22px,3.2vw,38px);letter-spacing:-.02em;flex:1;">Estratégia de Conteúdo</span>
+          <span class="acc-icon" style="font-size:26px;font-weight:300;transition:transform .3s;flex:0 0 auto;">+</span>
+        </button>
+        <div class="acc-body" style="max-height:0;overflow:hidden;transition:max-height .4s ease;">
+          <p style="margin:0;padding:0 4px 30px 66px;font-size:17px;line-height:1.6;color:#444;max-width:760px;">Mapeamos o posicionamento da marca e desenhamos um plano editorial alinhado aos seus objetivos de negócio.</p>
+        </div>
+      </div>
+      <div class="acc-item" style="border-bottom:1px solid #e5e5e5;">
+        <button class="acc-head" style="width:100%;display:flex;align-items:center;gap:24px;background:transparent;border:none;padding:30px 4px;text-align:left;font-family:'Inter';">
+          <span style="font-family:'Poppins';font-weight:700;font-size:18px;color:#CC0000;flex:0 0 auto;">02</span>
+          <span style="font-family:'Poppins';font-weight:700;font-size:clamp(22px,3.2vw,38px);letter-spacing:-.02em;flex:1;">Produção Audiovisual</span>
+          <span class="acc-icon" style="font-size:26px;font-weight:300;transition:transform .3s;flex:0 0 auto;">+</span>
+        </button>
+        <div class="acc-body" style="max-height:0;overflow:hidden;transition:max-height .4s ease;">
+          <p style="margin:0;padding:0 4px 30px 66px;font-size:17px;line-height:1.6;color:#444;max-width:760px;">Produção de vídeos, documentários, comerciais e conteúdo para redes sociais com alto padrão técnico e criativo.</p>
+        </div>
+      </div>
+      <div class="acc-item" style="border-bottom:1px solid #e5e5e5;">
+        <button class="acc-head" style="width:100%;display:flex;align-items:center;gap:24px;background:transparent;border:none;padding:30px 4px;text-align:left;font-family:'Inter';">
+          <span style="font-family:'Poppins';font-weight:700;font-size:18px;color:#CC0000;flex:0 0 auto;">03</span>
+          <span style="font-family:'Poppins';font-weight:700;font-size:clamp(22px,3.2vw,38px);letter-spacing:-.02em;flex:1;">Criação e Roteiro</span>
+          <span class="acc-icon" style="font-size:26px;font-weight:300;transition:transform .3s;flex:0 0 auto;">+</span>
+        </button>
+        <div class="acc-body" style="max-height:0;overflow:hidden;transition:max-height .4s ease;">
+          <p style="margin:0;padding:0 4px 30px 66px;font-size:17px;line-height:1.6;color:#444;max-width:760px;">Desenvolvemos roteiros e narrativas únicas, do conceito à execução, para marcas que querem se destacar.</p>
+        </div>
+      </div>
+      <div class="acc-item" style="border-bottom:1px solid #e5e5e5;">
+        <button class="acc-head" style="width:100%;display:flex;align-items:center;gap:24px;background:transparent;border:none;padding:30px 4px;text-align:left;font-family:'Inter';">
+          <span style="font-family:'Poppins';font-weight:700;font-size:18px;color:#CC0000;flex:0 0 auto;">04</span>
+          <span style="font-family:'Poppins';font-weight:700;font-size:clamp(22px,3.2vw,38px);letter-spacing:-.02em;flex:1;">Distribuição e Performance</span>
+          <span class="acc-icon" style="font-size:26px;font-weight:300;transition:transform .3s;flex:0 0 auto;">+</span>
+        </button>
+        <div class="acc-body" style="max-height:0;overflow:hidden;transition:max-height .4s ease;">
+          <p style="margin:0;padding:0 4px 30px 66px;font-size:17px;line-height:1.6;color:#444;max-width:760px;">Criamos e distribuímos conteúdo estratégico nos canais certos, monitorando resultados e otimizando continuamente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 — THEY TRUSTED -->
+<section data-screen-label="Clients" style="background:#fff;padding:120px 0;overflow:hidden;">
+  <h2 data-reveal style="margin:0 0 56px;text-align:center;font-family:'Poppins';font-weight:800;font-size:clamp(44px,7vw,100px);letter-spacing:-.03em;line-height:.9;">they<br><span style="color:#CC0000;">trusted</span></h2>
+
+  <div style="white-space:nowrap;overflow:hidden;margin-bottom:26px;">
+    <div style="display:inline-flex;align-items:center;animation:mqA 30s linear infinite;">
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">NORTE</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">VIVAZ</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Lumina</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Corteza</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">MERIDIA</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Ônix</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">NORTE</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">VIVAZ</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Lumina</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Corteza</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">MERIDIA</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Ônix</span>
+    </div>
+  </div>
+  <div style="white-space:nowrap;overflow:hidden;">
+    <div style="display:inline-flex;align-items:center;animation:mqB 34s linear infinite;">
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Petra&amp;Co</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">SOLARE</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Verde</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">KANTO</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Aurora</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">FLUXO</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Petra&amp;Co</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">SOLARE</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Verde</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">KANTO</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">Aurora</span>
+      <span class="cli-logo" style="margin:0 48px;font-family:'Poppins';font-weight:700;font-size:38px;color:#cfcfcf;transition:color .3s;">FLUXO</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8 — GALLERY -->
+<section id="gallery" data-screen-label="Gallery" style="background:#fff;padding:120px 0 130px;">
+  <div style="max-width:900px;margin:0 auto 50px;padding:0 24px;text-align:center;">
+    <h2 data-reveal style="margin:0 0 16px;font-family:'Poppins';font-weight:800;font-size:clamp(34px,5vw,68px);letter-spacing:-.02em;line-height:1.02;">Assista conteúdos impactantes que criamos.</h2>
+    <p data-reveal style="margin:0;font-size:17px;color:#666;font-weight:300;">De campanhas de TV a conteúdo digital, criamos histórias com alto valor de produção.</p>
+  </div>
+
+  <div style="position:relative;max-width:1340px;margin:0 auto;">
+    <div id="gallery-scroll" style="display:flex;gap:22px;overflow-x:auto;scroll-behavior:smooth;padding:8px 24px 24px;scrollbar-width:none;">
+      <div class="gal-card" style="flex:0 0 460px;max-width:84vw;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;">
+          <img src="https://picsum.photos/seed/4c-g1/800/450" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease;">
+          <div class="gal-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;">
+            <span style="color:#fff;border:1.5px solid #fff;border-radius:50px;padding:10px 24px;font-size:14px;">Assista</span>
+          </div>
+        </div>
+        <h3 style="margin:16px 0 5px;font-family:'Poppins';font-weight:700;font-size:19px;">Campanha Institucional | Norte</h3>
+        <p style="margin:0;font-size:14px;color:#777;line-height:1.45;">Filme manifesto que reposicionou a marca no mercado nacional.</p>
+      </div>
+      <div class="gal-card" style="flex:0 0 460px;max-width:84vw;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;">
+          <img src="https://picsum.photos/seed/4c-g2/800/450" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease;">
+          <div class="gal-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;">
+            <span style="color:#fff;border:1.5px solid #fff;border-radius:50px;padding:10px 24px;font-size:14px;">Assista</span>
+          </div>
+        </div>
+        <h3 style="margin:16px 0 5px;font-family:'Poppins';font-weight:700;font-size:19px;">Documentário de Marca | Vivaz</h3>
+        <p style="margin:0;font-size:14px;color:#777;line-height:1.45;">A história por trás de uma empresa contada por quem a vive.</p>
+      </div>
+      <div class="gal-card" style="flex:0 0 460px;max-width:84vw;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;">
+          <img src="https://picsum.photos/seed/4c-g3/800/450" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease;">
+          <div class="gal-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;">
+            <span style="color:#fff;border:1.5px solid #fff;border-radius:50px;padding:10px 24px;font-size:14px;">Assista</span>
+          </div>
+        </div>
+        <h3 style="margin:16px 0 5px;font-family:'Poppins';font-weight:700;font-size:19px;">Série de Conteúdo | Lumina</h3>
+        <p style="margin:0;font-size:14px;color:#777;line-height:1.45;">Episódios semanais que construíram uma audiência fiel.</p>
+      </div>
+      <div class="gal-card" style="flex:0 0 460px;max-width:84vw;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;">
+          <img src="https://picsum.photos/seed/4c-g4/800/450" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease;">
+          <div class="gal-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;">
+            <span style="color:#fff;border:1.5px solid #fff;border-radius:50px;padding:10px 24px;font-size:14px;">Assista</span>
+          </div>
+        </div>
+        <h3 style="margin:16px 0 5px;font-family:'Poppins';font-weight:700;font-size:19px;">Videoclipe | Aurora</h3>
+        <p style="margin:0;font-size:14px;color:#777;line-height:1.45;">Direção de arte e narrativa visual para um lançamento musical.</p>
+      </div>
+      <div class="gal-card" style="flex:0 0 460px;max-width:84vw;">
+        <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;">
+          <img src="https://picsum.photos/seed/4c-g5/800/450" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease;">
+          <div class="gal-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;">
+            <span style="color:#fff;border:1.5px solid #fff;border-radius:50px;padding:10px 24px;font-size:14px;">Assista</span>
+          </div>
+        </div>
+        <h3 style="margin:16px 0 5px;font-family:'Poppins';font-weight:700;font-size:19px;">Comercial TV | Solare</h3>
+        <p style="margin:0;font-size:14px;color:#777;line-height:1.45;">Spot de 30 segundos veiculado em rede nacional.</p>
+      </div>
+    </div>
+    <button id="gal-next" aria-label="Próximo" style="position:absolute;right:18px;top:calc(50% - 30px);transform:translateY(-50%);background:#0D0D0D;color:#fff;width:52px;height:52px;border-radius:50%;border:none;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.2);" style-hover="background:#CC0000;">&#8594;</button>
+  </div>
+</section>
+
+<!-- SECTION 9 — CONTACT -->
+<section id="contact" data-screen-label="Contact" style="background:#fff;padding:150px 24px 130px;text-align:center;">
+  <h2 data-reveal style="margin:0 0 44px;font-family:'Poppins';font-weight:800;font-size:clamp(64px,11vw,200px);letter-spacing:-.04em;line-height:.84;">Qual<br>seu próximo<br>projeto<span style="color:#CC0000;">?</span></h2>
+  <a href="mailto:hello@4content.com.br" data-reveal style="display:inline-block;font-family:'Poppins';font-weight:600;font-size:clamp(22px,3vw,40px);color:#0D0D0D;text-decoration:underline;text-underline-offset:8px;letter-spacing:-.02em;" style-hover="color:#CC0000;">hello@4content.com.br</a>
+  <p data-reveal style="margin:34px 0 0;font-size:14px;color:#999;line-height:1.6;">Av. Paulista, 1000 · 12º andar · São Paulo — SP · Brasil</p>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#111111;color:#fff;padding:80px 24px 36px;">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:48px;">
+    <div>
+      <img src="assets/logo-white.png" alt="4Content" style="width:150px;height:auto;display:block;margin-bottom:24px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:24px;margin-bottom:18px;max-width:260px;line-height:1.2;">Conte-nos sobre seu próximo projeto</div>
+      <a href="mailto:hello@4content.com.br" style="display:inline-block;text-decoration:none;color:#111;background:#fff;border-radius:50px;padding:12px 24px;font-size:14px;" style-hover="background:#CC0000;color:#fff;">Fala com a gente</a>
+    </div>
+    <div>
+      <div style="font-size:13px;color:#888;margin-bottom:14px;">Newsletter</div>
+      <div style="display:flex;gap:8px;max-width:320px;">
+        <input type="email" placeholder="seu@email.com" style="flex:1;background:transparent;border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:11px 16px;color:#fff;font-size:14px;font-family:'Inter';outline:none;">
+        <button style="background:#fff;color:#111;border:none;border-radius:50px;padding:11px 20px;font-size:14px;font-family:'Inter';" style-hover="background:#CC0000;color:#fff;">Enviar</button>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+      <a href="#hero" style="color:#ccc;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Home</a>
+      <a href="#manifesto" style="color:#ccc;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Conteúdos</a>
+      <a href="#reel" style="color:#ccc;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Quem somos</a>
+      <a href="#gallery" style="color:#ccc;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Projetos</a>
+      <a href="#contact" style="color:#ccc;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Contato</a>
+      <a href="#" style="color:#ccc;text-decoration:none;font-size:14px;" style-hover="color:#fff;">Privacidade</a>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:54px auto 0;height:1px;background:rgba(255,255,255,.14);"></div>
+  <div style="max-width:1240px;margin:24px auto 0;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;">
+    <div style="display:flex;gap:16px;">
+      <a href="#" aria-label="Instagram" style="color:#aaa;display:flex;" style-hover="color:#fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" aria-label="LinkedIn" style="color:#aaa;display:flex;" style-hover="color:#fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8.5h5V24H0zM8 8.5h4.8v2.1h.07c.67-1.2 2.3-2.5 4.73-2.5 5.06 0 6 3.3 6 7.6V24h-5v-6.8c0-1.6 0-3.7-2.25-3.7s-2.6 1.75-2.6 3.6V24H8z"/></svg></a>
+      <a href="#" aria-label="YouTube" style="color:#aaa;display:flex;" style-hover="color:#fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.9 4.8 12 4.8 12 4.8s-5.9 0-7.6.4a2.8 2.8 0 0 0-2 2C2 8.9 2 12 2 12s0 3.1.4 4.8a2.8 2.8 0 0 0 2 2c1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4a2.8 2.8 0 0 0 2-2C22 15.1 22 12 22 12s0-3.1-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+      <a href="#" aria-label="Vimeo" style="color:#aaa;display:flex;" style-hover="color:#fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7.4c-.1 2.1-1.6 5-4.4 8.6-2.9 3.8-5.4 5.7-7.4 5.7-1.2 0-2.3-1.2-3.1-3.5-.6-2.1-1.1-4.3-1.7-6.4-.6-2.3-1.3-3.5-2-3.5-.2 0-.7.3-1.6.9L0 8.1c1-.9 2-1.8 3-2.7 1.3-1.2 2.4-1.8 3-1.9 1.6-.2 2.6.9 3 3.3.4 2.6.7 4.2.9 4.8.5 2.3 1 3.5 1.6 3.5.5 0 1.2-.7 2.1-2.2.9-1.5 1.4-2.6 1.5-3.4.2-1.5-.4-2.3-1.7-2.3-.6 0-1.3.1-1.9.4 1.3-4.2 3.7-6.2 7.3-6.1 2.6.1 3.9 1.9 3.7 5.3z"/></svg></a>
+    </div>
+    <div style="font-size:13px;color:#777;">© 2026 — All rights reserved to 4Content</div>
+  </div>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div id="video-modal" style="position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);padding:24px;">
+  <button id="modal-close" aria-label="Fechar" style="position:absolute;top:24px;right:28px;background:transparent;border:none;color:#fff;font-size:34px;font-weight:300;line-height:1;">&times;</button>
+  <video id="reel-video" controls playsinline style="width:100%;max-width:1100px;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.5);" poster="https://picsum.photos/seed/4c-reel/1600/900">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+  </video>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = this.el || document;
+    const $ = (s) => root.querySelector(s);
+    const $$ = (s) => Array.from(root.querySelectorAll(s));
+
+    // ---- Custom cursor (desktop only) ----
+    const cursor = $('#cursor');
+    if (window.matchMedia('(pointer:fine)').matches && cursor) {
+      cursor.style.display = 'block';
+      let cx = window.innerWidth / 2, cy = window.innerHeight / 2, tx = cx, ty = cy;
+      window.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
+      const loop = () => {
+        cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2;
+        cursor.style.left = cx + 'px'; cursor.style.top = cy + 'px';
+        this._raf = requestAnimationFrame(loop);
+      };
+      loop();
+      const grow = () => { cursor.style.width = '64px'; cursor.style.height = '64px'; cursor.style.background = 'rgba(204,0,0,0.28)'; };
+      const shrink = () => { cursor.style.width = '34px'; cursor.style.height = '34px'; cursor.style.background = 'rgba(204,0,0,0.18)'; };
+      $$('a,button,[role=button],.gal-card,.acc-head').forEach((el) => {
+        el.addEventListener('mouseenter', grow);
+        el.addEventListener('mouseleave', shrink);
+      });
+    }
+
+    // ---- Scroll reveal (scroll/rAF based — IntersectionObserver is unreliable in the preview) ----
+    const revealEls = $$('[data-reveal]');
+    revealEls.forEach((el) => {
+      if (el.dataset.revealed) return;
+      el.style.setProperty('opacity', '0', 'important');
+      el.style.setProperty('transform', 'translateY(34px)', 'important');
+    });
+    // rAF-driven tween (CSS transitions are unreliable in this preview)
+    const tween = (el) => {
+      const start = performance.now(), dur = 720;
+      const step = (now) => {
+        const t = Math.min(1, (now - start) / dur);
+        const e = 1 - Math.pow(1 - t, 3);
+        el.style.setProperty('opacity', String(e), 'important');
+        el.style.setProperty('transform', 'translateY(' + (34 * (1 - e)).toFixed(2) + 'px)', 'important');
+        if (t < 1) requestAnimationFrame(step);
+        else { el.style.setProperty('opacity', '1', 'important'); el.style.setProperty('transform', 'translateY(0)', 'important'); }
+      };
+      requestAnimationFrame(step);
+    };
+    const revealCheck = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      revealEls.forEach((el) => {
+        if (el.dataset.revealed) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < vh - 60 && r.bottom > -40) {
+          el.dataset.revealed = '1';
+          tween(el);
+        }
+      });
+    };
+    revealCheck();
+    window.addEventListener('scroll', revealCheck, { passive: true });
+    window.addEventListener('resize', revealCheck);
+    // capture phase catches scroll from any inner scroll container (window itself may not scroll here)
+    document.addEventListener('scroll', revealCheck, true);
+    // polling fallback — bulletproof regardless of scroll mechanics; self-clears when all revealed
+    this._revealPoll = setInterval(() => {
+      revealCheck();
+      if (revealEls.every((el) => el.dataset.revealed)) { clearInterval(this._revealPoll); this._revealPoll = null; }
+    }, 250);
+    setTimeout(revealCheck, 300);
+    setTimeout(revealCheck, 1200);
+
+    // ---- Navbar scroll shadow ----
+    const nav = $('#navbar');
+    const onScroll = () => {
+      if (!nav) return;
+      if (window.scrollY > 40) nav.firstElementChild.style.boxShadow = '0 10px 40px rgba(0,0,0,0.32)';
+      else nav.firstElementChild.style.boxShadow = '0 8px 30px rgba(0,0,0,0.18)';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ---- Hamburger / mobile menu ----
+    const burger = $('#hamburger'), mm = $('#mobile-menu');
+    if (burger && mm) {
+      burger.addEventListener('click', () => {
+        mm.style.display = mm.style.display === 'flex' ? 'none' : 'flex';
+      });
+      mm.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { mm.style.display = 'none'; }));
+    }
+
+    // ---- Projects carousel ----
+    const track = $('#proj-track');
+    const dots = $$('#proj-dots [data-dot]');
+    let idx = 0;
+    const total = 3;
+    const go = (i) => {
+      idx = (i + total) % total;
+      if (track) track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+      dots.forEach((d, di) => { d.style.background = di === idx ? '#fff' : 'rgba(255,255,255,.4)'; });
+    };
+    const prev = $('#proj-prev'), next = $('#proj-next');
+    if (prev) prev.addEventListener('click', () => go(idx - 1));
+    if (next) next.addEventListener('click', () => go(idx + 1));
+    dots.forEach((d) => d.addEventListener('click', () => go(parseInt(d.getAttribute('data-dot'), 10))));
+    this._auto = setInterval(() => go(idx + 1), 6000);
+
+    // ---- Accordion ----
+    $$('.acc-item').forEach((item) => {
+      const head = item.querySelector('.acc-head');
+      const body = item.querySelector('.acc-body');
+      const icon = item.querySelector('.acc-icon');
+      head.addEventListener('click', () => {
+        const open = body.style.maxHeight && body.style.maxHeight !== '0px';
+        $$('.acc-item').forEach((other) => {
+          other.querySelector('.acc-body').style.maxHeight = '0px';
+          other.querySelector('.acc-icon').style.transform = 'rotate(0deg)';
+          other.querySelector('.acc-icon').textContent = '+';
+        });
+        if (!open) {
+          body.style.maxHeight = body.scrollHeight + 'px';
+          icon.style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+
+    // ---- Gallery scroll ----
+    const galNext = $('#gal-next'), galScroll = $('#gallery-scroll');
+    if (galNext && galScroll) {
+      galNext.addEventListener('click', () => {
+        const card = galScroll.querySelector('.gal-card');
+        const step = card ? card.offsetWidth + 22 : 480;
+        if (galScroll.scrollLeft + galScroll.clientWidth >= galScroll.scrollWidth - 10) {
+          galScroll.scrollTo({ left: 0 });
+        } else {
+          galScroll.scrollBy({ left: step });
+        }
+      });
+    }
+    // gallery card hover overlay
+    $$('.gal-card').forEach((c) => {
+      const ov = c.querySelector('.gal-overlay');
+      const im = c.querySelector('img');
+      c.addEventListener('mouseenter', () => { if (ov) ov.style.opacity = '1'; if (im) im.style.transform = 'scale(1.05)'; });
+      c.addEventListener('mouseleave', () => { if (ov) ov.style.opacity = '0'; if (im) im.style.transform = 'scale(1)'; });
+    });
+
+    // ---- Client logos hover color ----
+    $$('.cli-logo').forEach((l) => {
+      l.addEventListener('mouseenter', () => { l.style.color = '#0D0D0D'; });
+      l.addEventListener('mouseleave', () => { l.style.color = '#cfcfcf'; });
+    });
+
+    // ---- Video modal ----
+    const modal = $('#video-modal'), vid = $('#reel-video');
+    const openModal = () => { if (modal) { modal.style.display = 'flex'; if (vid) vid.play().catch(() => {}); } };
+    const closeModal = () => { if (modal) { modal.style.display = 'none'; if (vid) vid.pause(); } };
+    const reelBtn = $('#reel-open');
+    if (reelBtn) reelBtn.addEventListener('click', openModal);
+    $$('.proj-play').forEach((p) => p.addEventListener('click', openModal));
+    const mc = $('#modal-close');
+    if (mc) mc.addEventListener('click', closeModal);
+    if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // ---- Language toggle ----
+    const langBtn = $('#lang-toggle'), langLabel = $('#lang-label');
+    let lang = 'PT';
+    $$('[data-en]').forEach((el) => { el.setAttribute('data-pt', el.textContent); });
+    if (langBtn) {
+      langBtn.addEventListener('click', () => {
+        lang = lang === 'PT' ? 'EN' : 'PT';
+        if (langLabel) langLabel.textContent = lang;
+        $$('[data-en]').forEach((el) => {
+          el.textContent = lang === 'EN' ? el.getAttribute('data-en') : el.getAttribute('data-pt');
+        });
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._auto) clearInterval(this._auto);
+    if (this._revealPoll) clearInterval(this._revealPoll);
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
