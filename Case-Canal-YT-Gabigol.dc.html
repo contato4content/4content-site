@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#0A0A0B;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  input,textarea{cursor:text;}
+  ::selection{background:#D5C29E;color:#0A0A0B;}
+  @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div id="root" style="--accent:#D5C29E;--accent-rgb:213,194,158;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
+
+<div id="cursor" style="display:none;"></div>
+
+<nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(14,14,16,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:11px 14px 11px 22px;box-shadow:0 10px 36px rgba(0,0,0,.4);">
+    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white-cropped.png" alt="4Content" style="height:15px;width:auto;display:block;"></a>
+    <div data-desktop-nav style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
+      <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Campanhas</a>
+      <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Séries</a>
+      <a href="Media-Day.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Media Day</a>
+      <a href="Real-Time.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Real Time</a>
+    </div>
+    <div data-nav-right style="display:flex;align-items:center;gap:14px;flex:0 0 auto;">
+      <a href="4Content.dc.html#contact" style="color:#0A0A0B;text-decoration:none;font-size:13px;font-weight:600;background:var(--accent);border-radius:50px;padding:10px 18px;transition:transform .2s;" style-hover="transform:translateY(-1px);">Fale conosco</a>
+    </div>
+    <button data-hamburger id="hamburger" style="display:none;flex-direction:column;gap:4px;background:transparent;border:none;padding:6px;width:34px;height:34px;align-items:center;justify-content:center;">
+      <span style="width:18px;height:2px;background:#fff;display:block;"></span><span style="width:18px;height:2px;background:#fff;display:block;"></span><span style="width:18px;height:2px;background:#fff;display:block;"></span>
+    </button>
+  </div>
+  <div id="mobile-menu" style="display:none;flex-direction:column;gap:2px;background:rgba(14,14,16,.96);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:24px;margin-top:10px;padding:16px 22px;">
+    <a href="4Content.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Home</a>
+    <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Campanhas</a>
+    <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Séries</a>
+    <a href="Media-Day.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Media Day</a>
+    <a href="Real-Time.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Real Time</a>
+  </div>
+</nav>
+
+<section data-screen-label="Case Hero" style="position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden;">
+  <image-slot id="ytg-hero" shape="rect" src="assets/ytg-cover.jpg" placeholder="Foto/vídeo de capa — Canal YT Gabigol" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.45) 55%,rgba(10,10,11,.6) 100%);"></div>
+  <div style="position:relative;max-width:1180px;margin:0 auto;width:100%;padding:0 24px 110px;">
+    <a href="4Content.dc.html#cases" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar aos cases</a>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <span style="font-family:'Poppins';font-weight:700;font-size:13px;color:var(--accent);">CASE</span>
+      <span style="width:34px;height:1px;background:var(--accent);"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">4Content × Gabigol</span>
+    </div>
+    <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(38px,6.6vw,104px);line-height:.92;letter-spacing:-.02em;">Canal YT Gabigol</h1>
+    <p style="margin:24px 0 0;max-width:640px;font-size:clamp(16px,1.5vw,21px);line-height:1.55;color:#bcbcc2;font-weight:300;">Acesso exclusivo à rotina e aos bastidores de Gabigol.</p>
+    <p style="margin:20px 0 0;font-size:13px;color:#6a6a70;">Produção: 4Content</p>
+  </div>
+</section>
+
+<section data-screen-label="Ação 01" style="padding:120px 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">01</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:22ch;">Texto a definir.</h2>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção. Substitua por informações e resultados específicos.</p>
+</section>
+<section data-screen-label="Texto extra 1" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
+  <h3 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;">Texto a definir.</h3>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção. Substitua por informações e resultados específicos.</p>
+</section>
+<section data-screen-label="Imagens duplas 1" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:14px;">
+    <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="ytg-img-1" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+    <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="ytg-img-2" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Cards de destaque" style="padding:0 24px 100px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:14px;align-items:stretch;">
+    <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:280px;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="ytg-img-3" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Título a definir</div>
+        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Descrição a definir.</div>
+      </div>
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Título a definir</div>
+        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Descrição a definir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Ação 02" style="position:relative;padding:120px 24px;overflow:hidden;">
+  <image-slot id="ytg-bg-2" shape="rect" placeholder="Imagem de fundo" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+  <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.82);"></div>
+  <div style="position:relative;max-width:1340px;margin:0 auto;">
+    <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+      <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">02</span>
+      <span style="width:34px;height:1px;background:var(--accent);"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Texto a definir</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+      <div>
+        <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(28px,4vw,58px);line-height:1.08;letter-spacing:-.02em;max-width:16ch;">Texto a definir.</h2>
+        <p data-reveal style="margin:0 0 24px;max-width:560px;font-size:16px;line-height:1.65;color:#c4c4c8;font-weight:300;">Espaço reservado para o texto desta seção.</p>
+        <p data-reveal style="margin:0;max-width:560px;font-size:16px;line-height:1.65;color:#c4c4c8;font-weight:300;">Substitua por informações e resultados específicos.</p>
+      </div>
+      <div data-reveal style="position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);">
+        <image-slot id="ytg-img-4" shape="rect" placeholder="Foto ou vídeo" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Ação 03" style="padding:120px 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">03</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção. Substitua por informações e resultados específicos.</p>
+</section>
+<section data-screen-label="Imagens duplas 2" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:14px;">
+    <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="ytg-img-5" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+    <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="ytg-img-6" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Texto extra 2" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="max-width:700px;">
+    <h3 style="margin:0 0 16px;font-family:'Poppins';font-weight:700;font-size:clamp(20px,2.2vw,28px);">Título a definir</h3>
+    <p style="margin:0;font-size:15px;line-height:1.65;color:#9a9aa0;font-weight:300;">Texto a definir.</p>
+  </div>
+</section>
+
+<section data-screen-label="Ação 04" style="padding:0 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">04</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:22ch;">Texto a definir.</h2>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção. Substitua por informações e resultados específicos.</p>
+</section>
+<section data-screen-label="Imagens duplas 3" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:14px;">
+    <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="ytg-img-7" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+    <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <image-slot id="ytg-img-8" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Ação 05" style="padding:0 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">05</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:24ch;">Texto a definir.</h2>
+  <p data-reveal style="margin:0 0 24px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção.</p>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Substitua por informações e resultados específicos.</p>
+</section>
+<section data-screen-label="Imagens duplas 4" style="padding:0 24px 40px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:14px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div data-reveal style="position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+        <image-slot id="ytg-img-9" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+      </div>
+      <div data-reveal style="position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+        <image-slot id="ytg-img-10" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">Descrição</div></div>
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">Descrição</div></div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Cards finais" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Título a definir</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.6;">Texto a definir.</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Título a definir</div>
+      <div style="font-size:14px;color:#8a8a90;line-height:1.6;">Texto a definir.</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Impactos em números" style="padding:0 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">06</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Impactos em números</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 44px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;">Texto a definir.</h2>
+</section>
+<section data-screen-label="Números hero" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;">
+    <div data-reveal style="background:linear-gradient(150deg,rgba(var(--accent-rgb),.22),rgba(18,18,20,1) 70%);border:1px solid rgba(var(--accent-rgb),.35);border-radius:24px;padding:44px 38px;">
+      <div style="font-family:'Poppins';font-weight:900;font-size:clamp(56px,8vw,104px);color:var(--accent);line-height:.92;letter-spacing:-.03em;">—</div>
+      <div style="margin-top:14px;font-size:15px;color:#e4e4e8;max-width:22ch;">Descrição</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">—</div>
+        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Descrição</div>
+      </div>
+      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">—</div>
+        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Descrição</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">—</div>
+        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Descrição</div>
+      </div>
+      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">—</div>
+        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Descrição</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Números grid" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div>
+      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Descrição</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div>
+      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Descrição</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div>
+      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Descrição</div>
+    </div>
+    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
+      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Título a definir</div>
+      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div>
+      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Descrição</div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Impactos imagem" style="padding:0 24px 130px;max-width:1340px;margin:0 auto;">
+  <div data-reveal style="position:relative;aspect-ratio:16/6;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+    <image-slot id="ytg-impactos" shape="rect" placeholder="Mockup de resultados" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+  </div>
+</section>
+
+<section data-screen-label="CTA" style="padding:0 24px 130px;text-align:center;">
+  <h2 data-reveal style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(38px,6.4vw,100px);line-height:.9;letter-spacing:-.02em;">Bora criar o seu?</h2>
+  <div data-reveal style="margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="4Content.dc.html#contact" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fale conosco <span style="font-size:17px;">&#8594;</span></a>
+    <a href="4Content.dc.html#contact" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fale conosco, nos envie seu projeto</a>
+  </div>
+</section>
+
+<footer style="background:#070708;padding:60px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
+    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
+    <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+    const root = $('#root');
+
+    root.style.setProperty('--accent', '#D5C29E');
+    root.style.setProperty('--accent-rgb', '213,194,158');
+
+    const kickVideos = () => {
+      $$('video').forEach((v) => {
+        v.muted = true;
+        v.loop = true;
+        v.setAttribute('muted', '');
+        v.setAttribute('loop', '');
+        if (!v.dataset.kicked) {
+          v.dataset.kicked = '1';
+          v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
+          v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); });
+          v.addEventListener('canplay', () => { v.play().catch(() => {}); });
+        }
+        const pv = v.play();
+        if (pv && pv.catch) pv.catch(() => {});
+      });
+    };
+    kickVideos();
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
+    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
+    setTimeout(kickVideos, 400);
+    setTimeout(kickVideos, 1500);
+
+    const cursor = $('#cursor');
+    if (window.matchMedia('(pointer:fine)').matches && cursor) {
+      cursor.style.display = 'block';
+      let cx = innerWidth/2, cy = innerHeight/2, tx = cx, ty = cy;
+      addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
+      const loop = () => { cx += (tx-cx)*0.2; cy += (ty-cy)*0.2; cursor.style.left = cx+'px'; cursor.style.top = cy+'px'; this._raf = requestAnimationFrame(loop); };
+      loop();
+      const grow = () => { cursor.style.width='56px'; cursor.style.height='56px'; cursor.style.background='rgba(var(--accent-rgb),.18)'; };
+      const shrink = () => { cursor.style.width='30px'; cursor.style.height='30px'; cursor.style.background='transparent'; };
+      $$('a,button,[role=button]').forEach((el) => { el.addEventListener('mouseenter', grow); el.addEventListener('mouseleave', shrink); });
+    }
+
+    const revealEls = $$('[data-reveal]');
+    revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });
+    const tween = (el) => {
+      const s = performance.now(), dur = 760;
+      const step = (now) => { const t = Math.min(1,(now-s)/dur); const e = 1-Math.pow(1-t,3); el.style.setProperty('opacity',String(e),'important'); el.style.setProperty('transform','translateY('+(34*(1-e)).toFixed(2)+'px)','important'); if (t<1) requestAnimationFrame(step); else { el.style.setProperty('opacity','1','important'); el.style.setProperty('transform','translateY(0)','important'); } };
+      requestAnimationFrame(step);
+    };
+    const revealCheck = () => { const vh = innerHeight||document.documentElement.clientHeight; revealEls.forEach((el) => { if (el.dataset.revealed) return; const r = el.getBoundingClientRect(); if (r.top < vh-60 && r.bottom > -40) { el.dataset.revealed='1'; tween(el); } }); };
+    revealCheck();
+    addEventListener('scroll', revealCheck, { passive:true });
+    addEventListener('resize', revealCheck);
+    document.addEventListener('scroll', revealCheck, true);
+    this._poll = setInterval(() => { revealCheck(); if (revealEls.every((el) => el.dataset.revealed)) { clearInterval(this._poll); this._poll = null; } }, 250);
+    setTimeout(revealCheck, 300); setTimeout(revealCheck, 1200);
+
+    const nav = $('#navbar');
+    addEventListener('scroll', () => { if (nav) nav.firstElementChild.style.boxShadow = (scrollY>40)?'0 12px 44px rgba(0,0,0,.6)':'0 10px 36px rgba(0,0,0,.4)'; }, { passive:true });
+
+    const burger = $('#hamburger'), mm = $('#mobile-menu');
+    if (burger && mm) { burger.addEventListener('click', () => { mm.style.display = mm.style.display==='flex'?'none':'flex'; }); mm.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { mm.style.display='none'; })); }
+  }
+  componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); if (this._poll) clearInterval(this._poll); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
