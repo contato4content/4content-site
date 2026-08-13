@@ -18,6 +18,7 @@
   input,textarea{cursor:text;}
   ::selection{background:#D5C29E;color:#0A0A0B;}
   @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
+  @keyframes tt-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 </style>
 <script src="./image-slot.js"></script>
 </helmet>
@@ -52,7 +53,24 @@
 </nav>
 
 <section data-screen-label="Case Hero" style="position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden;">
-  <image-slot id="tt-hero" shape="rect" placeholder="Foto/vídeo de capa — Tour da Taça" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+  <div style="position:absolute;inset:0;overflow:hidden;">
+    <div style="display:flex;width:max-content;height:100%;animation:tt-marquee 34s linear infinite;">
+      <img src="./tt-photo-1.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;object-position:center 60%;">
+      <img src="./tt-photo-2.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;object-position:center 30%;">
+      <img src="./tt-photo-3.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;">
+      <img src="./tt-photo-4.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;">
+      <img src="./tt-photo-5.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;">
+      <img src="./tt-photo-6.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;object-position:center 30%;">
+      <img src="./tt-photo-7.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;">
+      <img src="./tt-photo-1.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;object-position:center 60%;">
+      <img src="./tt-photo-2.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;object-position:center 30%;">
+      <img src="./tt-photo-3.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;">
+      <img src="./tt-photo-4.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;">
+      <img src="./tt-photo-5.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;">
+      <img src="./tt-photo-6.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;object-position:center 30%;">
+      <img src="./tt-photo-7.jpg" alt="Tour da Taça" style="width:30vw;height:100%;object-fit:cover;">
+    </div>
+  </div>
   <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.45) 55%,rgba(10,10,11,.6) 100%);"></div>
   <div style="position:relative;max-width:1180px;margin:0 auto;width:100%;padding:0 24px 110px;">
     <a href="4Content.dc.html#cases" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar aos cases</a>
@@ -62,7 +80,7 @@
       <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">4Content × Campanha</span>
     </div>
     <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(38px,6.6vw,104px);line-height:.92;letter-spacing:-.02em;">Tour da Taça</h1>
-    <p style="margin:24px 0 0;max-width:640px;font-size:clamp(16px,1.5vw,21px);line-height:1.55;color:#bcbcc2;font-weight:300;">Texto a definir.</p>
+    <p style="margin:24px 0 0;max-width:640px;font-size:clamp(16px,1.5vw,21px);line-height:1.55;color:#bcbcc2;font-weight:300;">Produção e cobertura completa da ação que levou o troféu do Grande Prêmio pelos pontos mais icônicos de São Paulo, do Ibirapuera a Interlagos.</p>
     <p style="margin:20px 0 0;font-size:13px;color:#6a6a70;">Produção: 4Content</p>
   </div>
 </section>
@@ -71,213 +89,84 @@
   <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
     <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">01</span>
     <span style="width:34px;height:1px;background:var(--accent);"></span>
-    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">O projeto</span>
   </div>
-  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:22ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção. Substitua por informações e resultados específicos.</p>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:22ch;">Tour da Taça <span style="color:var(--accent);">pelas ruas de São Paulo.</span></h2>
+  <p data-reveal style="margin:0 0 24px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">A 4Content produziu e executou o Tour da Taça F1 São Paulo, ação que levou o troféu do Grande Prêmio para as ruas da capital na semana que antecedeu o GP de 2025.</p>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">A proposta era transformar o troféu em acontecimento urbano. Em vez de mantê-lo restrito ao autódromo, a taça circulou pelos cartões-postais da cidade no período em que São Paulo respira Fórmula 1, aproximando o símbolo máximo da prova de quem vive a corrida fora das arquibancadas. Nossa função foi planejar a operação de captação em cada parada e entregar o material em foto, vídeo, imagem aérea e aftermovie.</p>
 </section>
 <section data-screen-label="Texto extra 1" style="padding:0 24px 60px;max-width:1180px;margin:0 auto;">
-  <h3 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;">Texto a definir.</h3>
-  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção. Substitua por informações e resultados específicos.</p>
-</section>
-<section data-screen-label="Imagens duplas 1" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:14px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 50px;">
     <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="tt-img-1" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+      <img src="./tt-photo-6.jpg" alt="Tour da Taça" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;">
     </div>
     <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="tt-img-2" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+      <img src="./tt-photo-7.jpg" alt="Tour da Taça" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
+  </div>
+  <h3 data-reveal style="margin:0 0 26px;font-family:'Poppins';font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;">O trajeto <span style="color:var(--accent);">do Ibirapuera a Interlagos.</span></h3>
+  <p data-reveal style="margin:0 0 20px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">O tour passou pelo Parque Ibirapuera, Parque do Povo, Avenida Paulista e Faria Lima até chegar ao destino final: o Autódromo de Interlagos, palco da corrida.</p>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Cada ponto exigiu um tratamento próprio de captação. Parques pedem enquadramento aberto e leitura de céu; a Paulista e a Faria Lima pedem ritmo, verticalidade e a arquitetura como moldura. O planejamento definiu, ponto a ponto, o que era foto, o que era vídeo e onde a imagem aérea entrava.</p>
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);height:60vh;min-height:420px;">
+    <iframe src="./tour-mapa.html" style="position:absolute;inset:0;width:100%;height:100%;border:0;" loading="lazy"></iframe>
   </div>
 </section>
 <section data-screen-label="Cards de destaque" style="padding:0 24px 100px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:14px;align-items:stretch;">
-    <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:280px;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="tt-img-3" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:14px;">
-      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
-        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Título a definir</div>
-        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Descrição a definir.</div>
-      </div>
-      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
-        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Título a definir</div>
-        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Descrição a definir.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section data-screen-label="Ação 02" style="position:relative;padding:120px 24px;overflow:hidden;">
-  <image-slot id="tt-bg-2" shape="rect" placeholder="Imagem de fundo" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
-  <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.82);"></div>
-  <div style="position:relative;max-width:1340px;margin:0 auto;">
-    <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
-      <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">02</span>
-      <span style="width:34px;height:1px;background:var(--accent);"></span>
-      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Texto a definir</span>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
-      <div>
-        <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(28px,4vw,58px);line-height:1.08;letter-spacing:-.02em;max-width:16ch;">Texto a definir.</h2>
-        <p data-reveal style="margin:0 0 24px;max-width:560px;font-size:16px;line-height:1.65;color:#c4c4c8;font-weight:300;">Espaço reservado para o texto desta seção.</p>
-        <p data-reveal style="margin:0;max-width:560px;font-size:16px;line-height:1.65;color:#c4c4c8;font-weight:300;">Substitua por informações e resultados específicos.</p>
-      </div>
-      <div data-reveal style="position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);">
-        <image-slot id="tt-img-4" shape="rect" placeholder="Foto ou vídeo" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section data-screen-label="Ação 03" style="padding:120px 24px 0;max-width:1180px;margin:0 auto;">
   <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
-    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">03</span>
-    <span style="width:34px;height:1px;background:var(--accent);"></span>
-    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">A operação</span>
   </div>
-  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:20ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção. Substitua por informações e resultados específicos.</p>
+  <div style="display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Fotografia</div>
+        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Registro da taça em cada cenário, com cobertura de still para uso em divulgação, imprensa e redes.</div>
+      </div>
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Vídeo</div>
+        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Captação em movimento acompanhando o troféu, com material cortado para diferentes formatos e durações.</div>
+      </div>
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Imagens aéreas</div>
+        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Voar sobre São Paulo exige planejamento antecipado, autorização de espaço aéreo, e nem todo ponto do trajeto permite o mesmo tipo de voo. Mapeamos essa viabilidade antes de sair, ponto a ponto.</div>
+      </div>
+      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Aftermovies</div>
+        <div style="font-size:14px;color:#8a8a90;line-height:1.55;">Um filme finalizado para cada ponto do tour, do Ibirapuera a Interlagos. Em vez de um único vídeo entregue depois, cada parada gerou sua própria peça fechada, com a taça como fio condutor e o cenário como protagonista.</div>
+      </div>
+    </div>
+  </div>
 </section>
-<section data-screen-label="Imagens duplas 2" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:2fr 1fr;gap:14px;">
-    <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="tt-img-5" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+<section data-screen-label="Imagens duplas 1" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+    <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <img src="./tt-photo-1.jpg" alt="Tour da Taça" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;">
+    </div>
+    <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <img src="./tt-photo-2.jpg" alt="Tour da Taça" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Ação 02" style="padding:120px 24px 0;max-width:1180px;margin:0 auto;">
+  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">02</span>
+    <span style="width:34px;height:1px;background:var(--accent);"></span>
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Os números</span>
+  </div>
+  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(28px,4vw,58px);line-height:1.08;letter-spacing:-.02em;max-width:20ch;">134 fotos, 243 vídeos <span style="color:var(--accent);">e 65 clipes aéreos.</span></h2>
+  <p data-reveal style="margin:0 0 24px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">5 aftermovies, um para cada ponto do tour.</p>
+  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">5 pontos da cidade cobertos, do Ibirapuera a Interlagos.</p>
+</section>
+<section data-screen-label="Imagens triplas" style="padding:0 24px 60px;max-width:1600px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;">
+    <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <img src="./tt-photo-3.jpg" alt="Tour da Taça" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
     <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="tt-img-6" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+      <img src="./tt-photo-4.jpg" alt="Tour da Taça" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
-  </div>
-</section>
-<section data-screen-label="Texto extra 2" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="max-width:700px;">
-    <h3 style="margin:0 0 16px;font-family:'Poppins';font-weight:700;font-size:clamp(20px,2.2vw,28px);">Título a definir</h3>
-    <p style="margin:0;font-size:15px;line-height:1.65;color:#9a9aa0;font-weight:300;">Texto a definir.</p>
-  </div>
-</section>
-
-<section data-screen-label="Ação 04" style="padding:0 24px 0;max-width:1180px;margin:0 auto;">
-  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
-    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">04</span>
-    <span style="width:34px;height:1px;background:var(--accent);"></span>
-    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
-  </div>
-  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:22ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção. Substitua por informações e resultados específicos.</p>
-</section>
-<section data-screen-label="Imagens duplas 3" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:14px;">
-    <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="tt-img-7" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
+    <div data-reveal style="position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <img src="./tt-photo-5.jpg" alt="Tour da Taça" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
-    <div data-reveal style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <image-slot id="tt-img-8" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
-    </div>
-  </div>
-</section>
-
-<section data-screen-label="Ação 05" style="padding:0 24px 0;max-width:1180px;margin:0 auto;">
-  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
-    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">05</span>
-    <span style="width:34px;height:1px;background:var(--accent);"></span>
-    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Texto a definir</span>
-  </div>
-  <h2 data-reveal style="margin:0 0 30px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;max-width:24ch;">Texto a definir.</h2>
-  <p data-reveal style="margin:0 0 24px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Espaço reservado para o texto desta seção.</p>
-  <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">Substitua por informações e resultados específicos.</p>
-</section>
-<section data-screen-label="Imagens duplas 4" style="padding:0 24px 40px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:14px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-      <div data-reveal style="position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-        <image-slot id="tt-img-9" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
-      </div>
-      <div data-reveal style="position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-        <image-slot id="tt-img-10" shape="rect" placeholder="Foto" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:14px;">
-      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">Descrição</div></div>
-      <div data-reveal style="flex:1;background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div><div style="margin-top:8px;font-size:13px;color:#9a9aa0;">Descrição</div></div>
-    </div>
-  </div>
-</section>
-<section data-screen-label="Cards finais" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Título a definir</div>
-      <div style="font-size:14px;color:#8a8a90;line-height:1.6;">Texto a definir.</div>
-    </div>
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:17px;margin-bottom:10px;">Título a definir</div>
-      <div style="font-size:14px;color:#8a8a90;line-height:1.6;">Texto a definir.</div>
-    </div>
-  </div>
-</section>
-
-<section data-screen-label="Impactos em números" style="padding:0 24px 0;max-width:1180px;margin:0 auto;">
-  <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
-    <span style="font-family:'Poppins';font-weight:700;font-size:14px;color:var(--accent);">06</span>
-    <span style="width:34px;height:1px;background:var(--accent);"></span>
-    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a90;">Impactos em números</span>
-  </div>
-  <h2 data-reveal style="margin:0 0 44px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.6vw,50px);line-height:1.1;letter-spacing:-.02em;">Texto a definir.</h2>
-</section>
-<section data-screen-label="Números hero" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;">
-    <div data-reveal style="background:linear-gradient(150deg,rgba(var(--accent-rgb),.22),rgba(18,18,20,1) 70%);border:1px solid rgba(var(--accent-rgb),.35);border-radius:24px;padding:44px 38px;">
-      <div style="font-family:'Poppins';font-weight:900;font-size:clamp(56px,8vw,104px);color:var(--accent);line-height:.92;letter-spacing:-.03em;">—</div>
-      <div style="margin-top:14px;font-size:15px;color:#e4e4e8;max-width:22ch;">Descrição</div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:14px;">
-      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
-        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">—</div>
-        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Descrição</div>
-      </div>
-      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
-        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">—</div>
-        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Descrição</div>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:14px;">
-      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
-        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">—</div>
-        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Descrição</div>
-      </div>
-      <div data-reveal style="flex:1;background:linear-gradient(150deg,rgba(var(--accent-rgb),.16),rgba(18,18,20,1) 75%);border:1px solid rgba(var(--accent-rgb),.25);border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;">
-        <div style="font-family:'Poppins';font-weight:900;font-size:clamp(36px,4.4vw,52px);color:var(--accent);line-height:1;letter-spacing:-.02em;">—</div>
-        <div style="margin-top:10px;font-size:13px;color:#c4c4c8;">Descrição</div>
-      </div>
-    </div>
-  </div>
-</section>
-<section data-screen-label="Números grid" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div>
-      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Descrição</div>
-    </div>
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div>
-      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Descrição</div>
-    </div>
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div>
-      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Descrição</div>
-    </div>
-    <div data-reveal style="background:#121214;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:30px;">
-      <div style="font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;color:#8a8a90;">Título a definir</div>
-      <div style="font-family:'Poppins';font-weight:800;font-size:clamp(30px,3vw,40px);color:var(--accent);line-height:1;">—</div>
-      <div style="margin:6px 0 16px;font-size:13px;color:#9a9aa0;">Descrição</div>
-    </div>
-  </div>
-</section>
-<section data-screen-label="Impactos imagem" style="padding:0 24px 130px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="position:relative;aspect-ratio:16/6;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-    <image-slot id="tt-impactos" shape="rect" placeholder="Mockup de resultados" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
   </div>
 </section>
 

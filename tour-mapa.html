@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html,body,#map{margin:0;height:100%;background:#0A0A0B;}
+  .leaflet-tile-pane{filter:grayscale(1) invert(1) contrast(.88) brightness(.82) sepia(.15) saturate(.4);}
+  .leaflet-control-zoom,.leaflet-control-attribution{display:none !important;}
+  .trophy-pin{width:34px;height:34px;border-radius:50%;background:#141416;border:2px solid #e7b555;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 4px 14px rgba(0,0,0,.55);}
+  .stop-label{background:rgba(10,10,11,.88);color:#f0e6d0;font-family:Poppins,Arial,sans-serif;font-weight:600;font-size:12px;padding:4px 11px;border-radius:20px;border:1px solid rgba(231,181,85,.35);white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.4);}
+  .leaflet-tooltip-top:before{display:none;}
+  .leaflet-container{background:#0A0A0B;}
+  .car-icon{font-size:22px;filter:drop-shadow(0 2px 5px rgba(0,0,0,.6));transform-origin:center;}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  // Coordinates exaggerated (out of scale) so the stops read clearly apart.
+  var stops = [
+    {name:"Parque Ibirapuera", lat:-23.5550, lng:-46.6005},
+    {name:"Parque do Povo", lat:-23.5865, lng:-46.7230},
+    {name:"Avenida Paulista", lat:-23.4960, lng:-46.6318},
+    {name:"Faria Lima", lat:-23.5475, lng:-46.6755},
+    {name:"Autódromo de Interlagos", lat:-23.6800, lng:-46.7100}
+  ];
+  var map = L.map('map', {zoomControl:false, scrollWheelZoom:false}).setView([-23.62,-46.68], 11);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  var latlngs = stops.map(function(s){ return [s.lat, s.lng]; });
+  stops.forEach(function(s){
+    var icon = L.divIcon({html:'<div class="trophy-pin">🏆</div>', iconSize:[34,34], iconAnchor:[17,26], className:''});
+    L.marker([s.lat,s.lng], {icon:icon}).addTo(map)
+      .bindTooltip(s.name, {permanent:true, direction:'top', offset:[0,-22], className:'stop-label'});
+  });
+  L.polyline(latlngs, {color:'#e7b555', weight:2.5, dashArray:'1 9', opacity:.8, lineCap:'round'}).addTo(map);
+  map.fitBounds(latlngs, {padding:[10,10]});
+
+  // Animate a car marker along the route.
+  var carIcon = L.divIcon({html:'<div class="car-icon">🏎️</div>', iconSize:[26,26], iconAnchor:[13,13], className:''});
+  var carMarker = L.marker(latlngs[0], {icon:carIcon}).addTo(map);
+  var totalDur = 9000; // ms for full loop
+  var segCount = latlngs.length - 1;
+  var startTime = null;
+  function animate(ts){
+    if(!startTime) startTime = ts;
+    var t = ((ts - startTime) % totalDur) / totalDur; // 0..1
+    var segT = t * segCount;
+    var i = Math.min(Math.floor(segT), segCount - 1);
+    var localT = segT - i;
+    var a = latlngs[i], b = latlngs[i+1];
+    var lat = a[0] + (b[0]-a[0])*localT;
+    var lng = a[1] + (b[1]-a[1])*localT;
+    carMarker.setLatLng([lat,lng]);
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
