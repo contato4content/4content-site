@@ -21,6 +21,7 @@
   @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
 </style>
 <script src="./image-slot.js"></script>
+<script src="./video-lazy.js"></script>
 </helmet>
 
 <div id="root" style="--accent:#FF2E2E;--accent-rgb:255,46,46;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
@@ -53,7 +54,7 @@
 
 <!-- HERO -->
 <section data-screen-label="Campanhas Hero" style="position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;">
-  <video src="./realtime-video-unicef.mp4" poster="assets/poster-realtime-video-unicef.jpg" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  <video src="./realtime-video-unicef.mp4" poster="assets/poster-realtime-video-unicef.jpg" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.4) 55%,rgba(10,10,11,.55) 100%);"></div>
   <div style="position:relative;max-width:1340px;margin:0 auto;width:100%;padding:0 24px 110px;">
     <a href="4Content.dc.html" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar</a>
@@ -107,13 +108,13 @@
 <section data-screen-label="Imagem — cobertura em produção (3 vídeos)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-video-fashion06.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./realtime-video-fashion06.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-video-grade1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./realtime-video-grade1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-video-fashion00.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./realtime-video-fashion00.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
 </section>
@@ -132,13 +133,13 @@
 <section data-screen-label="Imagem — bastidores da cobertura (3 fotos)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-video-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+      <video src="./realtime-video-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-video-2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
+      <video src="./realtime-video-2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-video-3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+      <video src="./realtime-video-3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
     </div>
   </div>
 </section>
@@ -223,14 +224,14 @@
 <section data-screen-label="Case" style="padding:0 24px 100px;max-width:1340px;margin:0 auto;">
   <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:14px;">
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:440px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-case-small.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./realtime-case-small.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
       <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
       <div style="position:relative;padding:44px;max-width:480px;">
         <h3 style="margin:0;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">Heineken Village</h3>
       </div>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:440px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./realtime-case-big.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./realtime-case-big.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
 </section>
@@ -279,17 +280,6 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    $$('video').forEach((v) => {
-      v.muted = true;
-      v.loop = true;
-      v.setAttribute('muted', '');
-      v.setAttribute('loop', '');
-      v.removeEventListener('ended', v._loopHandler || (() => {}));
-      v._loopHandler = () => { v.currentTime = 0; v.play(); };
-      v.addEventListener('ended', v._loopHandler);
-      const pv = v.play();
-      if (pv && pv.catch) pv.catch(() => {});
-    });
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });

@@ -20,6 +20,7 @@
   @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
 </style>
 <script src="./image-slot.js"></script>
+<script src="./video-lazy.js"></script>
 </helmet>
 
 <div id="root" style="--accent:#D5C29E;--accent-rgb:213,194,158;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
@@ -52,7 +53,7 @@
 </nav>
 
 <section data-screen-label="Case Hero" style="position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden;">
-  <video src="./creators-cup-hero.mp4" poster="assets/creators-cup-cover.jpg" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  <video src="./creators-cup-hero.mp4" poster="assets/creators-cup-cover.jpg" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.45) 55%,rgba(10,10,11,.6) 100%);"></div>
   <div style="position:relative;max-width:1180px;margin:0 auto;width:100%;padding:0 24px 110px;">
     <a href="4Content.dc.html#cases" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar aos cases</a>
@@ -78,8 +79,8 @@
   <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">A Red Bull Bragantino Creators Cup nasceu para colocar criadores de conteúdo dentro do dia a dia de um centro de treinamento profissional. Seis times disputaram desafios em campo, e o prêmio elevou a régua da competição: uma viagem para conhecer o Centro de Treinamento do Red Bull em Nova York, o mesmo CT usado pela seleção brasileira durante a Copa.</p>
 </section>
 <section data-screen-label="Cards de destaque" style="padding:0 24px 100px;max-width:1340px;margin:0 auto;">
-  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/8;border:1px solid rgba(255,255,255,.08);">
-<video src="./creators-cup-ep1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;"></video>
+  <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:9/16;max-width:420px;margin:0 auto;border:1px solid rgba(255,255,255,.08);">
+<video src="./creators-cup-ep1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 
@@ -101,7 +102,7 @@
         </div>
       </div>
       <div data-reveal style="position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);">
-  <video src="./creators-cup-ep3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  <video src="./creators-cup-ep3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
       </div>
     </div>
   </div>
@@ -149,7 +150,7 @@
 </section>
 <section data-screen-label="Vídeo fechamento" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/8;border:1px solid rgba(255,255,255,.08);">
-    <video src="./creators-cup-fechamento.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./creators-cup-fechamento.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 <section data-screen-label="CTA" style="padding:0 24px 130px;text-align:center;">
@@ -179,27 +180,6 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    const kickVideos = () => {
-      $$('video').forEach((v) => {
-        v.muted = true;
-        v.loop = true;
-        v.setAttribute('muted', '');
-        v.setAttribute('loop', '');
-        if (!v.dataset.kicked) {
-          v.dataset.kicked = '1';
-          v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
-          v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); });
-          v.addEventListener('canplay', () => { v.play().catch(() => {}); });
-        }
-        const pv = v.play();
-        if (pv && pv.catch) pv.catch(() => {});
-      });
-    };
-    kickVideos();
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
-    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
-    setTimeout(kickVideos, 400);
-    setTimeout(kickVideos, 1500);
 
     const cursor = $('#cursor');
     if (window.matchMedia('(pointer:fine)').matches && cursor) {

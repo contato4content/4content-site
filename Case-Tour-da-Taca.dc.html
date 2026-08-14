@@ -21,6 +21,7 @@
   @keyframes tt-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 </style>
 <script src="./image-slot.js"></script>
+<script src="./video-lazy.js"></script>
 </helmet>
 
 <div id="root" style="--accent:#D5C29E;--accent-rgb:213,194,158;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
@@ -197,27 +198,6 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    const kickVideos = () => {
-      $$('video').forEach((v) => {
-        v.muted = true;
-        v.loop = true;
-        v.setAttribute('muted', '');
-        v.setAttribute('loop', '');
-        if (!v.dataset.kicked) {
-          v.dataset.kicked = '1';
-          v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
-          v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); });
-          v.addEventListener('canplay', () => { v.play().catch(() => {}); });
-        }
-        const pv = v.play();
-        if (pv && pv.catch) pv.catch(() => {});
-      });
-    };
-    kickVideos();
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
-    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
-    setTimeout(kickVideos, 400);
-    setTimeout(kickVideos, 1500);
 
     const cursor = $('#cursor');
     if (window.matchMedia('(pointer:fine)').matches && cursor) {

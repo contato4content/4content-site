@@ -21,6 +21,7 @@
   @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
 </style>
 <script src="./image-slot.js"></script>
+<script src="./video-lazy.js"></script>
 </helmet>
 
 <div id="root" style="--accent:#FF2E2E;--accent-rgb:255,46,46;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
@@ -53,7 +54,7 @@
 
 <!-- HERO -->
 <section data-screen-label="Campanhas Hero" style="position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;">
-  <video src="./campanhas-hero-new.mp4" poster="assets/poster-campanhas-hero-new.jpg" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  <video src="./campanhas-hero-new.mp4" poster="assets/poster-campanhas-hero-new.jpg" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.4) 55%,rgba(10,10,11,.55) 100%);"></div>
   <div style="position:relative;max-width:1340px;margin:0 auto;width:100%;padding:0 24px 110px;">
     <a href="4Content.dc.html" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar</a>
@@ -110,7 +111,7 @@
       <img src="assets/camp-pato-1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;margin-top:-5vh;border:1px solid rgba(255,255,255,.08);">
-      <video src="./campanhas-video-meio.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
+      <video src="./campanhas-video-meio.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
       <img src="assets/camp-pato-2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
@@ -148,7 +149,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — campanha em produção (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-hero.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <video src="./campanhas-hero.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
   </div>
 </section>
 
@@ -216,7 +217,7 @@
 <!-- IMAGE BREAK -->
 <section id="case-arena-rbb" data-screen-label="Case — Arena Red Bull Bragantino" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-video-3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <video src="./campanhas-video-3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Campanha</span>
@@ -229,7 +230,7 @@
 <!-- CASE STRIP -->
 <section id="case-mae-que-conduz" data-screen-label="Case — Mãe que conduz" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:88vh;min-height:600px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-video-4.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./campanhas-video-4.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Campanha</span>
@@ -285,27 +286,6 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    const kickVideos = () => {
-      $$('video').forEach((v) => {
-        v.muted = true;
-        v.loop = true;
-        v.setAttribute('muted', '');
-        v.setAttribute('loop', '');
-        if (!v.dataset.kicked) {
-          v.dataset.kicked = '1';
-          v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
-          v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); });
-          v.addEventListener('canplay', () => { v.play().catch(() => {}); });
-        }
-        const pv = v.play();
-        if (pv && pv.catch) pv.catch(() => {});
-      });
-    };
-    kickVideos();
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
-    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
-    setTimeout(kickVideos, 400);
-    setTimeout(kickVideos, 1500);
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });

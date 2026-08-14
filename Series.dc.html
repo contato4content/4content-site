@@ -21,6 +21,7 @@
   @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
 </style>
 <script src="./image-slot.js"></script>
+<script src="./video-lazy.js"></script>
 </helmet>
 
 <div id="root" style="--accent:#FF2E2E;--accent-rgb:255,46,46;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
@@ -53,7 +54,7 @@
 
 <!-- HERO -->
 <section data-screen-label="Campanhas Hero" style="position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;">
-  <video src="./series-hero-video.mp4" poster="assets/poster-series-hero-video.jpg" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  <video src="./series-hero-video.mp4" poster="assets/poster-series-hero-video.jpg" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.4) 55%,rgba(10,10,11,.55) 100%);"></div>
   <div style="position:relative;max-width:1340px;margin:0 auto;width:100%;padding:0 24px 110px;">
     <a href="4Content.dc.html" style="display:inline-flex;align-items:center;gap:8px;color:#c4c4c8;text-decoration:none;font-size:13px;margin-bottom:26px;" style-hover="color:#fff;"><span style="font-size:15px;">&#8592;</span> Voltar</a>
@@ -106,7 +107,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — série em produção (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./series-video-2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./series-video-2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 
@@ -129,7 +130,7 @@
 <!-- VÍDEO — THE GAMERS SACY TRAILER -->
 <section data-screen-label="Vídeo — The Gamers Sacy Trailer (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:72vh;min-height:480px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./series-video-3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./series-video-3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 
@@ -150,10 +151,10 @@
       <image-slot id="series-break-2a" shape="rect" radius="20" src="assets/series-hero-photo.webp" placeholder="Foto de bastidor" style="position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.72);"></image-slot>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./series-vert-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./series-vert-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:52vh;min-height:340px;border:1px solid rgba(255,255,255,.08);">
-      <video src="./series-vert-2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./series-vert-2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
 </section>
@@ -195,7 +196,7 @@
 
 <section data-screen-label="Case" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;min-height:520px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <video src="./series-case-video.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <video src="./series-case-video.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Série Documental</span>
@@ -219,7 +220,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Vídeo — galeria da série (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:460px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./series-video-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video src="./series-video-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
   </div>
 </section>
 
@@ -302,49 +303,7 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    const kickVideos = () => {
-      $$('video').forEach((v) => {
-        v.muted = true;
-        v.loop = true;
-        v.setAttribute('muted', '');
-        v.setAttribute('loop', '');
-        if (!v.dataset.kicked) {
-          v.dataset.kicked = '1';
-          v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
-          v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); });
-          v.addEventListener('canplay', () => { v.play().catch(() => {}); });
-        }
-        const pv = v.play();
-        if (pv && pv.catch) pv.catch(() => {});
-      });
-    };
-    kickVideos();
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
-    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
-    setTimeout(kickVideos, 400);
-    setTimeout(kickVideos, 1500);
 
-    const kickVideos = () => {
-      $$('video').forEach((v) => {
-        v.muted = true;
-        v.loop = true;
-        v.setAttribute('muted', '');
-        v.setAttribute('loop', '');
-        if (!v.dataset.kicked) {
-          v.dataset.kicked = '1';
-          v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
-          v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); });
-          v.addEventListener('canplay', () => { v.play().catch(() => {}); });
-        }
-        const pv = v.play();
-        if (pv && pv.catch) pv.catch(() => {});
-      });
-    };
-    kickVideos();
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
-    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
-    setTimeout(kickVideos, 400);
-    setTimeout(kickVideos, 1500);
 
     const revealEls = $$('[data-reveal]');
     revealEls.forEach((el) => { if (el.dataset.revealed) return; el.style.setProperty('opacity','0','important'); el.style.setProperty('transform','translateY(34px)','important'); });

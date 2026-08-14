@@ -27,6 +27,7 @@
   }
 </style>
 <script src="./image-slot.js"></script>
+<script src="./video-lazy.js"></script>
 </helmet>
 
 <div id="root" style="--accent:#FF2E2E;--accent-rgb:255,46,46;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
@@ -77,7 +78,7 @@
   <div id="hero-track" style="display:flex;height:100%;width:100%;transition:transform .9s cubic-bezier(.76,0,.24,1);">
 
     <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
-      <video id="hero-video-1" src="./185.mp4" poster="assets/poster-185.jpg" autoplay="" muted="" loop="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video id="hero-video-1" src="./185.mp4" poster="assets/poster-185.jpg" muted="" loop="" playsinline="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
       <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;padding:0 24px 120px;max-width:1340px;margin:0 auto;left:50%;transform:translateX(-50%);width:100%;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
@@ -92,7 +93,7 @@
     </div>
 
     <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
-      <video id="hero-video-2" src="./hero-series.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video id="hero-video-2" src="./hero-series.mp4" muted="" loop="" playsinline="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
       <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
       <div style="position:absolute;left:50%;transform:translateX(-50%);right:0;bottom:0;padding:0 24px 120px;max-width:1340px;width:100%;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
@@ -107,7 +108,7 @@
     </div>
 
     <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
-      <video id="hero-video-3" src="./hero-mediaday.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video id="hero-video-3" src="./hero-mediaday.mp4" muted="" loop="" playsinline="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
       <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
       <div style="position:absolute;left:50%;transform:translateX(-50%);right:0;bottom:0;padding:0 24px 120px;max-width:1340px;width:100%;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
@@ -122,7 +123,7 @@
     </div>
 
     <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
-      <video id="hero-video-4" src="./hero-realtime.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video id="hero-video-4" src="./hero-realtime.mp4" muted="" loop="" playsinline="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
       <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
       <div style="position:absolute;left:50%;transform:translateX(-50%);right:0;bottom:0;padding:0 24px 120px;max-width:1340px;width:100%;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
@@ -462,27 +463,6 @@ class Component extends DCLogic {
     const root = $('#root');
 
     // ---- Hero background video (autoplay needs muted set as a property) ----
-    const kickVideos = () => {
-      $$('video').forEach((hv) => {
-        hv.muted = true;
-        hv.loop = true;
-        hv.setAttribute('muted', '');
-        hv.setAttribute('loop', '');
-        if (!hv.dataset.kicked) {
-          hv.dataset.kicked = '1';
-          hv.addEventListener('ended', () => { hv.currentTime = 0; hv.play().catch(() => {}); });
-          hv.addEventListener('pause', () => { if (!document.hidden) hv.play().catch(() => {}); });
-          hv.addEventListener('canplay', () => { hv.play().catch(() => {}); });
-        }
-        const pv = hv.play();
-        if (pv && pv.catch) pv.catch(() => {});
-      });
-    };
-    kickVideos();
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
-    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
-    setTimeout(kickVideos, 400);
-    setTimeout(kickVideos, 1500);
 
     // ---- Fixed brand accent (gold) ----
     root.style.setProperty('--accent', '#D5C29E');

@@ -26,6 +26,7 @@
   @media (max-width:1100px){[data-desktop-nav]{display:none !important;}[data-nav-right]{display:none !important;}[data-hamburger]{display:flex !important;}}
 </style>
 <script src="./image-slot.js"></script>
+<script src="./video-lazy.js"></script>
 </helmet>
 
 <div id="root" style="--accent:#D5C29E;--accent-rgb:213,194,158;position:relative;width:100%;background:#0A0A0B;color:#fff;overflow:hidden;">
@@ -84,15 +85,15 @@
   <p data-reveal style="margin:0 0 40px;max-width:700px;font-size:16px;line-height:1.65;color:#9a9aa0;font-weight:300;">A repercussão colocou Gabigol ao lado de outros grandes nomes do futebol que já haviam adotado o mesmo movimento. Como observou a CNN Brasil, o atacante lançou o canal "repetindo o projeto de outros astros do futebol, como Cristiano Ronaldo", transformando o YouTube em ferramenta de comunicação direta com o torcedor, sem intermediação da imprensa.</p>
 </section>
 <section data-screen-label="Vídeos verticais 1" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:1fr 1.7fr 1fr;gap:14px;">
-    <div data-reveal style="position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-ate-o-fim-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+    <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <video src="./ytg-ate-o-fim-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
-    <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;margin-top:-5vh;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-ate-o-fim-3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <video src="./ytg-ate-o-fim-3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
-    <div data-reveal style="position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-ate-o-fim-2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <video src="./ytg-ate-o-fim-2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
 </section>
@@ -141,7 +142,7 @@
       </div>
     </div>
     <div style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);margin-top:44px;">
-      <video src="./ytg-resplandecer.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./ytg-resplandecer.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
 </section>
@@ -163,15 +164,15 @@
 </section>
 
 <section data-screen-label="Imagens duplas 3" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
-    <div data-reveal style="position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-podpah-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+    <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <video src="./ytg-podpah-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
-    <div data-reveal style="position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-podpah-3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <video src="./ytg-podpah-3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
-    <div data-reveal style="position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-podpah-4.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
+      <video src="./ytg-podpah-4.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
 </section>
@@ -219,18 +220,18 @@
 <section data-screen-label="Vídeo destaque" style="padding:0 24px 60px;max-width:1340px;margin:0 auto;">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
     <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-como-tudo-1.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./ytg-como-tudo-1.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
     <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-como-tudo-2.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./ytg-como-tudo-2.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
     <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-como-tudo-3.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./ytg-como-tudo-3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
     <div data-reveal style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);">
-      <video src="./ytg-como-tudo-4.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <video src="./ytg-como-tudo-4.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     </div>
   </div>
 </section>
@@ -261,27 +262,6 @@ class Component extends DCLogic {
     root.style.setProperty('--accent', '#D5C29E');
     root.style.setProperty('--accent-rgb', '213,194,158');
 
-    const kickVideos = () => {
-      $$('video').forEach((v) => {
-        v.muted = true;
-        v.loop = true;
-        v.setAttribute('muted', '');
-        v.setAttribute('loop', '');
-        if (!v.dataset.kicked) {
-          v.dataset.kicked = '1';
-          v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
-          v.addEventListener('pause', () => { if (!document.hidden) v.play().catch(() => {}); });
-          v.addEventListener('canplay', () => { v.play().catch(() => {}); });
-        }
-        const pv = v.play();
-        if (pv && pv.catch) pv.catch(() => {});
-      });
-    };
-    kickVideos();
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) kickVideos(); });
-    ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => addEventListener(evt, kickVideos, { once: true, passive: true }));
-    setTimeout(kickVideos, 400);
-    setTimeout(kickVideos, 1500);
 
     const cursor = $('#cursor');
     if (window.matchMedia('(pointer:fine)').matches && cursor) {
