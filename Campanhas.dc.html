@@ -29,7 +29,7 @@
 <!-- NAVBAR -->
 <nav id="navbar" style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;width:calc(100% - 32px);max-width:1340px;">
   <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(14,14,16,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:11px 14px 11px 22px;box-shadow:0 10px 36px rgba(0,0,0,.4);">
-    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img src="assets/logo-white-cropped.png" alt="4Content" style="height:15px;width:auto;display:block;"></a>
+    <a href="4Content.dc.html" style="display:flex;align-items:center;flex:0 0 auto;text-decoration:none;"><img decoding="async" src="assets/logo-white-cropped.png" alt="4Content" style="height:15px;width:auto;display:block;"></a>
     <div data-desktop-nav style="display:flex;align-items:center;gap:26px;flex:0 0 auto;">
       <a href="Campanhas.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:1;">Campanhas</a>
       <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:14px;opacity:.7;" style-hover="opacity:1;">Séries</a>
@@ -49,6 +49,7 @@
     <a href="Series.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Séries</a>
     <a href="Media-Day.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Media Day</a>
     <a href="Real-Time.dc.html" style="color:#fff;text-decoration:none;font-size:16px;padding:9px 0;">Real Time</a>
+    <a href="4Content.dc.html#contact" style="color:var(--accent);text-decoration:none;font-size:16px;padding:9px 0;font-weight:600;">Fale conosco</a>
   </div>
 </nav>
 
@@ -108,13 +109,13 @@
 <section data-screen-label="Imagem — bastidores da campanha (3 fotos)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div style="display:grid;grid-template-columns:1fr 1.7fr 1fr;gap:14px;">
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <img src="assets/camp-pato-1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <img loading="lazy" decoding="async" src="assets/camp-pato-1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;margin-top:-5vh;border:1px solid rgba(255,255,255,.08);">
-      <video src="./campanhas-video-meio.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
+      <video poster="assets/poster-campanhas-video-meio.jpg" src="./campanhas-video-meio.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;"></video>
     </div>
     <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:64vh;min-height:420px;border:1px solid rgba(255,255,255,.08);">
-      <img src="assets/camp-pato-2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <img loading="lazy" decoding="async" src="assets/camp-pato-2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
   </div>
 </section>
@@ -149,7 +150,7 @@
 <!-- IMAGE BREAK -->
 <section data-screen-label="Imagem — campanha em produção (paisagem)" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-hero.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <video poster="assets/poster-campanhas-hero.jpg" src="./campanhas-hero.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
   </div>
 </section>
 
@@ -217,12 +218,11 @@
 <!-- IMAGE BREAK -->
 <section id="case-arena-rbb" data-screen-label="Case — Arena Red Bull Bragantino" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:74vh;min-height:480px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-video-3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
+    <video poster="assets/poster-campanhas-video-3.jpg" src="./campanhas-video-3.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"></video>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Campanha</span>
       <h3 style="margin:0 0 12px;font-family:'Poppins';font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;">Arena Red Bull Bragantino</h3>
-      <p style="margin:0;font-size:15px;color:#bcbcc2;line-height:1.55;max-width:480px;">Texto a definir.</p>
     </div>
   </div>
 </section>
@@ -230,7 +230,7 @@
 <!-- CASE STRIP -->
 <section id="case-mae-que-conduz" data-screen-label="Case — Mãe que conduz" style="padding:0 24px 120px;max-width:1340px;margin:0 auto;">
   <div data-reveal style="position:relative;border-radius:20px;overflow:hidden;height:88vh;min-height:600px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,.08);">
-    <video src="./campanhas-video-4.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <video poster="assets/poster-campanhas-video-4.jpg" src="./campanhas-video-4.mp4" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent 70%);"></div>
     <div style="position:relative;padding:44px;max-width:600px;">
       <span style="display:inline-block;background:rgba(10,10,11,.7);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:5px 13px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;">Case · Campanha</span>
@@ -257,7 +257,6 @@
   <h2 data-reveal style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(40px,7vw,110px);line-height:.9;letter-spacing:-.02em;">Bora criar a sua?</h2>
   <div data-reveal style="margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
     <a href="4Content.dc.html#contact" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fale conosco <span style="font-size:17px;">&#8594;</span></a>
-    <a href="4Content.dc.html#contact" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0A0A0B;background:var(--accent);border-radius:50px;padding:15px 30px;font-size:16px;font-weight:600;transition:transform .2s;" style-hover="transform:translateY(-2px);">Fale conosco, nos envie seu projeto</a>
   </div>
   <div data-reveal style="margin-top:64px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
     <a href="Series.dc.html" style="color:#c4c4c8;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:10px 20px;" style-hover="border-color:rgba(255,255,255,.4);color:#fff;">Séries Documentais &#8594;</a>
@@ -269,7 +268,7 @@
 <!-- FOOTER -->
 <footer style="background:#070708;padding:60px 24px 36px;border-top:1px solid rgba(255,255,255,.06);">
   <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
-    <a href="4Content.dc.html" style="display:flex;"><img src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
+    <a href="4Content.dc.html" style="display:flex;"><img loading="lazy" decoding="async" src="assets/logo-white.png" alt="4Content" style="width:140px;height:auto;display:block;"></a>
     <div style="font-size:13px;color:#6a6a70;">© 2026 — 4Content. Todos os direitos reservados.</div>
   </div>
 </footer>
