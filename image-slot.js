@@ -237,7 +237,7 @@
       root.innerHTML =
         '<style>' + stylesheet + '</style>' +
         '<div class="frame" part="frame">' +
-        '  <img part="image" alt="" draggable="false" style="display:none">' +
+        '  <img part="image" alt="" draggable="false" loading="lazy" decoding="async" style="display:none">' +
         '  <div class="empty" part="empty">' + icon +
         '    <div class="cap"></div>' +
         '    <div class="sub">or <u>browse files</u></div></div>' +
@@ -619,8 +619,13 @@
       // the display:flex / display:block rules in the stylesheet above.
       if (url) {
         if (this._img.getAttribute('src') !== url) {
-          this._img.src = url;
-          this._ghost.src = url;
+          // O <img> começa com display:none, e um elemento sem caixa faz o
+          // navegador ignorar loading="lazy" e baixar na hora. Por isso a
+          // espera é feita aqui: o src só é atribuído perto da viewport.
+          whenNearViewport(this, () => {
+            this._img.src = url;
+            this._ghost.src = url;
+          });
         }
         this._img.style.display = 'block';
         this._empty.style.display = 'none';
@@ -635,6 +640,61 @@
         this.removeAttribute('data-filled');
       }
     }
+  }
+
+  // Dispara o callback quando o slot chega perto da viewport. O observer é o
+  // caminho normal; a varredura por geometria cobre os casos em que ele não
+  // entrega a notificação inicial (elemento ainda sem layout no primeiro
+  // render), que deixariam a imagem sem carregar para sempre.
+  const MARGIN = 400;
+  const pending = new Set();
+
+  function fire(el) {
+    if (!pending.has(el)) return;
+    pending.delete(el);
+    if (nearObs) nearObs.unobserve(el);
+    const cb = el._onNear;
+    el._onNear = null;
+    if (cb) cb();
+  }
+
+  const nearObs = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => {
+        for (const e of entries) if (e.isIntersecting) fire(e.target);
+      }, { rootMargin: MARGIN + 'px 0px' })
+    : null;
+
+  let queued = false;
+  function sweep() {
+    queued = false;
+    if (!pending.size) return;
+    const h = window.innerHeight || document.documentElement.clientHeight;
+    const w = window.innerWidth || document.documentElement.clientWidth;
+    for (const el of [...pending]) {
+      const r = el.getBoundingClientRect();
+      if (!r.width && !r.height) continue;
+      if (r.top < h + MARGIN && r.bottom > -MARGIN && r.left < w + MARGIN && r.right > -MARGIN) fire(el);
+    }
+  }
+  // setTimeout em vez de requestAnimationFrame: o rAF não roda em aba de
+  // segundo plano, e aí a varredura de resgate nunca aconteceria.
+  function sweepSoon() {
+    if (queued) return;
+    queued = true;
+    setTimeout(sweep, 0);
+  }
+  addEventListener('scroll', sweepSoon, { passive: true });
+  addEventListener('resize', sweepSoon, { passive: true });
+  addEventListener('load', sweepSoon);
+  // O primeiro render ainda não tem layout; estas passadas pegam o que sobrou.
+  setTimeout(sweep, 300);
+  setTimeout(sweep, 1200);
+
+  function whenNearViewport(el, cb) {
+    el._onNear = cb;
+    pending.add(el);
+    if (nearObs) nearObs.observe(el);
+    sweepSoon();
   }
 
   if (!customElements.get('image-slot')) {
