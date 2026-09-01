@@ -78,6 +78,21 @@
   <div id="hero-track" style="display:flex;height:100%;width:100%;transition:transform .9s cubic-bezier(.76,0,.24,1);">
 
     <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
+      <video id="hero-video-0" src="./nns-hero.mp4" poster="assets/poster-nns-hero.jpg" muted="" loop="" playsinline="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
+      <div style="position:absolute;left:50%;transform:translateX(-50%);right:0;bottom:0;padding:0 24px 120px;max-width:1340px;width:100%;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+          <span style="font-family: 'Poppins'; font-weight: 700; font-size: 13px; letter-spacing: .05em; color: #D5C29E">00</span>
+          <span style="width: 34px; height: 1px; background-color: #D5C29E"></span>
+          <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#c4c4c8;">Red Bull Bragantino</span>
+        </div>
+        <h1 style="margin:0;font-family:'Poppins';font-weight:800;text-transform:uppercase;font-size:clamp(48px,8vw,128px);line-height:.92;letter-spacing:-.02em;max-width:14ch;">N&#227;o negociamos nosso suor</h1>
+        <a href="Case-Nao-Negociamos-Nosso-Suor.dc.html" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; text-decoration: none; color: #0A0A0B; border-radius: 50px; padding: 14px 26px; font-size: 15px; font-weight: 600; transition: transform .2s; background-color: #D5C29E" style-hover="transform:translateY(-2px);">Ver case <span style="font-size:17px;">&#8594;</span></a>
+      </div>
+    </div>
+
+
+    <div class="hero-slide" style="position:relative;flex:0 0 100%;height:100%;">
       <video id="hero-video-1" src="./185.mp4" poster="assets/poster-185.jpg" muted="" loop="" playsinline="" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
       <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,10,11,.40);"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;padding:0 24px 120px;max-width:1340px;margin:0 auto;left:50%;transform:translateX(-50%);width:100%;">
@@ -142,9 +157,10 @@
   <button id="hero-next" aria-label="Próximo" style="position:absolute;right:18px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.07);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);color:#fff;width:46px;height:46px;border-radius:50%;font-size:19px;display:flex;align-items:center;justify-content:center;z-index:5;" style-hover="background:rgba(255,255,255,.18);">→</button>
   <div id="hero-bars" style="position:absolute;bottom:48px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:5;width:min(280px,70vw);">
     <span data-bar="0" style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.22);overflow:hidden;cursor:pointer;"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
-    <span data-bar="1" style="flex: 1; height: 3px; border-radius: 3px; background: rgba(255,255,255,.22); overflow: hidden; cursor: pointer; display: block"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
-    <span data-bar="2" style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.22);overflow:hidden;cursor:pointer;"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
+    <span data-bar="1" style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.22);overflow:hidden;cursor:pointer;"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
+    <span data-bar="2" style="flex: 1; height: 3px; border-radius: 3px; background: rgba(255,255,255,.22); overflow: hidden; cursor: pointer; display: block"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
     <span data-bar="3" style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.22);overflow:hidden;cursor:pointer;"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
+    <span data-bar="4" style="flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.22);overflow:hidden;cursor:pointer;"><i style="display:block;height:100%;width:0;background:var(--accent);"></i></span>
   </div>
 </section>
 
@@ -559,7 +575,7 @@ class Component extends DCLogic {
     // ---- Hero carousel ----
     const track = $('#hero-track');
     const bars = $$('#hero-bars [data-bar]');
-    const total = 4;
+    const total = 5;
     let idx = 0, barRAF = null, barStart = 0;
     const DURATION = 6000;
     const animateBar = () => {
